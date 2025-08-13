@@ -1,17 +1,18 @@
 import { JSX } from "react";
 interface HeadingsProps {
-    level: number,
-    children: React.ReactNode,
-    className?: string
+  level: number;
+  heading: string;
+  className?: string;
 }
 
-const Headings: React.FC<HeadingsProps> = ({children, level, className}) => {
-    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-    return (
-        <Tag className={`${className} capitalize`}>
-            {children}
-        </Tag>
-    );
-}
+const Headings: React.FC<HeadingsProps> = ({ heading, level, className }) => {
+  const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+  return (
+    <Tag
+      className={`${className}`}
+      dangerouslySetInnerHTML={{ __html: heading }}
+    />
+  );
+};
 
 export default Headings;

@@ -9,6 +9,10 @@ interface SectionHeadingDescProps {
   titleColor?: string;
   subTitleColor?: string;
   smTextCenter?: boolean;
+  wrapperClassName?: string;
+  titleClassName?: string;
+  subTitleClassName?: string;
+  descriptionClassName?: string;
 }
 
 const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
@@ -20,27 +24,33 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
   titleColor,
   subTitleColor,
   smTextCenter = false,
+  wrapperClassName = "",
+  titleClassName = "",
+  subTitleClassName = "",
+  descriptionClassName = "",
 }) => {
   return (
-    <div className="flex flex-col w-full gap-4">
+    <div className={`flex flex-col w-full gap-4 ${wrapperClassName}`}>
       {title && (
         <Headings
           level={2}
-          className={` ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${titleColor ? `text-${titleColor}` : "text-primary"}  abhayaLibre md:text-5xl text-2xl `}
-        >
-          {title}
-        </Headings>
+          className={`${titleClassName} ${textcenter ? "text-center mx-auto" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${titleColor ? `text-${titleColor}` : "text-primary"} md:text-5xl pUltralight tracking-wider text-2xl`}
+          heading={title}
+        />
       )}
       {subTitle && (
         <Headings
           level={3}
-          className={` ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${subTitleColor ? `text-${subTitleColor}` : "text-dark"} abhayaLibre md:text-[2.5rem]/[3rem] text-2xl`}
-        >
-          {subTitle}
-        </Headings>
+          className={`${subTitleClassName} ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${subTitleColor ? `text-${subTitleColor}` : "text-primary"} lg_font_s font-medium`}
+          heading={subTitle}
+        />
       )}
       {description && (
-        <p className={`${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${descriptionColor ? `text-${descriptionColor}` : "text-light"} md:text-lg text-base`}>{description}</p>
+        <p
+          className={`${descriptionClassName} ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${descriptionColor ? `text-${descriptionColor}` : "text-light"} md:text-[1.375rem] text-base`}
+        >
+          {description}
+        </p>
       )}
     </div>
   );

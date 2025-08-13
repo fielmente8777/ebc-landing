@@ -1,6 +1,8 @@
 import Container from "./Container";
 import Section from "./Section";
 
+import React from "react";
+
 interface SectionWithContainerProps {
   sectionId?: string;
   containerId?: string;
@@ -9,7 +11,9 @@ interface SectionWithContainerProps {
   children: React.ReactNode;
   containerStyle?: React.CSSProperties;
   sectionStyle?: React.CSSProperties;
-  lgpy?: string;
+  defaultPadding?: boolean;
+  sectionProps?: React.HTMLAttributes<HTMLElement>;
+  containerProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 const SectionWithContainer: React.FC<SectionWithContainerProps> = ({
@@ -17,14 +21,27 @@ const SectionWithContainer: React.FC<SectionWithContainerProps> = ({
   containerId = "",
   sectionClassName = "",
   containerClassName = "",
-  lgpy = "",
   sectionStyle = {},
-  containerStyle={},
+  containerStyle = {},
   children,
+  defaultPadding = true,
+  sectionProps = {},
+  containerProps = {},
 }) => {
   return (
-    <Section id={sectionId} className={sectionClassName} style={sectionStyle} lgpy={lgpy}>
-      <Container id={containerId} className={containerClassName} style={containerStyle}>
+    <Section
+      id={sectionId}
+      className={sectionClassName}
+      style={sectionStyle}
+      defaultPadding={defaultPadding}
+      {...sectionProps}
+    >
+      <Container
+        id={containerId}
+        className={containerClassName}
+        style={containerStyle}
+        {...containerProps}
+      >
         {children}
       </Container>
     </Section>

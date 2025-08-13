@@ -1,77 +1,75 @@
 import { JSX } from "react";
 
 export interface BannerType {
-  title: string;
   videoSrc?: string;
   src: string;
 }
 
-export interface HolisticHealingTypes {
-  title: string;
-  icon: JSX.Element;
-  cards: {
-    title: string;
-    icon: JSX.Element;
-  }[];
-}
-
-export interface SignatureTherapiesTypes {
-  title: string;
-  description: string;
-  cards: {
-    category: string;
-    title: string;
-    description: string;
-    src: string;
-  }[];
-  links: {
-    label: string;
-    href: string;
-  }[];
-}
-
-export interface FacilitiesTypes {
-  title: string;
-  list: string[];
+export interface AboutUsTypes {
   src: string;
-  links: {
-    label: string;
-    href: string;
-  }[];
-}
-
-export interface WellnessProgramsTypes {
   title: string;
-  description: string;
-  icon: JSX.Element;
-  cards: {
-    title: string;
-    src: string;
-  }[];
-  links: {
-    label: string;
-    href: string;
-  }[];
-}
-
-export interface AccommodationTypes {
-  title: string;
+  subtitle: string;
   description: string;
   cards: {
     title: string;
     src: string;
   }[];
-  links: {
-    label: string;
+  blogs: {
+    src: string;
     href: string;
   }[];
 }
 
-export interface TestimonialsTypes {
+export interface TestimonialTypes {
+  title: string;
+  cards: {
+    src: string;
+    name: string;
+    text: string;
+  }[];
+}
+
+export interface ExperienceTypes {
   title: string;
   description: string;
   cards: {
-    author: string;
-    review: string;
+    src: string[];
+  }[];
+  link: {
+    href: string;
+    label: string;
+  };
+}
+
+export interface RoomsTypes {
+  title: string;
+  cards: {
+    images: string[];
+    roomName: string;
+    description: string;
+    label?: string;
+    labelColor?: string;
+    amenities: {
+      title: string;
+      icon: JSX.Element;
+    }[];
+  }[];
+}
+
+export interface AddsTypes {
+  title: string;
+  listOfData: string[];
+  link: {
+    href: string;
+    label: string;
+  };
+}
+
+export interface WhyEbcTypes {
+  title: string;
+  description: string;
+  cards: {
+    icon: JSX.Element;
+    title: string;
   }[];
 }

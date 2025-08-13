@@ -86,6 +86,7 @@ const SEOVideo: React.FC<VideoProps> = ({
         className="w-full h-full object-cover overflow-hidden"
         onPlay={handlePlay}
         playsInline
+        
       >
         Sorry, your browser doesn&apos;t support embedded videos.
       </video>

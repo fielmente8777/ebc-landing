@@ -1,30 +1,34 @@
 "use client";
 import { useState } from "react";
 import { Headings } from "../typography";
-import { TestimonialsTypes } from "@/@types/types";
+import { TestimonialTypes } from "@/@types/types";
+import Image from "next/image";
+import { RatingsIcon } from "@/utils/icons";
 
-const TestimonialCard: React.FC<TestimonialsTypes["cards"][0]> = ({
-  author: title,
-  review: desc,
+const TestimonialCard: React.FC<TestimonialTypes["cards"][0]> = ({
+  name,
+  src,
+  text,
 }) => {
-  const [readMore, setReadMore] = useState(false);
+  // const [readMore, setReadMore] = useState(false);
   return (
-    <div className="w-full flex flex-col gap-6">
-      <p className="text-light text-lg  max-md:text-center">
-        {readMore ? desc : `${desc.slice(0, 300)}...`}
-        <span
-          className="cursor-pointer text-dark font-semibold"
-          onClick={() => setReadMore(!readMore)}
-        >
-          {readMore ? "...Read less" : "Read more"}
-        </span>
-      </p>
-      <Headings
-        level={3}
-        className="text-primary font-semibold text-lg tracking-wide max-md:text-center"
-      >
-        {title}
-      </Headings>
+    <div className="w-full grid md:grid-cols-2 gap-6">
+      <div className="w-full relative md:aspect-[4/2.3]">
+        <Image src={src} alt={name} fill className="object-cover" />
+      </div>
+      <div className="flex flex-col justify-center gap-6">
+        <div className="flex items-center gap-2">
+          {Array(5)
+            .fill(0)
+            .map((_, index) => (
+              <span key={index}>
+                <RatingsIcon />
+              </span>
+            ))}
+        </div>
+        <p className="text-light md:text-[1.375rem]">{text}</p>
+        <h3 className="text-light text-2xl pUltralight">{name}</h3>
+      </div>
     </div>
   );
 };

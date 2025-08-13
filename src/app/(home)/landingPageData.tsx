@@ -1,20 +1,24 @@
 import {
   CuratedLuxury,
+  ForestView,
+  FreeWifi,
+  HeatedBeds,
   LocationNature,
   SustainabilityCentric,
 } from "@/utils/icons";
-import { imgSrc, landingpageImgSrc } from "../../../constant";
-
+import { contact, imgSrc, landingpageImgSrc } from "../../../constant";
 
 export const landingPageData = {
   bannerData: {
     videoSrc: "",
-    src: "",
+    src: "/img1.webp",
   },
   aboutUsData: {
+    src:"/img.webp",
     title: "Luxury Glamping Meets Himalayan Serenity",
     subtitle: "Top Rated Glamping Resort of Mussoorie",
-    description: "Reconnect with nature in curated comfort at Everest Base Camp, Mussoorie",
+    description:
+      "Reconnect with nature in curated comfort at Everest Base Camp, Mussoorie",
     cards: [
       {
         title: "9.2/10",
@@ -47,7 +51,23 @@ export const landingPageData = {
     ],
     blogs: [
       {
-        src: "",
+        src: "/hotelier.png",
+        href: "https://www.hotelierindia.com/operations/experience-tranquil-adventure-in-the-heart-of-mussoorie-with-ebc-mussoorie",
+      },
+      {
+        src: "/ad.png",
+        href: "https://www.architecturaldigest.in/story/weekend-getaways-from-delhi-that-are-perfect-for-last-minute-planning/",
+      },
+      {
+        src: "/tripoto.png",
+        href: "https://www.tripoto.com/india/trips/did-you-know-that-just-8-hours-from-delhi-there-s-an-everest-base-camp-no-we-re-not-kidding-3aea3a54f8628a1c8",
+      },
+      {
+        src: "/lbb.png",
+        href: "https://lbb.in/delhi/away-from-the-city-around-all-things-pretty-ebc-mussoorie/",
+      },
+      {
+        src: "/vogue.png",
         href: "",
       },
     ],
@@ -56,19 +76,9 @@ export const landingPageData = {
     title: "Real Stays. Real Stories. EBC Mussoorie Reviews",
     cards: [
       {
-        src: "",
-        name: "",
-        text: "",
-      },
-      {
-        src: "",
-        name: "",
-        text: "",
-      },
-      {
-        src: "",
-        name: "",
-        text: "",
+        src: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/activities/picnic/img2.webp",
+        name: "Lorem Ipsum Family",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       },
     ],
   },
@@ -78,64 +88,126 @@ export const landingPageData = {
       "Escape the urban chaos and embrace a tranquil retreat in nature's embrace. Join us for a unique glamping experience that transcends the ordinary. Immerse yourself in the serenity of the great outdoors, where city stress fades away, replaced by the soothing symphony of rustling leaves and chirping birds. Be our guest, unwind, and rediscover the joy of simplicity. It's time to trade skyscrapers for star-studded skies. Your adventure in nature awaits – let the relaxation begin!",
     cards: [
       {
-        src: ["", ""],
+        src: ["https://ebcmussoorie.com/gallery2/outsideview6.webp", "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/activities/bonfire/img1.webp"],
       },
       {
-        src: ["", ""],
+        src: [
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/img2.webp",
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/activities/trekking/img1.webp",
+        ],
       },
       {
-        src: ["", ""],
+        src: [
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/img1.webp",
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/activities/picnic/img1.webp",
+        ],
       },
     ],
     link: {
-      href: "",
-      label: "",
+      href: contact.ctaUrl,
+      label: "VIEW ALL EXPERIENCES",
     },
   },
   roomsData: {
     title: "Curated Comfort in Every Room",
     cards: [
       {
-        image: [
+        images: [
           landingpageImgSrc + "camper/img1.webp",
           landingpageImgSrc + "camper/img2.webp",
           landingpageImgSrc + "camper/img3.webp",
           landingpageImgSrc + "camper/img4.webp",
         ],
         roomName: "The Camper",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
         description:
           "Treat yourself to a relaxing getaway in our Camper rooms, designed for couples seeking a lavish vacation experience with unparalleled comfort and coziness in a peaceful setting.",
       },
       {
-        image: [
+        images: [
           landingpageImgSrc + "glamper/img1.webp",
           landingpageImgSrc + "glamper/img2.webp",
           landingpageImgSrc + "glamper/img3.webp",
           landingpageImgSrc + "glamper/img4.webp",
         ],
         roomName: "The Glamper",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
         description:
           "Our Glamper rooms promise relaxation and rejuvenation like no other, ideal for small groups, making unforgettable moments on our exclusive netted balcony spaces — perfect for creating Instagram-worthy memories.",
       },
       {
-        image: [
+        images: [
           landingpageImgSrc + "surveyor/img1.webp",
           imgSrc + "home/img2.webp",
           landingpageImgSrc + "surveyor/img2.webp",
           landingpageImgSrc + "surveyor/img3.webp",
         ],
         roomName: "The Surveyor",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
         description:
           "Experience luxury in the Surveyor at Everest Base Camp, Mussoorie. Enjoy Spacious tents with stunning forest views and king-size beds, perfect for families or friends seeking luxury in nature.",
       },
       {
-        image: [
+        images: [
           landingpageImgSrc + "surveyor_suite/img1.webp",
           landingpageImgSrc + "surveyor_suite/img2.webp",
           landingpageImgSrc + "surveyor_suite/img3.webp",
           landingpageImgSrc + "surveyor/img3.webp",
         ],
         roomName: "The Surveyor Grand Suite",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
         description:
           "Relax and recharge in the peaceful Surveyor Suite, surrounded by Deodar forest scenery. Perfect for families or small groups, our serene atmosphere ensures privacy and comfort, allowing you to reconnect with nature.",
       },
@@ -153,7 +225,7 @@ export const landingPageData = {
     },
   },
   whyEbcMussoorieData: {
-    title: "Why EBC Mussoorie",
+    title: "Why EBC <span>Mussoorie</span>?",
     description:
       "Perched above the Queen of Hills, EBC Mussoorie blends refined luxury with raw nature. Thoughtfully built with local materials, it’s where sustainability meets sophistication.",
     cards: [

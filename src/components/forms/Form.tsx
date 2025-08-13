@@ -1,112 +1,145 @@
 "use client";
+import DataContext from "@/contextApi/DataContext";
+import { countries } from "../../../constant";
+import { getDateInputLimits } from "@/hocks/getDateInputLimits";
+import { CalenderIcon } from "@/utils/icons";
 import axios from "axios";
-import { useRef, useState } from "react";
-import { countries } from "../chatbot/constant";
-import useClickOutside from "@/hocks/useClickOutside";
-import { DropDownIcon } from "@/utils/icons";
-import { contact } from "../../../Constent";
+import { usePathname } from "next/navigation";
+import { ChangeEvent, useContext, useRef, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
-  const [countryCode, setCountryCode] = useState("+91");
+  const { setIsOpen } = useContext(DataContext);
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
+  const { min } = getDateInputLimits({
+    showPast: false,
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const offers = [
-    "Wellness Offers",
-    "Rejuvenation Treatments",
-    "Lifestyle Treatments",
-    "Ailment Treatments",
-  ];
-
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    checkIn: "",
+    checkOut: "",
+    fullName: "",
+    PhoneNumber: "",
+    EmailId: "",
     message: "",
-    wellnessOffer: "",
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    wellnessOffer: "",
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const [error, setError] = useState({
+    checkIn: "",
+    checkOut: "",
+    fullName: "",
+    PhoneNumber: "",
+    EmailId: "",
   });
 
-  // Regex patterns
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const phoneRegex = /^[0-9]{10}$/;
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
-  const dropDownRef = useRef<HTMLDivElement | null>(null);
-  useClickOutside(dropDownRef, () => {
-    setIsDropdownOpen(false);
-  });
+  const validatePhone = (phone: string) => {
+    const re = /^[0-9]{10,15}$/;
+    return re.test(phone);
+  };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
 
-    // Clear error when user types
-    if (errors[name as keyof typeof errors]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }));
+    // Clear error when user starts typing
+    if (error[name as keyof typeof error]) {
+      setError((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleDateChange = (
+    date: Date | null,
+    field: "checkIn" | "checkOut"
+  ) => {
+    const dateString = date ? date.toISOString().split("T")[0] : "";
+
+    setFormData((prev) => ({
+      ...prev,
+      [field]: dateString,
+    }));
+
+    if (field === "checkIn") {
+      setStartDate(date);
+      // Clear check-out error if both dates are selected
+      if (date && endDate && date > endDate) {
+        setEndDate(null);
+        setFormData((prev) => ({ ...prev, checkOut: "" }));
+      }
+    } else {
+      setEndDate(date);
+    }
+
+    // Clear error when date is selected
+    if (error[field]) {
+      setError((prev) => ({ ...prev, [field]: "" }));
     }
   };
 
   const validateForm = () => {
     let isValid = true;
     const newErrors = {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      wellnessOffer: "",
+      checkIn: "",
+      checkOut: "",
+      fullName: "",
+      PhoneNumber: "",
+      EmailId: "",
     };
 
-    // Name validation
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Name is required";
       isValid = false;
     }
 
-    // Email validation
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+    if (!formData.EmailId.trim()) {
+      newErrors.EmailId = "Please enter your email";
       isValid = false;
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-      isValid = false;
-    }
-
-    // Phone validation
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-      isValid = false;
-    } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Phone must be 10 digits";
+    } else if (!validateEmail(formData.EmailId)) {
+      newErrors.EmailId = "Please enter a valid email";
       isValid = false;
     }
 
-    // Offer validation
-    if (!formData.wellnessOffer) {
-      newErrors.wellnessOffer = "Please select an offer";
+    if (!formData.PhoneNumber.trim()) {
+      newErrors.PhoneNumber = "phone number is required";
+      isValid = false;
+    } else if (!validatePhone(formData.PhoneNumber)) {
+      newErrors.PhoneNumber = "phone number must be 10 digits";
       isValid = false;
     }
 
-    setErrors(newErrors);
+    if (!formData.checkIn.trim()) {
+      newErrors.checkIn = "check-in date is required";
+      isValid = false;
+    }
+
+    if (!formData.checkOut.trim()) {
+      newErrors.checkOut = "check-out date is required";
+      isValid = false;
+    } else if (startDate && endDate && startDate > endDate) {
+      newErrors.checkOut = "Check-out must be after check-in";
+      isValid = false;
+    }
+
+    setError(newErrors);
     return isValid;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -119,12 +152,14 @@ const Form = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: contact.formDomain,
-          email: formData.email,
-          Name: formData.name,
-          Contact: formData.phone,
-          Description: formData.message,
-          created_from: "website",
+          Domain: "testmulti",
+          email: formData?.EmailId,
+          Name: formData?.fullName,
+          Contact: formData?.PhoneNumber,
+          Description: `Check-in ${formData?.checkIn}, Check-out: ${formData?.checkOut}, Message: ${formData?.message}`,
+          check_in: `${formData?.checkIn}`,
+          check_out: `${formData?.checkOut}`,
+          created_from: "landing page",
         },
         {
           headers: {
@@ -132,19 +167,36 @@ const Form = () => {
           },
         }
       );
-
       if (data.Status) {
         setFormData({
-          name: "",
-          email: "",
-          phone: "",
+          checkIn: "",
+          checkOut: "",
+          fullName: "",
+          PhoneNumber: "",
+          EmailId: "",
           message: "",
-          wellnessOffer: "",
         });
+        setStartDate(null);
+        setEndDate(null);
         setSubmitSuccess(true);
-        window.open("/thank-you/", "_blank");
+        setTimeout(() => setSubmitSuccess(false), 3000);
+        if (setIsOpen) {
+          setIsOpen(false);
+        }
+        window.open("/thank-you", "_blank");
       } else {
-        alert(data.message || "Submission failed. Please try again.");
+        setFormData({
+          checkIn: "",
+          checkOut: "",
+          fullName: "",
+          PhoneNumber: "",
+          EmailId: "",
+          message: "",
+        });
+
+        setStartDate(null);
+        setEndDate(null);
+        alert(data.message || "Something went wrong!");
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -154,163 +206,169 @@ const Form = () => {
     }
   };
 
-  const inputFields = [
-    {
-      name: "name",
-      type: "text",
-      placeholder: "Full Name*",
-      required: true,
-    },
-    {
-      name: "email",
-      type: "email",
-      placeholder: "Email Address*",
-      required: true,
-    },
-    {
-      name: "phone",
-      type: "tel",
-      placeholder: "Phone Number*",
-      required: true,
-    },
-    {
-      name: "wellnessOffer",
-      type: "select",
-      placeholder: "Wellness Offer*",
-      required: true,
-    },
-    {
-      name: "message",
-      type: "textarea",
-      placeholder: "Message",
-      required: false,
-    },
-  ];
-
   return (
-    <div className="w-full">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        {inputFields.map((field) => (
-          <div key={field.name} className="flex flex-col gap-1">
-            {field.type === "tel" ? (
-              <div className="flex items-center border border-light rounded-lg divide-x divide-light">
-                <select
-                  value={countryCode}
-                  onChange={(e) => setCountryCode(e.target.value)}
-                  className={`ps-3 py-3.5 bg-white focus:outline-none border-light rounded-l-md `}
-                  aria-label="Country code"
-                  style={{ width: `${countryCode.length * 2.5}ch` }}
-                >
-                  {countries.map((country) => (
-                    <option key={country.code} value={country.code}>
-                      {country.code}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder={field.placeholder}
-                  className="pl-2 w-full py-3.5 bg-white outline-none rounded-lg"
-                  aria-required={field.required}
-                />
-              </div>
-            ) : field.type === "textarea" ? (
-              <textarea
-                name={field.name}
-                value={formData[field.name as keyof typeof formData]}
-                onChange={handleChange}
-                placeholder={field.placeholder}
-                rows={3}
-                className="px-4 py-3.5 bg-white border border-light rounded-lg resize-none"
-                aria-required={field.required}
-              />
-            ) : field.type === "select" ? (
-              <div className="relative" ref={dropDownRef}>
-                <button
-                  type="button"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className={`w-full px-4 py-3.5 text-left bg-white border border-light rounded-lg  flex items-center justify-between ${
-                    !formData.wellnessOffer ? "text-gray-400" : ""
-                  }`}
-                  aria-haspopup="listbox"
-                  aria-expanded={isDropdownOpen}
-                >
-                  {formData.wellnessOffer || field.placeholder}
-                  <span
-                    className={`${isDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}
-                  >
-                    <DropDownIcon />
-                  </span>
-                </button>
-                {isDropdownOpen && (
-                  <div
-                    role="listbox"
-                    className="absolute z-10 w-full mt-1 bg-white border border-light rounded-lg shadow-lg"
-                  >
-                    {offers.map((offer) => (
-                      <button
-                        key={offer}
-                        type="button"
-                        onClick={() => {
-                          setFormData((prev) => ({
-                            ...prev,
-                            wellnessOffer: offer,
-                          }));
-                          setIsDropdownOpen(false);
-                          setErrors((prev) => ({
-                            ...prev,
-                            wellnessOffer: "",
-                          }));
-                        }}
-                        className="block w-full px-4 py-2 text-left hover:bg-gray-100 rounded-lg"
-                        role="option"
-                        aria-selected={formData.wellnessOffer === offer}
-                      >
-                        {offer}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <input
-                type={field.type}
-                name={field.name}
-                value={formData[field.name as keyof typeof formData]}
-                onChange={handleChange}
-                placeholder={field.placeholder}
-                className="px-4 py-3.5 bg-white border border-light rounded-lg"
-                aria-required={field.required}
-              />
-            )}
-            {errors[field.name as keyof typeof errors] && (
-              <p className="text-sm text-red-500">
-                {errors[field.name as keyof typeof errors]}
-              </p>
-            )}
-          </div>
-        ))}
+    <form
+      onSubmit={handleFormSubmit}
+      className={`flex flex-col gap-2 bg-[#F1EECB] px-6 py-8`}
+      ref={formRef}
+    >
+      <h2 className="text-2xl text-primary pUltralight">
+        BOOK YOUR MOUNTAIN <span className="pultralight-italic">ESCAPE</span>
+      </h2>
+      {/* Full Name Field - unchanged */}
+      <div className={`bg-white flex flex-col items-center mt-4`}>
+        <input
+          type="text"
+          name="fullName"
+          aria-label="Full Name*"
+          placeholder="Full Name*"
+          onChange={handleInputChange}
+          value={formData.fullName}
+          className="outline-none border-none w-full h-full p-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+        />
+        {error.fullName && (
+          <span className="text-red-500 text-[0.5rem] px-1 w-full">
+            {error.fullName}
+          </span>
+        )}
+      </div>
 
+      {/* Phone Number Field - unchanged */}
+      <div className={`bg-white`}>
+        <div className="flex items-center py-4 ps-1 w-full h-full">
+          <select
+            aria-label="Country Code"
+            id="countryCode"
+            name="countryCode"
+            value={countryCode}
+            onChange={(e) => setCountryCode(e.target.value)}
+            className={`text-[#343434] placeholder:text-[#343434] focus:outline-none w-full bg-transparent`}
+            style={{ width: `${countryCode.length * 2}ch` }}
+          >
+            {countries.map((country, index) => (
+              <option
+                key={index + 101}
+                value={country.code}
+                aria-label={country.name}
+                className="bg-gray-100"
+              >
+                {`${country.code}`}
+              </option>
+            ))}
+          </select>
+
+          <input
+            type="number"
+            name="PhoneNumber"
+            aria-label="Phone Number*"
+            placeholder="Phone Number*"
+            onChange={handleInputChange}
+            value={formData.PhoneNumber}
+            className=" ps-1 outline-none no-spinner appearance-auto border-none w-full h-full text-base text-[#343434] placeholder:text-[#343434] bg-transparent"
+          />
+        </div>
+        {error.PhoneNumber && (
+          <span className="text-red-500 text-xs px-1 w-full">
+            {error.PhoneNumber}
+          </span>
+        )}
+      </div>
+
+      {/* Email Field - unchanged */}
+      <div className={`bg-white`}>
+        <input
+          type="text"
+          name="EmailId"
+          aria-label="Email Id*"
+          placeholder="Email Id*"
+          onChange={handleInputChange}
+          value={formData.EmailId}
+          className="outline-none border-none w-full h-full p-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+        />
+        {error.EmailId && (
+          <span className="text-red-500 text-xs px-1 w-full">
+            {error.EmailId}
+          </span>
+        )}
+      </div>
+
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+        {/* Check In Date Field - updated with icon */}
+        <div
+          className={`col-span-1 flex flex-col items-center bg-[#fff] relative`}
+        >
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => handleDateChange(date, "checkIn")}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+            minDate={new Date(min || Date.now())}
+            placeholderText="Check in"
+            className="outline-none border-none w-full h-full  py-2  bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+            wrapperClassName="w-full h-full !flex items-center"
+          />
+          <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+            <CalenderIcon className="text-primary" />
+          </div>
+          {error.checkIn && (
+            <span className="text-red-500 text-xs">{error.checkIn}</span>
+          )}
+        </div>
+
+        {/* Check Out Date Field - updated with icon */}
+        <div
+          className={`col-span-1 flex flex-col items-center bg-[#fff] relative`}
+        >
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => handleDateChange(date, "checkOut")}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate || new Date(min || Date.now())}
+            placeholderText="Check out"
+            className="outline-none border-none w-full h-full py-2 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+            wrapperClassName="w-full h-full !flex items-center"
+          />
+          <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+            <CalenderIcon className="text-primary" />
+          </div>
+          {error.checkOut && (
+            <span className="text-red-500 text-xs ">{error.checkOut}</span>
+          )}
+        </div>
+      </div>
+      {/* message */}
+      <div className={`col-span-1 flex flex-col items-center bg-[#fff] relative`}>
+        <textarea
+          name="message"
+          aria-label="Message"
+          placeholder="Plan Your Stay With Us – Get Best Deals Now!"
+          onChange={handleInputChange}
+          value={formData.message}
+          rows={3}
+          className="outline-none resize-none border-none w-full h-full p-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+        />
+      </div>
+      {/* Submit Button - unchanged */}
+      <div className={`h-full col-span-1 max-md:col-span-2 `}>
         <button
           type="submit"
+          aria-label="Book Now"
+          className="text-center bg-primary py-4 w-full text-white hover:bg-light duration-300 transition-all ease-in-out uppercase"
           disabled={isSubmitting}
-          className={`py-3 px-6 bg-primary text-white rounded-lg uppercase font-medium hover:bg-secondary transition-colors ${
-            isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-          }`}
         >
           {isSubmitting ? (
-            <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            <span className="border-t-2 border-white w-6 h-6 rounded-full animate-spin mx-auto block" />
           ) : submitSuccess ? (
             "Thank You!"
           ) : (
-            "Submit"
+            "BOOK YOUR STAY"
           )}
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

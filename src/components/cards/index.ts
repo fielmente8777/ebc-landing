@@ -1,13 +1,5 @@
-import WellnesCard from "./WellnesCard";
-import TherapieCard from "./TherapieCard";
-import HealingCard from "./HealingCard";
-import AccommodationCard from "./AccommodationCard";
 import TestimonialCard from "./TestimonalCard";
+import WhyEBCCard from "./WhyEBCCard";
+import RoomCard from "./RoomCard";
 
-export {
-  WellnesCard,
-  TherapieCard,
-  HealingCard,
-  AccommodationCard,
-  TestimonialCard,
-};
+export { WhyEBCCard, TestimonialCard, RoomCard };

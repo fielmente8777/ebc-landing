@@ -10,9 +10,10 @@ const Container: React.FC<ContainerProps> = ({
   children,
   id = "",
   style = {},
+  ...props
 }) => {
   return (
-    <div className={`max-width ${className}`} id={id} style={style}>
+    <div className={`max_width ${className}`} id={id} style={style} {...props}>
       {children}
     </div>
   );
