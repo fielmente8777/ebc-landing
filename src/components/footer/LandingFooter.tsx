@@ -33,7 +33,7 @@ const LandingFooter = () => {
                     <li key={index}>
                       <Link
                         href={link.href}
-                        className="text-white md:text-[1.375rem]"
+                        className="text-white md:text-[1.375rem] ntbook"
                       >
                         {link.label}
                       </Link>
@@ -59,7 +59,7 @@ const LandingFooter = () => {
               </ul>
             </div>
             {/* map url */}
-            <div className="w-full md:aspect-[4/5.2]">
+            <div className="w-full md:h-full max-md:aspect-[4/5.2]">
               <LazyLoadedMap src={landingFooterData.mapUrl} />
             </div>
             {/* forms */}

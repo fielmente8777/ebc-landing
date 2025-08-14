@@ -304,7 +304,7 @@ const Form = () => {
             endDate={endDate}
             minDate={new Date(min || Date.now())}
             placeholderText="Check in"
-            className="outline-none border-none w-full h-full  py-2  bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+            className="outline-none border-none w-full h-full p-4  bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
             wrapperClassName="w-full h-full !flex items-center"
           />
           <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
@@ -327,7 +327,7 @@ const Form = () => {
             endDate={endDate}
             minDate={startDate || new Date(min || Date.now())}
             placeholderText="Check out"
-            className="outline-none border-none w-full h-full py-2 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+            className="outline-none border-none w-full h-full p-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
             wrapperClassName="w-full h-full !flex items-center"
           />
           <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
@@ -351,7 +351,7 @@ const Form = () => {
         />
       </div>
       {/* Submit Button - unchanged */}
-      <div className={`h-full col-span-1 max-md:col-span-2 `}>
+      <div className={`h-full`}>
         <button
           type="submit"
           aria-label="Book Now"
