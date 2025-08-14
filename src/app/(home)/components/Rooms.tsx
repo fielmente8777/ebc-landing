@@ -7,15 +7,26 @@ import {
   SwiperCarousel,
 } from "@/components";
 import { RoomCard } from "@/components/cards";
+import { NextBtn, PreviousBtn } from "@/utils/icons";
 import { Navigation } from "swiper/modules";
 
 const Rooms: React.FC<RoomsTypes> = ({ title, cards }) => {
   return (
     <Section className="bg-bg1 md:space-y-14 space-y-8">
       <Container>
-        <SectionHeadingDesc title={title} textcenter wrapperClassName="max-w-xl mx-auto" />
+        <SectionHeadingDesc
+          title={title}
+          textcenter
+          wrapperClassName="max-w-xl mx-auto"
+        />
       </Container>
-      <div className="">
+      <div className="w-full flex items-center justify-around">
+        <button
+          className="button-prev w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center ml-8"
+          aria-label="Previous"
+        >
+          <PreviousBtn />
+        </button>
         <Container>
           <SwiperCarousel
             data={cards}
@@ -34,11 +45,33 @@ const Rooms: React.FC<RoomsTypes> = ({ title, cards }) => {
               },
             }}
             modules={[Navigation]}
-            renderSlide={(item) => (
-              <RoomCard {...item} />
-            )}
+            navigation={{
+              nextEl: ".button-next",
+              prevEl: ".button-prev",
+            }}
+            renderSlide={(item) => <RoomCard {...item} />}
           />
+          <div className="md:hidden mt-6 flex items-center justify-center gap-6">
+            <button
+              className="button-prev w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center"
+              aria-label="Previous"
+            >
+              <PreviousBtn />
+            </button>
+            <button
+              className="button-next w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center"
+              aria-label="Next"
+            >
+              <NextBtn />
+            </button>
+          </div>
         </Container>
+        <button
+          className="button-next w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center mr-8"
+          aria-label="Next"
+        >
+          <NextBtn />
+        </button>
       </div>
     </Section>
   );

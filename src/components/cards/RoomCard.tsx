@@ -16,7 +16,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
 }) => {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg box-shadow">
-      <div className="w-full">
+      <div className="w-full bullet">
         <SwiperCarousel
           data={images}
           slidesPerView={1}
