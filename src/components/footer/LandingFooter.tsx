@@ -105,7 +105,7 @@ const LandingFooter = () => {
       {/* developed by info */}
       <div className="bg-primary py-6">
         <Container>
-          <div className="text-white text-[1.375rem] ntbook text-center md:divide-x divide-white flex max-md:gap-3 max-md:flex-col items-center justify-center">
+          <div className="text-white text-[1.2rem] ntbook text-center md:divide-x divide-white flex max-md:gap-3 max-md:flex-col items-center justify-center">
             <span className="px-4">
               © {currentYear} Everest Base Camp, Mussoorie
             </span>
