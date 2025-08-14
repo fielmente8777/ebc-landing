@@ -11,7 +11,7 @@ interface PartnerProps {
 
 const Partners: React.FC<PartnerProps> = ({ partners }) => {
   return (
-    <div className="mt-10 space-y-4 bg-white">
+    <div className="mt-10 space-y-10 bg-white">
       <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#434B3E,_#FFFFFF)] h-[0.8px] w-full max-w-[90rem] mx-auto" />
       <Container>
         <div className="demo">
