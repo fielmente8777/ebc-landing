@@ -34,7 +34,7 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
       {title && (
         <Headings
           level={2}
-          className={`${titleClassName} ${textcenter ? "text-center mx-auto" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${titleColor ? `text-${titleColor}` : "text-primary"} md:text-5xl pUltralight tracking-wider text-2xl`}
+          className={`${titleClassName} ${textcenter ? "text-center mx-auto" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${titleColor ? `text-${titleColor}` : "text-primary"} md:text-5xl pUltralight tracking-wider text-[2rem]`}
           heading={title}
         />
       )}
@@ -47,7 +47,7 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
       )}
       {description && (
         <p
-          className={`${descriptionClassName} ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${descriptionColor ? `text-${descriptionColor}` : "text-light"} md:text-[1.375rem] text-base`}
+          className={`${descriptionClassName} ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${descriptionColor ? `text-${descriptionColor}` : "text-light"} text-[1.375rem]`}
         >
           {description}
         </p>

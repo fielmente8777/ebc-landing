@@ -116,7 +116,7 @@ const OfferForm = () => {
       className={`grid md:grid-cols-3 grid-cols-1 items-center gap-4`}
     >
       {/* Full Name Field - unchanged */}
-      <div className={`border-b pb-3 border-primary flex flex-col`}>
+      <div className={`border-b pb-3 border-primary flex flex-col w-full `}>
         <input
           type="text"
           name="fullName"
@@ -175,19 +175,19 @@ const OfferForm = () => {
       </div>
 
       {/* Submit Button - unchanged */}
-      <div className={`h-full col-span-1 max-md:col-span-2 `}>
+      <div className={`h-full col-span-1  flex items-center justify-center`}>
         <button
           type="submit"
           aria-label="Book Now"
-          className="text-center bg-primary py-4 w-full text-white hover:bg-light duration-300 transition-all ease-in-out uppercase"
+          className="text-center bg-primary py-4 md:w-full px-12 mx-auto text-white hover:bg-light duration-300 transition-all ease-in-out uppercase"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            <span className="border-t-2 border-white w-6 h-6 rounded-full animate-spin mx-auto block" />
+            <span className="border-t-2 tracking-wider border-white w-6 h-6 rounded-full animate-spin mx-auto block" />
           ) : submitSuccess ? (
             "Thank You!"
           ) : (
-            <span className="pmedium">GET MY <span className="italic">DEAL</span></span>
+            <span className="pmedium">GET MY <span className="pmedium-italic">DEAL</span></span>
           )}
         </button>
       </div>

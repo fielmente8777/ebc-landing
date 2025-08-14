@@ -11,10 +11,10 @@ const LandingFooter = () => {
     <footer className="max_screen_width">
       <div className="bg-primary md:py-[104px] py-10">
         <Container>
-          <div className="grid lg:grid-cols-8 md:grid-cols-2 grid-cols-1 md:gap-8">
+          <div className="grid lg:grid-cols-8 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6">
             {/* logo and description */}
-            <div className="flex flex-col gap-4 md:gap-10 md:col-span-2">
-              <div className="relative w-full aspect-[4/2.4] max-w-[300px]">
+            <div className="flex flex-col gap-6 md:gap-10 md:col-span-2">
+              <div className="relative w-full aspect-[4/2.4] md:max-w-[300px]">
                 <Image
                   src={landingFooterData.src}
                   alt={"logo"}
@@ -24,8 +24,8 @@ const LandingFooter = () => {
                 />
               </div>
               {/* description */}
-              <div className="space-y-4">
-                <p className="text-white md:text-[1.375rem] max-w-[300px]">
+              <div className="space-y-6">
+                <p className="text-white text-[1.375rem] md:max-w-[300px]">
                   {landingFooterData.description}
                 </p>
                 <ul className="flex flex-col gap-2">
@@ -33,7 +33,7 @@ const LandingFooter = () => {
                     <li key={index}>
                       <Link
                         href={link.href}
-                        className="text-white md:text-[1.375rem] ntbook"
+                        className="text-white text-[1.375rem] ntbook"
                       >
                         {link.label}
                       </Link>
@@ -84,18 +84,18 @@ const LandingFooter = () => {
       </div>
       {/* offer */}
       <div className="relative after:absolute after:inset-0 after:bg-bg1 after:z-[-3]">
-        <div className=" py-10 bg_img_1">
+        <div className=" py-16 bg_img_1">
           <Container>
             <div className="grid items-center grid-cols-1 md:grid-cols-3 gap-6">
               <div className="">
-                <h2 className="text-primary pUltralight md:text-[2.5rem] text-xl">
+                <h2 className="text-primary pUltralight md:text-[2.5rem] text-[1.75rem] text-xl">
                   Stayed with Us Before?
                 </h2>
-                <p className="text-primary md:text-[1.375rem]">
+                <p className="text-primary text-[1.375rem]">
                   Want a Secret Deal?
                 </p>
               </div>
-              <div className="md:col-span-2">
+              <div className="md:col-span-2 max-md:max-w-[300px]">
                 <OfferForm />
               </div>
             </div>
@@ -105,7 +105,7 @@ const LandingFooter = () => {
       {/* developed by info */}
       <div className="bg-primary py-6">
         <Container>
-          <div className="text-white text-center divide-x divide-white flex items-center justify-center">
+          <div className="text-white text-[1.375rem] ntbook text-center md:divide-x divide-white flex max-md:gap-3 max-md:flex-col items-center justify-center">
             <span className="px-4">
               © {currentYear} Everest Base Camp, Mussoorie
             </span>

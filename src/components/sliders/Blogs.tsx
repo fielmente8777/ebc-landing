@@ -4,6 +4,7 @@ import { SectionWithContainer } from "../sectionComponents";
 import SwiperCarousel from "../SwiperCarousel";
 import Link from "next/link";
 import Image from "next/image";
+import { Autoplay } from "swiper/modules";
 
 interface BlogProps {
   blogs: AboutUsTypes["blogs"];
@@ -14,8 +15,13 @@ const Blogs: React.FC<BlogProps> = ({ blogs }) => {
     <SectionWithContainer sectionClassName="bg-bg1">
       <SwiperCarousel
         data={blogs}
-        slidesPerView={1}
+        slidesPerView={2}
         spaceBetween={24}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           768: {
             slidesPerView: 5,

@@ -7,7 +7,7 @@ const Adds: React.FC<AddsTypes> = ({ title, listOfData, link }) => {
       defaultPadding={false}
       className="relative after:absolute after:inset-0 after:bg-primary after:z-[-3]"
     >
-      <div className="w-full bg_img md:py-16 py-8">
+      <div className="w-full bg_img py-[4.5rem]">
         <Container>
           <div className="grid md:grid-cols-5 grid-cols-1 items-center gap-6 md:gap-10">
             <Headings

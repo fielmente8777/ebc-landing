@@ -16,7 +16,11 @@ const Experience: React.FC<ExperienceTypes> = ({
     <SectionWithContainer>
       <div className="grid md:grid-cols-6 grid-cols-1 gap-6">
         <div className="md:col-span-2 flex flex-col gap-8">
-          <SectionHeadingDesc title={title} description={description} />
+          <SectionHeadingDesc title={title} />
+          <div className="md:col-span-4 md:hidden">
+            <ExperiencesSlider cards={cards} />
+          </div>
+          <p className="text-[1.375rem] text-light">{description}</p>
           <LinkButton
             label={link.label}
             href={link.href}
@@ -26,7 +30,7 @@ const Experience: React.FC<ExperienceTypes> = ({
           />
         </div>
         {/* Experience Cards */}
-        <div className="md:col-span-4">
+        <div className="md:col-span-4 md:block hidden">
           <ExperiencesSlider cards={cards} />
         </div>
       </div>

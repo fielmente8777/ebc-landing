@@ -37,7 +37,7 @@ const Navbar = () => {
   }
   return (
     <nav
-      className={`top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${navbarColor ? "sticky bg-primary" : "lg:fixed lg:bg-transparent bg-white"}`}
+      className={`top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${navbarColor ? "sticky bg-primary" : "fixed bg-transparent"}`}
     >
       <Container className="px-4">
         <div className="flex items-center justify-between lg:py-6 py-4">

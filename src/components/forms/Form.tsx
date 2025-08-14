@@ -359,11 +359,11 @@ const Form = () => {
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            <span className="border-t-2 border-white w-6 h-6 rounded-full animate-spin mx-auto block" />
+            <span className="border-t-2 border-white w-6 h-6 tracking-wider rounded-full animate-spin mx-auto block" />
           ) : submitSuccess ? (
             "Thank You!"
           ) : (
-            "BOOK YOUR STAY"
+            <span className='pmedium'>BOOK YOUR <span className='pmedium-italic'>STAY</span></span>
           )}
         </button>
       </div>

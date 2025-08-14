@@ -221,7 +221,7 @@ export const landingPageData = {
     ],
     link: {
       href: contact.ctaUrl,
-      label: "GET OFFER <span>DETAILS</span>",
+      label: "GET OFFER <i>DETAILS</i>",
     },
   },
   whyEbcMussoorieData: {
