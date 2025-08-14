@@ -11,9 +11,9 @@ const LandingFooter = () => {
     <footer className="max_screen_width">
       <div className="bg-primary md:py-[104px] py-10">
         <Container>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8">
+          <div className="grid lg:grid-cols-8 md:grid-cols-2 grid-cols-1 md:gap-8">
             {/* logo and description */}
-            <div className="flex flex-col gap-4 md:gap-10">
+            <div className="flex flex-col gap-4 md:gap-10 md:col-span-2">
               <div className="relative w-full aspect-[4/2.4] max-w-[300px]">
                 <Image
                   src={landingFooterData.src}
@@ -59,13 +59,15 @@ const LandingFooter = () => {
               </ul>
             </div>
             {/* map url */}
-            <div className="w-full md:h-full max-md:aspect-[4/5.2]">
+            <div className="w-full md:h-full max-md:aspect-[4/5.2] md:col-span-3">
               <LazyLoadedMap src={landingFooterData.mapUrl} />
             </div>
             {/* forms */}
-            <Form />
+            <div className="md:col-span-3">
+              <Form />
+            </div>
           </div>
-          <div className="max-w-sm mx-auto w-full flex gap-6 mt-12">
+          <div className="max-w-sm mx-auto w-full flex gap-6 mt-12 ">
             {landingFooterData.partners.map((partner, index) => (
               <div className="w-full aspect-[4/1.5] relative" key={index}>
                 <Image
@@ -89,7 +91,9 @@ const LandingFooter = () => {
                 <h2 className="text-primary pUltralight md:text-[2.5rem] text-xl">
                   Stayed with Us Before?
                 </h2>
-                <p className="text-primary md:text-[1.375rem]">Want a Secret Deal?</p>
+                <p className="text-primary md:text-[1.375rem]">
+                  Want a Secret Deal?
+                </p>
               </div>
               <div className="md:col-span-2">
                 <OfferForm />
