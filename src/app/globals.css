@@ -78,27 +78,7 @@ p {
   font-weight: 200;
 }
 
-input {
-  font-family: "Neutra Text Book";
-  font-weight: 200;
-  font-size: 1.375rem;
-  color: var(--light);
 
-  @media (min-width: 768px) {
-    font-size: 1rem;
-  }
-}
-
-select {
-  font-family: "Neutra Text Book";
-  font-weight: 200;
-  font-size: 1.375rem;
-  color: var(--light);
-
-  @media (min-width: 768px) {
-    font-size: 1rem;
-  }
-}
 
 /* font family classes */
 

@@ -241,7 +241,7 @@ const Form = () => {
             name="countryCode"
             value={countryCode}
             onChange={(e) => setCountryCode(e.target.value)}
-            className={`text-[#343434] placeholder:text-[#343434] focus:outline-none w-full bg-transparent`}
+            className={`text-xl text-light focus:outline-none w-full bg-transparent`}
             style={{ width: `${countryCode.length * 2}ch` }}
           >
             {countries.map((country, index) => (
@@ -249,7 +249,7 @@ const Form = () => {
                 key={index + 101}
                 value={country.code}
                 aria-label={country.name}
-                className="bg-gray-100"
+                className="bg-gray-100 text-xl"
               >
                 {`${country.code}`}
               </option>

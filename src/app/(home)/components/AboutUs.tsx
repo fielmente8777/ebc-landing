@@ -14,7 +14,7 @@ const AboutUs: React.FC<AboutUsTypes> = ({
   return (
     <Section defaultPadding={false}>
       <SectionWithContainer>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 heading">
           <div className="w-full md:block hidden max-w-[342px] mx-auto relative aspect-[4/2]">
             <Image src={src} alt={title} fill className="object-contain" />
           </div>
@@ -22,7 +22,7 @@ const AboutUs: React.FC<AboutUsTypes> = ({
             {description}
           </p>
           <h2
-            className="text-primary xx_lg_font_s pUltralight max-w-5xl mx-auto text-center heading"
+            className="text-primary xx_lg_font_s pUltralight max-w-5xl mx-auto text-center "
             dangerouslySetInnerHTML={{ __html: title }}
           />
           <div className="w-full md:hidden max-w-[342px] mx-auto relative aspect-[4/2]">
@@ -33,9 +33,9 @@ const AboutUs: React.FC<AboutUsTypes> = ({
           </p>
         </div>
       </SectionWithContainer>
-      <Container>
+      <Container className="heading">
         <h3
-          className="text-primary text-center pUltralight md:text-[2.5rem] text-[1.75rem] heading"
+          className="text-primary text-center pUltralight md:text-[2.5rem] text-[1.75rem] "
           dangerouslySetInnerHTML={{ __html: subtitle }}
         />
 

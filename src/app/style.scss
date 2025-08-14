@@ -1,5 +1,49 @@
-
 @layer utilities {
+  input {
+    font-family: "Neutra Text Book";
+    font-weight: 200;
+    font-size: 1.22rem; // 20px
+    color: #797979 !important; 
+
+    &::placeholder {
+      font-weight: 200;
+      font-size: 1.22rem; // 20px
+      color: #797979 !important; 
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  select {
+    font-family: "Neutra Text Book";
+    font-weight: 200;
+    font-size: 1.22rem; // 20px
+    color: #797979 !important; 
+
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  textarea {
+    font-family: "Neutra Text Book";
+    font-weight: 200;
+    font-size: 1.22rem; // 20px
+    color: #797979 !important; 
+
+    &::placeholder {
+      font-weight: 200;
+      font-size: 1.22rem; // 20px
+      color: #797979 !important; 
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
   .demo {
     .swiper {
       pointer-events: none;
@@ -79,27 +123,27 @@
   }
 }
 
-.bullet{
+.bullet {
   .swiper-pagination-bullet {
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background-color: #fff;
-      opacity: 1;
-      transition:
-        width 0.3s ease-in-out,
-        height 0.3s ease-in-out,
-        border-radius 0.3s ease-in-out;
-    }
-    .swiper-pagination-bullet-active {
-      height: 0.5rem;
-      width: 2rem;
-      border-radius: 0.5rem;
-      transition:
-        width 0.3s ease-in-out,
-        height 0.3s ease-in-out,
-        border-radius 0.3s ease-in-out;
-    }
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 1;
+    transition:
+      width 0.3s ease-in-out,
+      height 0.3s ease-in-out,
+      border-radius 0.3s ease-in-out;
+  }
+  .swiper-pagination-bullet-active {
+    height: 0.5rem;
+    width: 2rem;
+    border-radius: 0.5rem;
+    transition:
+      width 0.3s ease-in-out,
+      height 0.3s ease-in-out,
+      border-radius 0.3s ease-in-out;
+  }
 }
 
 .common {
@@ -305,7 +349,7 @@
   h2,
   h3 {
     span {
-      font-family: var(--font-pultralight-italic);
+      font-family: "PPPangaia Ultralight Italic" !important;
       font-weight: 200;
       letter-spacing: 3%;
     }
