@@ -1,6 +1,5 @@
 import { AddsTypes } from "@/@types/types";
 import { Container, Headings, LinkButton, Section } from "@/components";
-import Link from "next/link";
 
 const Adds: React.FC<AddsTypes> = ({ title, listOfData, link }) => {
   return (
@@ -10,7 +9,7 @@ const Adds: React.FC<AddsTypes> = ({ title, listOfData, link }) => {
     >
       <div className="w-full bg_img md:py-16 py-8">
         <Container>
-          <div className="grid md:grid-cols-5 grid-cols-1 items-center gap-6 md:gap-10 heading">
+          <div className="grid md:grid-cols-5 grid-cols-1 items-center gap-6 md:gap-10">
             <Headings
               level={2}
               className="text-white md:text-[2.5rem] md:col-span-2 pUltralight"
