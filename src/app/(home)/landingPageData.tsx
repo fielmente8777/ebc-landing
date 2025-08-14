@@ -38,7 +38,7 @@ export const landingPageData = {
       },
       {
         title: "8.8/10",
-        src: "/partners/Expedia-logo.png",
+        src: "/partners/Expedia.png",
       },
       {
         title: "4.5/5",
@@ -119,6 +119,8 @@ export const landingPageData = {
           landingpageImgSrc + "camper/img4.webp",
         ],
         roomName: "The Camper",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
         amenities: [
           {
             title: "Forest View",
@@ -144,6 +146,8 @@ export const landingPageData = {
           landingpageImgSrc + "glamper/img4.webp",
         ],
         roomName: "The Glamper",
+        label: "Luxury Glamping",
+        labelColor: "#434B3E",
         amenities: [
           {
             title: "Forest View",
@@ -169,6 +173,8 @@ export const landingPageData = {
           landingpageImgSrc + "surveyor/img3.webp",
         ],
         roomName: "The Surveyor",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
         amenities: [
           {
             title: "Forest View",
@@ -193,6 +199,8 @@ export const landingPageData = {
           landingpageImgSrc + "surveyor_suite/img3.webp",
           landingpageImgSrc + "surveyor/img3.webp",
         ],
+        label: "Luxury Glamping",
+        labelColor: "#434B3E",
         roomName: "The Surveyor Grand Suite",
         amenities: [
           {

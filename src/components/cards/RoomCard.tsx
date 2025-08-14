@@ -35,7 +35,8 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
               />
               <div className="absolute top-4 left-4">
                 <span
-                  className={`bg-${labelColor}-500 text-white text-xs font-semibold px-2 py-1 rounded`}
+                  className={` text-white text-lg shadow-inner font-semibold px-4 h-8 ntbold flex items-center justify-center rounded-2xl`}
+                  style={{ backgroundColor: labelColor }}
                 >
                   {label}
                 </span>
