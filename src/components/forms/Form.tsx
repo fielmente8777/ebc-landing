@@ -4,7 +4,6 @@ import { countries } from "../../../constant";
 import { getDateInputLimits } from "@/hocks/getDateInputLimits";
 import { CalenderIcon } from "@/utils/icons";
 import axios from "axios";
-import { usePathname } from "next/navigation";
 import { ChangeEvent, useContext, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

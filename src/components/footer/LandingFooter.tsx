@@ -3,7 +3,7 @@ import { landingFooterData } from "./footerData";
 import Link from "next/link";
 import { Container } from "../sectionComponents";
 import LazyLoadedMap from "../map/LazyLoadedMap";
-import { Form } from "../forms";
+import { Form, OfferForm } from "../forms";
 
 const LandingFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -84,14 +84,16 @@ const LandingFooter = () => {
       <div className="relative after:absolute after:inset-0 after:bg-bg1 after:z-[-3]">
         <div className=" py-10 bg_img_1">
           <Container>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid items-center grid-cols-1 md:grid-cols-3 gap-6">
               <div className="">
-                <h2 className="text-primary md:text-[2.5rem] text-xl">
+                <h2 className="text-primary pUltralight md:text-[2.5rem] text-xl">
                   Stayed with Us Before?
                 </h2>
-                <p className="text-primary">Want a Secret Deal?</p>
+                <p className="text-primary md:text-[1.375rem]">Want a Secret Deal?</p>
               </div>
-              <form className="md:col-span-2 grid md:grid-cols-3"></form>
+              <div className="md:col-span-2">
+                <OfferForm />
+              </div>
             </div>
           </Container>
         </div>

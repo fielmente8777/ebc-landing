@@ -50,7 +50,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
           {amenities.map((amenity) => (
             <div key={amenity.title} className="flex items-center gap-2">
               <span aria-label={amenity.title}>{amenity.icon}</span>
-              <span className="text-lg text-light ntbook-italic">{amenity.title}</span>
+              <span className="text-lg text-light ntbook">{amenity.title}</span>
             </div>
           ))}
         </div>
@@ -58,7 +58,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
         <LinkButton
           href={contact.ctaUrl}
           target="_blank"
-          label="BOOK YOUR STAY"
+          label={`<span class="pmedium">BOOK YOUR <span class="italic">STAY</span></span>`}
           className="text-white bg-primary"
         />
       </div>

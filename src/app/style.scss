@@ -1,3 +1,4 @@
+
 @layer utilities {
   .demo {
     .swiper {
@@ -189,47 +190,19 @@
   box-shadow: 0px 7px 29px rgba(100, 100, 111, 0.2);
 }
 
-// // styles/animations.scss
-// @keyframes bounce-up {
-//   0% {
-//     transform: translateY(-40px);
-//   }
-//   100% {
-//     transform: translateY(40px);
-//   }
-
-// }
-
-// .bounce {
-//   animation-name: bounce-up;
-//   animation-duration: 1.5s;
-//   animation-timing-function: ease-in-out;
-//   animation-iteration-count: infinite;
-// }
-
-// // Generate staggered delay classes
-// @for $i from 1 through 10 {
-//   .delay-#{$i} {
-//     animation-delay: #{$i * 1}s; // increase delay per card
-//   }
-// }
-
 @keyframes bounce-up {
   0%,
   100% {
-    transform: translateY(0); // Start and end at rest
+    transform: translateY(50px);
   }
-  25% {
-    transform: translateY(-30px); // Move up
-  }
-  75% {
-    transform: translateY(30px); // Move down
+  50% {
+    transform: translateY(-40px);
   }
 }
 
 .bounce {
   animation-name: bounce-up;
-  animation-duration: 4s; // slightly longer for smoothness
+  animation-duration: 4s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -237,7 +210,7 @@
 // Generate staggered delay classes
 @for $i from 1 through 10 {
   .delay-#{$i} {
-    animation-delay: #{$i * 0.8}s; // shorter stagger for wave effect
+    animation-delay: #{$i * 0.9}s;
   }
 }
 
@@ -250,8 +223,7 @@
   }
 }
 
-
-.bg_img{
+.bg_img {
   position: relative;
   &::after,
   &::before {
@@ -278,7 +250,7 @@
     z-index: 1;
   }
 }
-.bg_img_1{
+.bg_img_1 {
   position: relative;
   &::after,
   &::before {
@@ -303,5 +275,16 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
+  }
+}
+
+.heading {
+  h2,
+  h3 {
+    span {
+      font-family: var(--font-pultralight-italic);
+      font-weight: 200;
+      letter-spacing: 3%;
+    }
   }
 }

@@ -16,6 +16,7 @@
   font-family: "Neutra Text Book Italic";
   src: url("/font/NeutraText-BookItalic.otf") format("opentype");
 }
+
 @font-face {
   font-family: "Neutra Text Book";
   src: url("/font/NeutraText-Book.otf") format("opentype");
@@ -72,68 +73,88 @@
   --font-ntbook: "Neutra Text Book";
 }
 
-p{
+p {
   font-family: "Neutra Text Book";
   font-weight: 200;
 }
 
-input{
+input {
   font-family: "Neutra Text Book";
   font-weight: 200;
+  font-size: 1.375rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 }
-select{
+
+select {
   font-family: "Neutra Text Book";
   font-weight: 200;
+  font-size: 1.375rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 /* font family classes */
 
-.pbold{
+.pbold {
   font-family: var(--font-pbold);
+  letter-spacing: 3%;
 }
 
-.pbold-italic{
+.pbold-italic {
   font-family: var(--font-pbold-italic);
+  letter-spacing: 3%;
 }
-.pmedium{
+
+.pmedium {
   font-family: var(--font-pmedium);
+  letter-spacing: 3%;
 }
 
-.pmedium-italic{
+.pmedium-italic {
   font-family: var(--font-pmedium-italic);
+  letter-spacing: 3%;
 }
 
-.pUltralight{
+.pUltralight {
   font-family: "PPPangaia Ultralight";
   font-weight: 200;
   letter-spacing: 3%;
 }
 
-.pultralight-italic{
-  font-family: "PPPangaia Ultralight Italic";
+.pultralight-italic {
+  font-family: var(--font-pultralight-italic);
   font-weight: 200;
   letter-spacing: 3%;
 }
 
-.ntbold{
+.ntbold {
   font-family: var(--font-ntbold);
 }
 
-.ntbold-italic{
+.ntbold-italic {
   font-family: var(--font-ntbold-italic);
 }
 
 
-.ntbold{
+.ntbold {
   font-family: var(--font-ntbold);
 }
 
-.ntbold-italic{
+.ntbold-italic {
   font-family: var(--font-ntbold-italic);
 }
 
-.ntbook-italic{
+.ntbook-italic {
   font-family: var(--font-ntbook-italic);
+}
+
+.ntbook {
+  font-family: var(--font-ntbook);
 }
 
 ::-webkit-scrollbar {

@@ -30,7 +30,7 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
   descriptionClassName = "",
 }) => {
   return (
-    <div className={`flex flex-col w-full gap-4 ${wrapperClassName}`}>
+    <div className={`flex flex-col w-full gap-4 heading ${wrapperClassName}`}>
       {title && (
         <Headings
           level={2}

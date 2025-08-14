@@ -15,8 +15,8 @@ export const landingPageData = {
   },
   aboutUsData: {
     src:"/img.webp",
-    title: "Luxury Glamping Meets Himalayan Serenity",
-    subtitle: "Top Rated Glamping Resort of Mussoorie",
+    title: `Luxury Glamping Meets Himalayan <span>Serenity</span>`,
+    subtitle: "Top Rated Glamping Resort of <span>Mussoorie</span>",
     description:
       "Reconnect with nature in curated comfort at Everest Base Camp, Mussoorie",
     cards: [
@@ -73,7 +73,7 @@ export const landingPageData = {
     ],
   },
   testimonialData: {
-    title: "Real Stays. Real Stories. EBC Mussoorie Reviews",
+    title: "Real Stays. Real Stories. EBC Mussoorie <span>Reviews</span>",
     cards: [
       {
         src: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/activities/picnic/img2.webp",
@@ -83,7 +83,7 @@ export const landingPageData = {
     ],
   },
   experienceData: {
-    title: "Not Just a Stay, It’s An Experience",
+    title: "Not Just a Stay, It’s <span>An Experience</span>",
     description:
       "Escape the urban chaos and embrace a tranquil retreat in nature's embrace. Join us for a unique glamping experience that transcends the ordinary. Immerse yourself in the serenity of the great outdoors, where city stress fades away, replaced by the soothing symphony of rustling leaves and chirping birds. Be our guest, unwind, and rediscover the joy of simplicity. It's time to trade skyscrapers for star-studded skies. Your adventure in nature awaits – let the relaxation begin!",
     cards: [
@@ -105,11 +105,11 @@ export const landingPageData = {
     ],
     link: {
       href: contact.ctaUrl,
-      label: "VIEW ALL EXPERIENCES",
+      label: "VIEW ALL <span>EXPERIENCES</span>",
     },
   },
   roomsData: {
-    title: "Curated Comfort in Every Room",
+    title: "Curated Comfort in Every <span>Room</span>",
     cards: [
       {
         images: [
@@ -214,14 +214,14 @@ export const landingPageData = {
     ],
   },
   addsData: {
-    title: "Plan Your Escape Before the Season Ends",
+    title: "Plan Your Escape Before the Season <span>Ends</span>",
     listOfData: [
       "Limited Duke Rooms available",
       "Special 2N/3D Monsoon Retreat Package (Depending on the season)",
     ],
     link: {
-      href: "",
-      label: "GET OFFER DETAILS",
+      href: contact.ctaUrl,
+      label: "GET OFFER <span>DETAILS</span>",
     },
   },
   whyEbcMussoorieData: {
