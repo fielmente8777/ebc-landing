@@ -22,7 +22,7 @@ const AboutUs: React.FC<AboutUsTypes> = ({
             {description}
           </p>
           <h2
-            className="text-primary xx_lg_font_s pUltralight max-w-5xl mx-auto text-center"
+            className="text-primary xx_lg_font_s pUltralight max-w-5xl mx-auto text-center heading"
             dangerouslySetInnerHTML={{ __html: title }}
           />
           <div className="w-full md:hidden max-w-[342px] mx-auto relative aspect-[4/2]">
@@ -35,7 +35,7 @@ const AboutUs: React.FC<AboutUsTypes> = ({
       </SectionWithContainer>
       <Container>
         <h3
-          className="text-primary text-center pUltralight md:text-[2.5rem] text-[1.75rem]"
+          className="text-primary text-center pUltralight md:text-[2.5rem] text-[1.75rem] heading"
           dangerouslySetInnerHTML={{ __html: subtitle }}
         />
 

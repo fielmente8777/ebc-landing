@@ -60,7 +60,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
           href={contact.ctaUrl}
           target="_blank"
           label={`<span class="pmedium">BOOK YOUR <span class="italic">STAY</span></span>`}
-          className="text-white bg-primary"
+          className="text-white bg-primary !py-4"
         />
       </div>
     </div>
