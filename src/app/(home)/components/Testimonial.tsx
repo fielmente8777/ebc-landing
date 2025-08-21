@@ -17,14 +17,19 @@ const Testimonial: React.FC<TestimonialTypes> = ({ title, cards }) => {
           textcenter
           wrapperClassName="max-w-5xl mx-auto"
         />
-        <div className="w-full">
+        <div className="w-full common">
           <SwiperCarousel
             data={cards}
             slidesPerView={1}
             spaceBetween={24}
             modules={[Pagination]}
+            pagination={{
+              clickable: true,
+              el: ".pagination_3",
+            }}
             renderSlide={(card) => <TestimonialCard {...card} />}
           />
+          <div className="pagination_3 mt-6 flex items-center justify-center"></div>
         </div>
       </div>
     </SectionWithContainer>

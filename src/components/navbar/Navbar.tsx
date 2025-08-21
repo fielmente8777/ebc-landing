@@ -42,12 +42,12 @@ const Navbar = () => {
       <Container className="px-4">
         <div className="flex items-center justify-between lg:py-6 py-4">
           <div
-            className="relative max-w-[8rem] w-full aspect-[4/2.5] lg:-mr-20"
+            className="relative max-w-[8rem] w-full aspect-[4/2.5] lg:-mr-20 bg-primary"
           >
             <Image
               src={`/logo.webp`}
               fill
-              className="object-contain"
+              className="object-contain px-1"
               alt="logo"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
