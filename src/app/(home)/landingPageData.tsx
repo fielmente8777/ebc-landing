@@ -254,8 +254,7 @@ export const landingPageData = {
   addsData: {
     title: "Plan Your Escape Before the Season <span>Ends</span>",
     listOfData: [
-      "Limited Duke Rooms available",
-      "Special 2N/3D Monsoon Retreat Package (Depending on the season)",
+      "More than just a stay — EBC Mussoorie offers you a hillside sanctuary of style, elegance, and serenity.",
     ],
     link: {
       href: contact.ctaUrl,
