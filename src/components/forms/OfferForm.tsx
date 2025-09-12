@@ -76,7 +76,7 @@ const OfferForm = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "testmulti",
+          Domain: "eb112233",
           Name: formData?.fullName,
           Contact: formData?.PhoneNumber,
           created_from: "landing page",

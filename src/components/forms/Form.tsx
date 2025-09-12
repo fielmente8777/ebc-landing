@@ -151,7 +151,7 @@ const Form = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "testmulti",
+          Domain: "eb112233",
           email: formData?.EmailId,
           Name: formData?.fullName,
           Contact: formData?.PhoneNumber,
