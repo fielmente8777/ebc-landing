@@ -1,11 +1,10 @@
+import { Navbar, RenderFooter } from "@/components";
+import Whatsapp from "@/components/ContactButton/WhatsApp";
 import type { Metadata } from "next";
+import Script from "next/script";
+import { contact } from "../../constant";
 import "./globals.css";
 import "./style.scss";
-import Call from "@/components/ContactButton/Call";
-import Whatsapp from "@/components/ContactButton/WhatsApp";
-import { contact } from "../../constant";
-import { Navbar, RenderFooter } from "@/components";
-
 
 export const metadata: Metadata = {
   title: "Camping in Mussoorie | Glamping near Dehradun - EBC Mussoorie",
@@ -52,7 +51,6 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,16 +58,81 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head></head>
-      <body
-        className={`antialiased`}
-        suppressHydrationWarning={true}
-      >
+      <head>
+        <meta
+          name="google-site-verification"
+          content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
+        />
+        {/* Clarity Script */}
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "n65gwfsc82");
+            `,
+          }}
+        />
+
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PVZG7NGGMG"
+        ></Script>
+        <Script
+          id="google-analytics-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-PVZG7NGGMG');
+        `,
+          }}
+        />
+
+        <Script
+          id="google-tag-manager-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-T36V8385');
+            `,
+          }}
+        />
+      </head>
+      <body className={`antialiased`} suppressHydrationWarning={true}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T36V8385"
+            height="0"
+            width="0"
+            title="Google Tag Manager (noscript)"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Navbar />
         {children}
         <RenderFooter />
-        <Call callNumber={contact.phoneNumber} />
+        {/* <Call callNumber={contact.phoneNumber} /> */}
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
+        <Script id="chatbot" strategy="beforeInteractive">
+          {`window.eazbotConfig = {
+            ndid: "e53a0946-ed31-455f-b278-37aa1b0c8c00",
+            hid: "56369483",
+          };`}
+        </Script>
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
       </body>
     </html>
   );

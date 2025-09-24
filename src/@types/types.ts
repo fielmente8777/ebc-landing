@@ -2,7 +2,7 @@ import { JSX } from "react";
 
 export interface BannerType {
   videoSrc?: string;
-  src: string;
+  images?: string[];
 }
 
 export interface AboutUsTypes {

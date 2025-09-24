@@ -11,7 +11,13 @@ import { contact, imgSrc, landingpageImgSrc } from "../../../constant";
 export const landingPageData = {
   bannerData: {
     videoSrc: "",
-    src: "/outsideview6.webp",
+    // src: "/outsideview6.webp",
+    images: [
+      "/im1.webp",
+      "/im4.webp",
+      "/im2.webp",
+      "/im3.webp",
+    ]
   },
   aboutUsData: {
     src: "/img.webp",
