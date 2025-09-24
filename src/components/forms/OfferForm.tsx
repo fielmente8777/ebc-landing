@@ -116,7 +116,7 @@ const OfferForm = () => {
       className={`grid md:grid-cols-3 grid-cols-1 items-center gap-4`}
     >
       {/* Full Name Field - unchanged */}
-      <div className={`border-b pb-3 border-primary flex flex-col w-full `}>
+      <div className={`border-b border-primary flex flex-col w-full `}>
         <input
           type="text"
           name="fullName"
@@ -124,7 +124,7 @@ const OfferForm = () => {
           placeholder="Full Name*"
           onChange={handleInputChange}
           value={formData.fullName}
-          className="outline-none border-none w-full h-full px-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+          className="outline-none py-3 border-none w-full h-full px-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
         />
         {error.fullName && (
           <span className="text-red-500 text-[0.5rem] px-1 w-full">
@@ -134,7 +134,7 @@ const OfferForm = () => {
       </div>
 
       {/* Phone Number Field - unchanged */}
-      <div className={`border-b pb-3 border-primary`}>
+      <div className={`border-b border-primary`}>
         <div className="flex items-center ps-1 w-full h-full">
           <select
             aria-label="Country Code"
@@ -164,7 +164,7 @@ const OfferForm = () => {
             placeholder="Phone Number*"
             onChange={handleInputChange}
             value={formData.PhoneNumber}
-            className=" ps-1 outline-none no-spinner appearance-auto border-none w-full h-full text-base text-[#343434] placeholder:text-[#343434] bg-transparent"
+            className=" ps-1 outline-none no-spinner py-3 appearance-auto border-none w-full h-full text-base text-[#343434] placeholder:text-[#343434] bg-transparent"
           />
         </div>
         {error.PhoneNumber && (
