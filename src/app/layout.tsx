@@ -63,6 +63,21 @@ export default function RootLayout({
           name="google-site-verification"
           content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
         />
+        {/* Pagesense Script */}
+        <Script
+          id="pagesense-script"
+          strategy="lazyOnload"
+          src="https://cdn-in.pagesense.io/js/everestbasecamp/3adab655c63f4325a1ea20ce11472e97.js"
+        ></Script>
+
+        {/* Zoho Script */}
+        <Script id="zoho-script" strategy="lazyOnload">
+          {`window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
+        </Script>
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.in/widget?wc=siq4bc7d026b8b5ab8b6663b74417f0678eeb748dabce26466abbf4b7a2765b5550"
+        ></Script>
         {/* Clarity Script */}
         <Script
           id="clarity-script"
@@ -126,13 +141,13 @@ export default function RootLayout({
         <RenderFooter />
         {/* <Call callNumber={contact.phoneNumber} /> */}
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
-        <Script id="chatbot" strategy="beforeInteractive">
+        {/* <Script id="chatbot" strategy="beforeInteractive">
           {`window.eazbotConfig = {
             ndid: "e53a0946-ed31-455f-b278-37aa1b0c8c00",
             hid: "56369483",
           };`}
         </Script>
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script> */}
       </body>
     </html>
   );
