@@ -79,13 +79,13 @@ export default function RootLayout({
           src="https://salesiq.zohopublic.in/widget?wc=siq4bc7d026b8b5ab8b6663b74417f0678eeb748dabce26466abbf4b7a2765b5550"
         ></Script> */}
 
-         <Script
+         {/* <Script
           type="text/javascript"
           strategy="afterInteractive"
           id="zsiqscript"
         >
           {`var $zoho= $zoho ||  {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"siq4bc7d026b8b5ab8b6663b74417f0678eeb748dabce26466abbf4b7a2765b5550", values:{},ready:function(){$zoho.salesiq.floatbutton.visible("");}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);`}
-        </Script>
+        </Script> */}
         {/* Clarity Script */}
         <Script
           id="clarity-script"
@@ -149,13 +149,13 @@ export default function RootLayout({
         <RenderFooter />
         {/* <Call callNumber={contact.phoneNumber} /> */}
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
-        {/* <Script id="chatbot" strategy="beforeInteractive">
+        <Script id="chatbot" strategy="beforeInteractive">
           {`window.eazbotConfig = {
             ndid: "e53a0946-ed31-455f-b278-37aa1b0c8c00",
             hid: "56369483",
           };`}
         </Script>
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script> */}
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
        
       </body>
     </html>
