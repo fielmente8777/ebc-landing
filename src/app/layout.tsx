@@ -79,7 +79,7 @@ export default function RootLayout({
           src="https://salesiq.zohopublic.in/widget?wc=siq4bc7d026b8b5ab8b6663b74417f0678eeb748dabce26466abbf4b7a2765b5550"
         ></Script> */}
 
-         {/* <Script
+        {/* <Script
           type="text/javascript"
           strategy="afterInteractive"
           id="zsiqscript"
@@ -133,6 +133,27 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          id="google-tag-manager-script"
+          strategy="afterInteractive"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10892529660"
+        ></Script>
+        <Script
+          id="google-analytics-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+         window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-10892529660');
+        `,
+          }}
+        />
       </head>
       <body className={`antialiased`} suppressHydrationWarning={true}>
         <noscript>
@@ -156,7 +177,6 @@ export default function RootLayout({
           };`}
         </Script>
         <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
-       
       </body>
     </html>
   );
