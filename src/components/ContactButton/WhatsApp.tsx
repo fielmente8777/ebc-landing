@@ -7,13 +7,18 @@ import { FaWhatsapp } from "react-icons/fa";
 function Whatsapp({ whatsAppNumber }: { whatsAppNumber: string }) {
   const pathName = usePathname();
   
-    if (pathName === "/thank-you/") {
-      return null;
-    }
+  if (pathName === "/thank-you/") {
+    return null;
+  }
+
+  const enCodedText = encodeURIComponent(
+    'Hi! I came across your resort on Google and wanted to know more about it'
+  );
+
   return (
-    <div className={`fixed bottom-24 lg:left-3 left-4 z-20 cursor-pointer`}>
+    <div className="fixed bottom-24 lg:left-3 left-4 z-20 cursor-pointer">
       <Link
-        href={`https://wa.me/${whatsAppNumber.replace(/\s+/g, "")}?text=Hello`}
+        href={`https://wa.me/${whatsAppNumber.replace(/\s+/g, "")}?text=${enCodedText}`}
         target="_blank"
         rel="noreferrer"
         className="w-12 h-12 rounded-full flex items-center justify-center bg-green-500 hover:bg-green-600 transition-all hover:shadow-2xl"

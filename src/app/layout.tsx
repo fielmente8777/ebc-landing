@@ -5,6 +5,7 @@ import Script from "next/script";
 import { contact } from "../../constant";
 import "./globals.css";
 import "./style.scss";
+import Call from "@/components/ContactButton/Call";
 
 export const metadata: Metadata = {
   title: "Camping in Mussoorie | Glamping near Dehradun - EBC Mussoorie",
@@ -168,7 +169,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <RenderFooter />
-        {/* <Call callNumber={contact.phoneNumber} /> */}
+        <Call callNumber={contact.phoneNumber} />
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
         <Script id="chatbot" strategy="beforeInteractive">
           {`window.eazbotConfig = {
