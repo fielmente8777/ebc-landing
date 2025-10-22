@@ -207,6 +207,9 @@ export const imgSrc =
 
 export const landingpageImgSrc =
   "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/";
+const enCodedText = encodeURIComponent(
+  "Hi! I came across your resort on Google and wanted to know more about it"
+);
 
 export const contact = {
   phoneNumber: "+919119001126",
@@ -219,8 +222,9 @@ export const contact = {
   socialLinks: {
     facebook: "https://www.facebook.com/ebc.mussoorie/",
     instagram: "https://www.instagram.com/ebcmussoorie/",
-    tripadvisor:"https://www.tripadvisor.in/Hotel_Review-g297689-d23292009-Reviews-Everest_Base_Camp_Mussoorie-Mussoorie_Dehradun_District_Uttarakhand.html",
+    tripadvisor:
+      "https://www.tripadvisor.in/Hotel_Review-g297689-d23292009-Reviews-Everest_Base_Camp_Mussoorie-Mussoorie_Dehradun_District_Uttarakhand.html",
     youtube: "https://www.youtube.com/@EverestBaseCampMussoorie",
   },
-  ctaUrl:"https://wa.me/+918595274861?text=Hello",
+  ctaUrl: `https://wa.me/+918595274861?text=${enCodedText}`,
 };
