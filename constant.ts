@@ -213,6 +213,7 @@ const enCodedText = encodeURIComponent(
 
 export const contact = {
   phoneNumber: "+919119001126",
+  call:"+918595274861",
   email: "info@ebcmussoorie.com",
   address:
     "Everest Base Camp Mussoorie, Park Estate, Hathipaon Road, Mussoorie, Uttarakhand, 248179",

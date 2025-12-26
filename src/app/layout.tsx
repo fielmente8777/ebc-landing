@@ -194,7 +194,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <RenderFooter />
-        <Call callNumber={contact.phoneNumber} />
+        <Call callNumber={contact.call} />
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
         <Script id="chatbot" strategy="beforeInteractive">
           {`window.eazbotConfig = {
