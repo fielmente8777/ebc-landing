@@ -10,8 +10,8 @@ export const landingFooterData = {
   mapUrl: contact.mapUrl,
   links: [
     {
-      label: "Call Us: " + contact.phoneNumber,
-      href: "tel: " + contact.phoneNumber,
+      label: "Call Us: " + contact.call,
+      href: "tel: " + contact.call,
     },
     {
       label: "Email: " + contact.email,
