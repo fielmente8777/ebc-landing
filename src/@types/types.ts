@@ -73,3 +73,17 @@ export interface WhyEbcTypes {
     title: string;
   }[];
 }
+
+export interface NearbyAttractionsTypes {
+  title: string;
+  description: string;
+  cards: {
+    placeName: string;
+    placeImage: string;
+    placeDetails: string;
+    distance: {
+      icon: JSX.Element;
+      miter: string;
+    }[];
+  }[];
+}

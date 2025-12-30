@@ -204,6 +204,8 @@ export const bookingLink = "https://wa.me/+918595274861?text=Hello";
 
 export const imgSrc =
   "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/";
+export const nearby =
+  "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/nearby/";
 
 export const landingpageImgSrc =
   "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/";
@@ -213,7 +215,7 @@ const enCodedText = encodeURIComponent(
 
 export const contact = {
   phoneNumber: "+919119001126",
-  call:"+91 85952 74861",
+  call: "+91 85952 74861",
   email: "info@ebcmussoorie.com",
   address:
     "Everest Base Camp Mussoorie, Park Estate, Hathipaon Road, Mussoorie, Uttarakhand, 248179",
