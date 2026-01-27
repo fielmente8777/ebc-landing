@@ -20,7 +20,7 @@ const Customizable: React.FC<CustomizableProps> = ({
   return (
     <Section defaultPadding={false}>
       <div className="grid md:grid-cols-[1fr_1fr_1fr]">
-        <div className="relative w-full aspect-square">
+        <div className="relative w-full aspect-square md:aspect-[4/4.5]">
           <Image
             src={images[0]}
             alt="Customizable Experience Image 1"
@@ -52,7 +52,7 @@ const Customizable: React.FC<CustomizableProps> = ({
             className="text-white uppercase px-6 py-3 rounded-none border border-white w-fit mx-auto hover:bg-white hover:text-primary transition-colors duration-300"
           />
         </div>
-        <div className="relative w-full aspect-square">
+        <div className="relative w-full aspect-square md:aspect-[4/4.5]">
           <Image
             src={images[1]}
             alt="Customizable Experience Image 2"
