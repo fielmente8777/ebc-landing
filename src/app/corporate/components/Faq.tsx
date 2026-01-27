@@ -2,7 +2,6 @@ import { FaqTypes } from "@/@types/types";
 import { SectionHeadingDesc, SectionWithContainer } from "@/components";
 import Accordion from "@/components/accordion/Accordion";
 
-
 const Faq: React.FC<FaqTypes> = ({ title, list: faqs }) => {
   return (
     <SectionWithContainer containerClassName="space-y-8">
