@@ -4,7 +4,7 @@ import { imgSrc } from "../../../../constant";
 
 export const corporateRetreatData = {
   bannerData: {
-    title: "Transform Your Team. Elevate Your Culture",
+    title: "Transform Your Team. Elevate Your <span>Culture</span>",
     images: ["/im1.webp", "/im4.webp", "/im2.webp", "/im3.webp"],
   },
   subtitle:
@@ -46,14 +46,15 @@ export const corporateRetreatData = {
     title: "Why Everest Base Camp?",
     cards: [
       {
-        title: "Unplug & Reconnect",
+        title: "Unplug & <span>Reconnect</span>",
         description: [
           "Reconnect with nature with exclusive nature experiences, 5 star like rooms in between forest built like a tent",
           "20 acre to yourself",
+          "Ideal for formal and semi-formal team meetings and team-building activities",
         ],
       },
       {
-        title: "Culinary Experience",
+        title: "Culinary <span>Experience</span>",
         description: [
           "Complimentary breakfast, lunch, dinner, and light snacks during high tea",
 
@@ -61,11 +62,22 @@ export const corporateRetreatData = {
         ],
       },
       {
-        title: "Exclusive Den Area",
+        title: "Exclusive Den <span>Area</span>",
         description: [
           "Dedicated, soundproof Den with mood lighting",
           "75-inch high-definition television",
           "Premium high-definition sound system",
+          "Heated environment",
+          "In-house barista service",
+          "Alcohol service",
+          "Perfect for team meetings, team-building activities, formal and semi-formal gatherings",
+        ],
+      },
+      {
+        title: "Nature & Outdoor <span>Adventures</span>",
+        description: [
+          "Full access to 20 acres of pristine nature",
+          "Outdoor activities: Archery, badminton, cricket, tic-tac-toe, ring toss, lawn bowling, cycling, kids' play area, nature trails, bird watching",
         ],
       },
     ],
@@ -80,18 +92,24 @@ export const corporateRetreatData = {
     title: "Package Inclusions",
     sections: [
       {
-        title: "Nature & Outdoor Adventures",
+        title: "Nature & Outdoor <span>Adventures</span>",
         list: [
           "Full access to 20 acres of pristine nature",
           "Archery",
           "Badminton",
           "Cricket",
           "Tic-tac-toe",
+          "Ring toss",
+          "Lawn bowling",
+          "Cycling",
+          "Kids' play area",
+          "Nature trails",
+          "Bird watching",
         ],
         src: imgSrc + "activities/img1.webp",
       },
       {
-        title: "Culinary Experience",
+        title: "Culinary <span>Experience</span>",
         list: [
           "All meals inclusive: Breakfast, lunch, dinner, light snacks",
           "High tea service",
@@ -101,12 +119,17 @@ export const corporateRetreatData = {
         src: imgSrc + "park-cafe/our-cuisine/img3.webp",
       },
       {
-        title: "Exclusive Den Area for Meetings & Bonding",
+        title: "Exclusive Den Area for <span>Meetings & Bonding</span>",
         list: [
           "Dedicated, soundproof Den",
           "Mood lighting",
           "75-inch high-definition television",
           "Premium high-definition sound system",
+          "Heated environment",
+          "In-house barista service",
+          "Alcohol service",
+          "Ideal for formal and semi-formal team meetings",
+          "Perfect for team-building activities",
         ],
         src: "/cafe.webp",
       },
@@ -117,7 +140,7 @@ export const corporateRetreatData = {
     },
   },
   natureHealingData: {
-    title: "How Nature Heals",
+    title: "How Nature <span>Heals</span>",
     description:
       "At Everest Base Camp Mussoorie, the surrounding forests, mountain air, and natural silence help calm the mind and restore balance. Time in nature reduces stress, improves focus, and encourages a natural digital detox, allowing guests to reconnect, reset, and leave feeling refreshed and re-energized.",
     video: {
@@ -181,10 +204,10 @@ export const corporateRetreatData = {
       { label: "Drive Time", value: "4.5 hours", icon: <CarIcon /> },
       { label: "Nearest Airport", value: "70 km", icon: <NearestAirport /> },
     ],
-    link:{
+    link: {
       label: "Contact Us",
       href: "",
-    }
+    },
   },
 
   customizationData: {

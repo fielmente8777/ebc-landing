@@ -40,8 +40,8 @@ const Navbar = () => {
       className={`${pathName === "/corporate/" ? "bg-primary" : `top-0 left-0 w-full z-50 shadow-xl transition-all duration-500 ease-in-out ${navbarColor ? "sticky bg-primary" : "fixed bg-transparent"}`}`}
     >
       <Container className="px-4">
-        <div className="flex items-center justify-between lg:py-6 py-4">
-          <div className="relative max-w-[8rem] w-full aspect-[4/2.5] lg:-mr-20 bg-primary">
+        <div className="flex items-center justify-between  py-4">
+          <div className="relative max-w-[10rem] w-full aspect-[4/2.5] lg:-mr-20 bg-primary">
             <Image
               src={`/logo.webp`}
               fill

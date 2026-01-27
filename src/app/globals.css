@@ -62,6 +62,7 @@
   --light: #797979;
   --primary: #434B3E;
   --secondary: #F1EECB;
+  --ternary: #DFB65C;
   --bg1: #F7F5EE;
   --bg2: #F9F4DC;
   /* font family */
@@ -186,6 +187,7 @@ a {
     --color-light: var(--light);
     --color-bg1: var(--bg1);
     --color-bg2: var(--bg2);
+    --color-ternary: var(--ternary);
   }
 
   body {

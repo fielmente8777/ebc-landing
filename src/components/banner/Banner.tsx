@@ -5,9 +5,9 @@ import { LazyLoadedVideo } from "../Video";
 import SwiperCarousel from "../SwiperCarousel";
 import { Autoplay } from "swiper/modules";
 
-const Banner: React.FC<BannerType> = ({ videoSrc, images }) => {
+const Banner: React.FC<BannerType> = ({ videoSrc, images, title }) => {
   return (
-    <section className="w-full max_screen ">
+    <section className="w-full max_screen relative heading">
       {videoSrc ? (
         <div className="relative md:aspect-[16/9] aspect-[4/4.5] w-full after:absolute after:inset-0 after:bg-black/10">
           <LazyLoadedVideo
@@ -56,6 +56,13 @@ const Banner: React.FC<BannerType> = ({ videoSrc, images }) => {
           />
         </div>
       )}
+      {title && (
+        <h2
+          className="text-white md:text-7xl text-4xl pUltralight absolute bottom-4 md:left-16 max-w-xl max-md:text-center z-20"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      )}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/10 z-10" />
     </section>
   );
 };

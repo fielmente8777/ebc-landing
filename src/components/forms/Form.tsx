@@ -7,8 +7,10 @@ import axios from "axios";
 import { ChangeEvent, useContext, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { usePathname } from 'next/navigation';
 
 const Form = () => {
+  const pathName = usePathname();
   const { setIsOpen } = useContext(DataContext);
   const formRef = useRef<HTMLFormElement | null>(null);
   const [countryCode, setCountryCode] = useState("+91"); // Default country code
@@ -49,7 +51,9 @@ const Form = () => {
     return re.test(phone);
   };
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -212,7 +216,8 @@ const Form = () => {
       ref={formRef}
     >
       <h2 className="text-2xl text-primary pUltralight">
-        BOOK YOUR MOUNTAIN <span className="pultralight-italic">ESCAPE</span>
+        BOOK YOUR {pathName === "/corporate/" ? "CORPORATE" : "MOUNTAIN"}{" "}
+        <span className="pultralight-italic">ESCAPE</span>
       </h2>
       {/* Full Name Field - unchanged */}
       <div className={`bg-white flex flex-col items-center mt-4`}>
@@ -339,7 +344,9 @@ const Form = () => {
         </div>
       </div>
       {/* message */}
-      <div className={`col-span-1 flex flex-col items-center bg-[#fff] relative`}>
+      <div
+        className={`col-span-1 flex flex-col items-center bg-[#fff] relative`}
+      >
         <textarea
           name="message"
           aria-label="Message"
@@ -363,7 +370,9 @@ const Form = () => {
           ) : submitSuccess ? (
             "Thank You!"
           ) : (
-            <span className='pmedium'>BOOK YOUR <span className='pmedium-italic'>STAY</span></span>
+            <span className="pmedium">
+              BOOK YOUR <span className="pmedium-italic">STAY</span>
+            </span>
           )}
         </button>
       </div>

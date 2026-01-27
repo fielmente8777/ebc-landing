@@ -25,12 +25,12 @@ const HowNatureHeals: React.FC<HowNatureHealsProps> = ({
 }) => {
   return (
     <SectionWithContainer containerClassName="space-y-8">
-      <div className="grid md:grid-cols-[3fr_3.5fr]">
-        <div>
+      <div className="grid md:grid-cols-[2.5fr_3.5fr] gap-4">
+        <div className="space-y-4">
           <SectionHeadingDesc title={title} />
-          <div className="max-w-36 w-full h-px bg-secondary" />
+          <div className="max-w-36 w-full h-px bg-[#DFB65C]" />
         </div>
-        <p>{description}</p>
+        <p className="md:text-[1.375rem] text-primary">{description}</p>
       </div>
       <div className="relative w-full md:aspect-[4/2] aspect-[4/3]">
         <LazyLoadedVideo

@@ -4,8 +4,10 @@ import Link from "next/link";
 import { Container } from "../sectionComponents";
 import LazyLoadedMap from "../map/LazyLoadedMap";
 import { Form, OfferForm } from "../forms";
+import { usePathname } from "next/navigation";
 
 const LandingFooter = () => {
+  const pathName = usePathname();
   const currentYear = new Date().getFullYear();
   return (
     <footer className="max_screen_width">
@@ -83,7 +85,7 @@ const LandingFooter = () => {
         </Container>
       </div>
       {/* offer */}
-      <div className="relative after:absolute after:inset-0 after:bg-bg1 after:z-[-3]">
+      {pathName !== "/corporate/" && <div className="relative after:absolute after:inset-0 after:bg-bg1 after:z-[-3]">
         <div className=" py-16 bg_img_1">
           <Container>
             <div className="grid items-center grid-cols-1 md:grid-cols-3 gap-6">
@@ -101,11 +103,11 @@ const LandingFooter = () => {
             </div>
           </Container>
         </div>
-      </div>
+      </div>}
       {/* developed by info */}
-      <div className="bg-primary py-6">
+      <div className={`${pathName === "/corporate/" ? "bg-bg1 py-6 text-primary divide-primary" : "bg-primary py-6 text-white divide-white"}`}>
         <Container>
-          <div className="text-white text-[1.2rem] ntbook text-center md:divide-x divide-white flex max-md:gap-3 max-md:flex-col items-center justify-center">
+          <div className=" text-[1.2rem] ntbook text-center md:divide-x  flex max-md:gap-3 max-md:flex-col items-center justify-center">
             <span className="px-4">
               © {currentYear} Everest Base Camp, Mussoorie
             </span>

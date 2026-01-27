@@ -10,12 +10,12 @@ const Accordion: React.FC<FaqTypes["list"][0]> = ({ question, answer }) => {
   return (
     <div className="py-4 cursor-pointer group">
       <div className="flex justify-between items-center">
-        <h3 className="font-bold text-lg">{question}</h3>
+        <h3 className="text-primary font-semibold text-xl">{question}</h3>
         <span>
           <DropDownIcon className="mt-2 transition-transform duration-300 ease-in-out group-hover:rotate-180" />
         </span>
       </div>
-      <p className="hidden group-hover:block transition-transform group-hover:translate-y-1 group-hover:opacity-100 opacity-0 transform duration-1000 ease-in-out mt-2">
+      <p className="hidden group-hover:block transition-transform group-hover:translate-y-1 group-hover:opacity-100 opacity-0 transform duration-1000 ease-in-out mt-2 text-primary text-xl">
         {answer}
       </p>
     </div>

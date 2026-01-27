@@ -19,7 +19,7 @@ const Customizable: React.FC<CustomizableProps> = ({
 }) => {
   return (
     <Section defaultPadding={false}>
-      <div className="grid md:grid-cols-[1fr_.8fr_1fr]">
+      <div className="grid md:grid-cols-[1fr_1fr_1fr]">
         <div className="relative w-full aspect-square">
           <Image
             src={images[0]}
@@ -29,7 +29,7 @@ const Customizable: React.FC<CustomizableProps> = ({
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <div className="flex flex-col justify-center px-4 heading space-y-6 bg-primary py-8 text-white">
+        <div className="flex flex-col justify-center px-4 heading space-y-6 bg-primary py-8  text-white">
           <h2
             className="text-5xl pUltralight text-center tracking-wide"
             dangerouslySetInnerHTML={{ __html: title }}
@@ -38,8 +38,8 @@ const Customizable: React.FC<CustomizableProps> = ({
           <div className="h-px bg-secondary w-full max-w-32 mx-auto" />
           <ul className="space-y-4">
             {list.map((item, index) => (
-              <li key={index} className="flex items-center justify-center">
-                <span className="text-primary font-bold mr-3 mt-px">✓</span>
+              <li key={index} className="flex items-center justify-center md:text-[1.375rem]">
+                <span className="text-white font-bold mr-3 mt-px">✓</span>
                 <span>{item}</span>
               </li>
             ))}
