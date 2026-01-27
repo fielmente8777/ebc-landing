@@ -14,5 +14,4 @@ const Faq: React.FC<FaqTypes> = ({ title, list: faqs }) => {
     </SectionWithContainer>
   );
 };
-
 export default Faq;
