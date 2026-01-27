@@ -17,7 +17,7 @@ const RoomTypes: React.FC<RoomsTypes> = ({ title, cards, link }) => {
 
       </div>
       <RoomsSlider cards={cards} />
-      {link && <LinkButton label={link?.label} href={link?.href} className="rounded-none w-fit uppercase mx-auto" />}
+      {link && <LinkButton label={link?.label} href={link?.href} className="rounded-none w-fit! uppercase mx-auto" />}
     </Section>
   );
 };
