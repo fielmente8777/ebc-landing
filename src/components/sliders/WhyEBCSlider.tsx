@@ -1,6 +1,6 @@
 "use client";
 import { WhyEBCProps } from "@/@types/types";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import WhyEBCampCard from "../cards/WhyEBCampCard";
 import SwiperCarousel from "../SwiperCarousel";
 
@@ -14,12 +14,12 @@ const WhyEBCSlider: React.FC<WhyEBCSliderProps> = ({ cards }) => {
         data={cards}
         slidesPerView={1}
         spaceBetween={14}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         navigation={{
-          nextEl: ".button-next",
-          prevEl: ".button-prev",
+          nextEl: ".camp-next",
+          prevEl: ".camp-prev",
         }}
         breakpoints={{
           768: {

@@ -1,11 +1,19 @@
 import { landingPageData } from "@/app/(home)/landingPageData";
 import { CarIcon, DistanceIcon, NearestAirport } from "@/utils/iconsPack2";
-import { imgSrc } from "../../../../constant";
+import { imgSrc, landingpageImgSrc } from "../../../../constant";
 
 export const corporateRetreatData = {
   bannerData: {
     title: "Transform Your Team. Elevate Your <span>Culture</span>",
-    images: ["/im1.webp", "/im4.webp", "/im2.webp", "/im3.webp"],
+    images: [
+      "/im4.webp",
+      landingpageImgSrc + "zenith/DSC05021.webp",
+      landingpageImgSrc + "zenith/DSC04978.webp",
+      // landingpageImgSrc + "zenith/DSC05055.webp",
+      "/im1.webp",
+      "/im2.webp",
+      "/im3.webp",
+    ],
   },
   subtitle:
     "ALL-INCLUSIVE CORPORATE RETREATS WITH LUXURY ACCOMMODATIONS, GOURMET DINING & EXCLUSIVE EXPERIENCES",

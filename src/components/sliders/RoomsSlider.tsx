@@ -4,6 +4,7 @@ import { Container } from "../sectionComponents";
 import SwiperCarousel from "../SwiperCarousel";
 import { Navigation } from "swiper/modules";
 import { RoomCard } from "../cards";
+import { SliderBtn } from "@/utils/iconsPack2";
 
 interface RoomsSliderProps {
   cards: RoomsTypes["cards"];
@@ -15,7 +16,7 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
         className="button-prev w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center ml-8"
         aria-label="Previous"
       >
-        {/* <PreviousBtn /> */}
+        <SliderBtn />
       </button>
       <Container>
         <SwiperCarousel
@@ -46,21 +47,21 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
             className="button-prev w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center"
             aria-label="Previous"
           >
-            {/* <PreviousBtn /> */}
+            <SliderBtn />
           </button>
           <button
-            className="button-next w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center"
+            className="button-next w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center rotate-180"
             aria-label="Next"
           >
-            {/* <NextBtn /> */}
+            <SliderBtn />
           </button>
         </div>
       </Container>
       <button
-        className="button-next w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center mr-8"
+        className="button-next w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center mr-8 rotate-180"
         aria-label="Next"
       >
-        {/* <NextBtn /> */}
+        <SliderBtn />
       </button>
     </div>
   );
