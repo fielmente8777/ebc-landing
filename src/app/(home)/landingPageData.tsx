@@ -183,17 +183,11 @@ export const CarDriveIcon = () => (
   </svg>
 );
 
-
 export const landingPageData = {
   bannerData: {
     videoSrc: "",
     // src: "/outsideview6.webp",
-    images: [
-      "/im1.webp",
-      "/im4.webp",
-      "/im2.webp",
-      "/im3.webp",
-    ]
+    images: ["/im1.webp", "/im4.webp", "/im2.webp", "/im3.webp"],
   },
   aboutUsData: {
     src: "/img.webp",
@@ -353,61 +347,7 @@ export const landingPageData = {
           },
         ],
         description:
-          "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia.",
-      },
-      {
-        images: [
-          landingpageImgSrc + "camper/img1.webp",
-          landingpageImgSrc + "camper/img2.webp",
-          landingpageImgSrc + "camper/img3.webp",
-          landingpageImgSrc + "camper/img4.webp",
-        ],
-        roomName: "The Camper",
-        label: "Most Popular",
-        labelColor: "#F6CE55",
-        amenities: [
-          {
-            title: "Forest View",
-            icon: <ForestView />,
-          },
-          {
-            title: "Heated Beds",
-            icon: <HeatedBeds />,
-          },
-          {
-            title: "Free Wi-Fi",
-            icon: <FreeWifi />,
-          },
-        ],
-        description:
-          "Treat yourself to a relaxing getaway in our Camper rooms, designed for couples seeking a lavish vacation experience with unparalleled comfort and coziness in a peaceful setting.",
-      },
-      {
-        images: [
-          landingpageImgSrc + "glamper/img1.webp",
-          landingpageImgSrc + "glamper/img2.webp",
-          landingpageImgSrc + "glamper/img3.webp",
-          landingpageImgSrc + "glamper/img4.webp",
-        ],
-        roomName: "The Glamper",
-        label: "Luxury Glamping",
-        labelColor: "#434B3E",
-        amenities: [
-          {
-            title: "Forest View",
-            icon: <ForestView />,
-          },
-          {
-            title: "Heated Beds",
-            icon: <HeatedBeds />,
-          },
-          {
-            title: "Free Wi-Fi",
-            icon: <FreeWifi />,
-          },
-        ],
-        description:
-          "Our Glamper rooms promise relaxation and rejuvenation like no other, ideal for small groups, making unforgettable moments on our exclusive netted balcony spaces — perfect for creating Instagram-worthy memories.",
+          "Our newest luxury cottage featuring warm tones, elegant interiors, and stunning forest views. The ultimate luxury retreat experience with private deck and hammock access. Ideal for intimate leadership gatherings and executive off-sites.",
       },
       {
         images: [
@@ -462,6 +402,60 @@ export const landingPageData = {
         ],
         description:
           "Relax and recharge in the peaceful Surveyor Suite, surrounded by Deodar forest scenery. Perfect for families or small groups, our serene atmosphere ensures privacy and comfort, allowing you to reconnect with nature.",
+      },
+      {
+        images: [
+          landingpageImgSrc + "glamper/img1.webp",
+          landingpageImgSrc + "glamper/img2.webp",
+          landingpageImgSrc + "glamper/img3.webp",
+          landingpageImgSrc + "glamper/img4.webp",
+        ],
+        roomName: "The Glamper",
+        label: "Luxury Glamping",
+        labelColor: "#434B3E",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
+        description:
+          "Our Glamper rooms promise relaxation and rejuvenation like no other, ideal for small groups, making unforgettable moments on our exclusive netted balcony spaces — perfect for creating Instagram-worthy memories.",
+      },
+      {
+        images: [
+          landingpageImgSrc + "camper/img1.webp",
+          landingpageImgSrc + "camper/img2.webp",
+          landingpageImgSrc + "camper/img3.webp",
+          landingpageImgSrc + "camper/img4.webp",
+        ],
+        roomName: "The Camper",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
+        description:
+          "Treat yourself to a relaxing getaway in our Camper rooms, designed for couples seeking a lavish vacation experience with unparalleled comfort and coziness in a peaceful setting.",
       },
     ],
   },
