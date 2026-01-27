@@ -15,7 +15,7 @@ const WhyEBC: React.FC<WhyEBCProps> = ({ cards, title, note }) => {
           <SectionHeadingDesc title={title} titleColor="white" />
         </div>
 
-        <div className="md:flex hidden gap-2">
+        <div className="md:flex hidden gap-2 ml-auto">
           <button className="bg-white px-6 py-2 text-primary camp-prev rounded-4xl ">
             <SliderBtn />
           </button>
