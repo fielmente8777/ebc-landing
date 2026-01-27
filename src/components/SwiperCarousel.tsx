@@ -11,8 +11,8 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
 import "swiper/css/effect-fade";
-import  'swiper/css/virtual';
-import 'swiper/css/free-mode';
+import "swiper/css/virtual";
+import "swiper/css/free-mode";
 
 interface SwiperCaroselProps<T> extends SwiperProps {
   data: T[];

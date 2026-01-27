@@ -355,3 +355,28 @@
     }
   }
 }
+
+
+.why-ebc-bg{
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/why-ebc-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--primary);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+  }
+}

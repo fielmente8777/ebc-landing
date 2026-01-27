@@ -1,10 +1,9 @@
 import { RoomsTypes } from "@/@types/types";
-import SwiperCarousel from "../SwiperCarousel";
 import Image from "next/image";
 import { Autoplay, Pagination } from "swiper/modules";
-import Link from "next/link";
-import LinkButton from "../buttons/LinkButton";
 import { contact } from "../../../constant";
+import LinkButton from "../buttons/LinkButton";
+import SwiperCarousel from "../SwiperCarousel";
 
 const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
   roomName,
@@ -13,6 +12,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
   images,
   labelColor,
   amenities,
+  link,
 }) => {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg box-shadow">
@@ -56,12 +56,14 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
           ))}
         </div>
         <p className="text-[1.375rem] text-light">{description}</p>
-        <LinkButton
-          href={contact.ctaUrl}
-          target="_blank"
-          label={`<span class="pmedium">BOOK YOUR <span class="italic">STAY</span></span>`}
-          className="text-white bg-primary !py-4"
-        />
+        {link && (
+          <LinkButton
+            href={contact.ctaUrl}
+            target="_blank"
+            label={`<span class="pmedium">BOOK YOUR <span class="italic">STAY</span></span>`}
+            className="text-white bg-primary !py-4"
+          />
+        )}
       </div>
     </div>
   );

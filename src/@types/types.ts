@@ -49,11 +49,16 @@ export interface RoomsTypes {
     description: string;
     label?: string;
     labelColor?: string;
+    link?: string;
     amenities: {
       title: string;
       icon: JSX.Element;
     }[];
   }[];
+  link?: {
+    href: string;
+    label: string;
+  };
 }
 
 export interface AddsTypes {
@@ -86,4 +91,53 @@ export interface NearbyAttractionsTypes {
       miter: string;
     }[];
   }[];
+}
+
+export interface FaqTypes {
+  title: string;
+  list: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+export interface LocationDetailsTypes {
+  title: string;
+  stats: {
+    label: string;
+    value: string;
+    icon: JSX.Element;
+  }[];
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+
+export interface PackageInclusionsProps {
+    title: string;
+    sections: {
+        title: string;
+        list: string[];
+        src: string;
+    }[];
+    link: {
+        label: string;
+        href: string;
+    };
+}
+
+
+export interface WhyEBCProps {
+  title: string;
+  cards: {
+    title: string;
+    description: string[];
+  }[];
+  note: string;
+  link: {
+    label: string;
+    href: string;
+  };
 }

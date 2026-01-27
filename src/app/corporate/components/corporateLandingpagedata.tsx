@@ -1,0 +1,273 @@
+import { landingPageData } from "@/app/(home)/landingPageData";
+import { CarIcon, DistanceIcon, NearestAirport } from "@/utils/iconsPack2";
+import { imgSrc } from "../../../../constant";
+
+export const corporateRetreatData = {
+  bannerData: {
+    title: "Transform Your Team. Elevate Your Culture",
+    images: ["/im1.webp", "/im4.webp", "/im2.webp", "/im3.webp"],
+  },
+  subtitle:
+    "ALL-INCLUSIVE CORPORATE RETREATS WITH LUXURY ACCOMMODATIONS, GOURMET DINING & EXCLUSIVE EXPERIENCES",
+  ratingsData: {
+    title: "Top Rated Glamping Resort of <span>Mussoorie</span>",
+    cards: [
+      {
+        title: "9.2/10",
+        src: "/partners/booking.png",
+      },
+      {
+        title: "4.5/5",
+        src: "/partners/yatra.png",
+      },
+      {
+        title: "4.9/5",
+        src: "/partners/tripadvisor.png",
+      },
+      {
+        title: "4.6/5",
+        src: "/partners/makemytrip.png",
+      },
+      {
+        title: "8.8/10",
+        src: "/partners/Expedia.png",
+      },
+      {
+        title: "4.5/5",
+        src: "/partners/cleartrip.png",
+      },
+      {
+        title: "9.1/10",
+        src: "/partners/Agoda-Logo.png",
+      },
+    ],
+  },
+  whyEbcData: {
+    title: "Why Everest Base Camp?",
+    cards: [
+      {
+        title: "Unplug & Reconnect",
+        description: [
+          "Reconnect with nature with exclusive nature experiences, 5 star like rooms in between forest built like a tent",
+          "20 acre to yourself",
+        ],
+      },
+      {
+        title: "Culinary Experience",
+        description: [
+          "Complimentary breakfast, lunch, dinner, and light snacks during high tea",
+
+          "All meals inclusive – no hidden costs",
+        ],
+      },
+      {
+        title: "Exclusive Den Area",
+        description: [
+          "Dedicated, soundproof Den with mood lighting",
+          "75-inch high-definition television",
+          "Premium high-definition sound system",
+        ],
+      },
+    ],
+    note: "*The total capacity is 26 guests including extra beds, and 14 guests under double occupancy.",
+    link: {
+      label: "DOWNLOAD CORPORATE RETREAT GUIDE",
+      href: "#",
+    },
+  },
+
+  packageInclusions: {
+    title: "Package Inclusions",
+    sections: [
+      {
+        title: "Nature & Outdoor Adventures",
+        list: [
+          "Full access to 20 acres of pristine nature",
+          "Archery",
+          "Badminton",
+          "Cricket",
+          "Tic-tac-toe",
+        ],
+        src: imgSrc + "activities/img1.webp",
+      },
+      {
+        title: "Culinary Experience",
+        list: [
+          "All meals inclusive: Breakfast, lunch, dinner, light snacks",
+          "High tea service",
+          "In-house barista service",
+          "Alcohol service available",
+        ],
+        src: imgSrc + "park-cafe/our-cuisine/img3.webp",
+      },
+      {
+        title: "Exclusive Den Area for Meetings & Bonding",
+        list: [
+          "Dedicated, soundproof Den",
+          "Mood lighting",
+          "75-inch high-definition television",
+          "Premium high-definition sound system",
+        ],
+        src: "/cafe.webp",
+      },
+    ],
+    link: {
+      label: "Contact Us",
+      href: "",
+    },
+  },
+  natureHealingData: {
+    title: "How Nature Heals",
+    description:
+      "At Everest Base Camp Mussoorie, the surrounding forests, mountain air, and natural silence help calm the mind and restore balance. Time in nature reduces stress, improves focus, and encourages a natural digital detox, allowing guests to reconnect, reset, and leave feeling refreshed and re-energized.",
+    video: {
+      src: "/videobnr.webp",
+      videoSrc: "",
+    },
+    link: {
+      label: "Contact Us",
+      href: "",
+    },
+  },
+  pricingData: {
+    title: "Pricing (Customizable & Reducible)",
+    maxPrice: "*Maximum Price: ₹9,999 per person",
+    subTitle: "All-Inclusive Rate Includes:",
+    src: "/img.webp",
+    inclusions: [
+      "Luxury accommodations",
+      "All meals: Breakfast, lunch, dinner, light snacks",
+      "All outdoor activities",
+      "All indoor entertainment",
+      "Den access with mood lighting",
+      "75-inch TV and premium sound system",
+      "Heated accommodations",
+      "In-house barista service",
+      "Alcohol service",
+    ],
+    link: {
+      label: "Contact Us",
+      href: "/contact",
+    },
+  },
+
+  roomTypes: {
+    title: "Room Types",
+    cards: landingPageData.roomsData.cards.map((card) => ({
+      images: card.images,
+      roomName: card.roomName,
+      description: card.description,
+      amenities: card.amenities,
+    })),
+    link: {
+      label: "contact us",
+      href: "/",
+    },
+  },
+  titles: [
+    "MINIMUM STAY: 2 NIGHTS",
+    "DEDICATED EVENT MANAGER: ASSIGNED PER GROUP",
+    "24/7 COORDINATION AVAILABLE",
+  ],
+
+  locationData: {
+    title: "Location Details",
+    stats: [
+      {
+        label: "Distance from Delhi",
+        value: "280 Kilometers",
+        icon: <DistanceIcon />,
+      },
+      { label: "Drive Time", value: "4.5 hours", icon: <CarIcon /> },
+      { label: "Nearest Airport", value: "70 km", icon: <NearestAirport /> },
+    ],
+    link:{
+      label: "Contact Us",
+      href: "",
+    }
+  },
+
+  customizationData: {
+    title: "100% <span>Customizable</span>",
+    list: [
+      "Room mix selection based on group needs",
+      "Activity preferences and scheduling",
+      "Meal preferences and dietary accommodations",
+      "Den scheduling for meetings and bonding",
+      "Timeline flexibility for daily itineraries",
+      "All special requirements accommodated",
+    ],
+    link: {
+      label: "Contact Us",
+      href: "",
+    },
+    images: [
+      "/camp.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/activities/bonfire/img1.webp",
+    ],
+  },
+
+  faqData: {
+    title: "Frequently Asked Questions",
+    list: [
+      {
+        question: "What if some team members aren't athletic?",
+        answer:
+          "Multiple difficulty levels are available for all outdoor activities, and participation is optional. Low-intensity options such as nature walks and bird watching ensure inclusivity for all team members.",
+      },
+      {
+        question: "Do you offer treks nearby?",
+        answer:
+          "Yes. Guided treks of varying difficulty levels are available close to the property, ranging from short scenic walks to moderate adventure treks. Routes are selected based on group fitness and preferences.",
+      },
+      {
+        question: "Are helicopter rides available nearby?",
+        answer:
+          "Yes. Helicopter rides are available at nearby helipads, subject to weather conditions and regulatory approvals. We can assist with coordination and scheduling upon request.",
+      },
+      {
+        question: "How do you handle dietary restrictions?",
+        answer:
+          "Our chef accommodates all dietary requirements, including vegetarian, vegan, gluten-free, and allergy-specific needs. Meal plans are fully customized.",
+      },
+      {
+        question: "What if the weather turns bad?",
+        answer:
+          "Indoor alternatives are always ready. Indoor games, entertainment systems, and Den activities ensure a seamless experience. Outdoor activities can be rescheduled as needed.",
+      },
+      {
+        question: "Can we keep strategy work confidential?",
+        answer:
+          "Yes. The soundproof Den ensures complete privacy for sensitive discussions and strategy sessions.",
+      },
+      {
+        question: "Can we customize the itinerary?",
+        answer:
+          "Absolutely. Mornings can be dedicated to work sessions, afternoons to activities, and evenings to team bonding. You control the rhythm of the retreat.",
+      },
+      {
+        question: "How far in advance do we need to book?",
+        answer:
+          "We recommend booking 6–8 weeks in advance. Earlier reservations help secure preferred dates, particularly during peak seasons.",
+      },
+      {
+        question: "What about WiFi and work requirements?",
+        answer:
+          "Reliable high-speed WiFi is available throughout the property to support urgent or planned work needs.",
+      },
+      {
+        question: "Can we bring external speakers or facilitators?",
+        answer:
+          "Yes. External trainers and facilitators are welcome. We provide Den space, AV setup, and complete logistical support.",
+      },
+    ],
+  },
+
+  contactData: {
+    address:
+      "Everest Base Camp Mussoorie, Park Estate, Hathipaon Road, Mussoorie, Uttarakhand, 248179",
+    phone: "+91 85952 74861",
+    email: "info@ebcmussoorie.com",
+    cta: "BOOK YOUR CORPORATE ESCAPE",
+  },
+};

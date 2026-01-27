@@ -52,6 +52,10 @@
   src: url("/font/PPPangaia-UltralightItalic-BF654c530ca889f.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Times New Roman";
+  src: url("/font/TimesNewRoman.ttf") format("truetype");
+}
 
 :root {
   --dark: #343434;
@@ -71,6 +75,7 @@
   --font-ntbold-italic: "Neutra Text Bold Italic";
   --font-ntbook-italic: "Neutra Text Book Italic";
   --font-ntbook: "Neutra Text Book";
+  --font-times: "Times New Roman";
 }
 
 p {
@@ -78,7 +83,9 @@ p {
   font-weight: 200;
 }
 
-
+.font-times {
+  font-family: var(--font-times);
+}
 
 /* font family classes */
 

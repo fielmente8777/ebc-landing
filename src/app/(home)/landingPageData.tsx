@@ -325,6 +325,38 @@ export const landingPageData = {
     cards: [
       {
         images: [
+          landingpageImgSrc + "zenith/DSC04996-HDR-2.webp",
+          landingpageImgSrc + "zenith/DSC04953-HDR-2.webp",
+          landingpageImgSrc + "zenith/DSC04938-HDR-2.webp",
+          landingpageImgSrc + "zenith/DSC04928-HDR-2.webp",
+          landingpageImgSrc + "zenith/DSC04923-HDR-2.webp",
+          landingpageImgSrc + "zenith/DJI_0763.webp",
+          landingpageImgSrc + "zenith/DSC04978.webp",
+          landingpageImgSrc + "zenith/DSC05021.webp",
+          landingpageImgSrc + "zenith/DSC05055.webp",
+        ],
+        roomName: "Zenith",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
+        description:
+          "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia.",
+      },
+      {
+        images: [
           landingpageImgSrc + "camper/img1.webp",
           landingpageImgSrc + "camper/img2.webp",
           landingpageImgSrc + "camper/img3.webp",
