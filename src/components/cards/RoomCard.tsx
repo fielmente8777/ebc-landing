@@ -46,7 +46,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
         />
       </div>
       <div className="p-6 flex flex-col justify-evenly gap-4 min-h-[24rem] bg-white">
-        <h3 className="text-[2.5rem] text-primary pUltralight">{roomName}</h3>
+        <h3 className="md:text-[2.5rem] text-2xl text-primary pUltralight">{roomName}</h3>
         <div className="flex flex-wrap gap-4">
           {amenities.map((amenity) => (
             <div key={amenity.title} className="flex items-center gap-2">
