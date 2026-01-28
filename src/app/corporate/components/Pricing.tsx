@@ -1,8 +1,8 @@
 import {
-  LinkButton,
   SectionHeadingDesc,
-  SectionWithContainer,
+  SectionWithContainer
 } from "@/components";
+import OpenPopUpBtn from "@/components/buttons/OpenPopUpBtn";
 import Image from "next/image";
 
 interface PricingProps {
@@ -50,10 +50,14 @@ const Pricing: React.FC<PricingProps> = ({
           </ul>
         </div>
       </div>
-      <LinkButton
+      {/* <LinkButton
         href={link.href}
         label={link.label}
-        className="mx-auto mt-8 w-fit rounded-none border border-primary uppercase"
+        className=""
+      /> */}
+      <OpenPopUpBtn
+        label={link.label}
+        className="mx-auto mt-8 w-fit rounded-none border border-primary uppercase text-primary"
       />
     </SectionWithContainer>
   );

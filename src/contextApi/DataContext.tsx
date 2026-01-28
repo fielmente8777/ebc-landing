@@ -32,3 +32,11 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 };
 
 export default DataContext;
+
+export function useDataContext() {
+  const context = React.useContext(DataContext);
+  if (context === undefined) {
+    throw new Error("useDataContext must be used within a DataProvider");
+  }
+  return context;
+}

@@ -73,7 +73,13 @@ const Navbar = () => {
               </span>
             )}
             <span className="md:hidden block pUltralight">
-              {pathName === "/corporate/" ? "INQUIRE" : "BOOK NOW"}
+              {pathName === "/corporate/" ? (
+                <span>
+                  <CallIcon />
+                </span>
+              ) : (
+                "BOOK NOW"
+              )}
             </span>
           </Link>
         </div>

@@ -7,7 +7,7 @@ import axios from "axios";
 import { ChangeEvent, useContext, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
 const Form = () => {
   const pathName = usePathname();
@@ -28,6 +28,7 @@ const Form = () => {
     PhoneNumber: "",
     EmailId: "",
     message: "",
+    peopleCount: "", // ✅ new
   });
 
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -159,7 +160,7 @@ const Form = () => {
           email: formData?.EmailId,
           Name: formData?.fullName,
           Contact: formData?.PhoneNumber,
-          Description: `Check-in ${formData?.checkIn}, Check-out: ${formData?.checkOut}, Message: ${formData?.message}`,
+          Description: `Check-in ${formData?.checkIn}, Check-out: ${formData?.checkOut}, Message: ${formData?.message} ${pathName === "/corporate/" ? `, No. of People: ${formData?.peopleCount}` : ""}`,
           check_in: `${formData?.checkIn}`,
           check_out: `${formData?.checkOut}`,
           created_from: "landing page",
@@ -178,6 +179,7 @@ const Form = () => {
           PhoneNumber: "",
           EmailId: "",
           message: "",
+          peopleCount: "",
         });
         setStartDate(null);
         setEndDate(null);
@@ -195,6 +197,7 @@ const Form = () => {
           PhoneNumber: "",
           EmailId: "",
           message: "",
+          peopleCount: "",
         });
 
         setStartDate(null);
@@ -295,6 +298,27 @@ const Form = () => {
           </span>
         )}
       </div>
+
+      {/* Number of People Field */}
+      {pathName === "/corporate/" && (
+        <div className="bg-white">
+          <input
+            type="number"
+            name="peopleCount"
+            aria-label="Number of People*"
+            placeholder="No. of People*"
+            min={1}
+            onChange={handleInputChange}
+            value={formData.peopleCount}
+            className="outline-none border-none w-full h-full appearance-none p-4 bg-transparent text-base text-[#343434] placeholder:text-[#343434]"
+          />
+          {/* {error.peopleCount && (
+      <span className="text-red-500 text-xs px-1 w-full">
+        {error.peopleCount}
+      </span>
+    )} */}
+        </div>
+      )}
 
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
         {/* Check In Date Field - updated with icon */}

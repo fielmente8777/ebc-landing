@@ -7,6 +7,8 @@ import "./globals.css";
 import "./style.scss";
 import Call from "@/components/ContactButton/Call";
 import Image from "next/image";
+import PopForm from "@/components/pop-up/PopForm";
+import DataContext, { DataProvider } from "@/contextApi/DataContext";
 
 export const metadata: Metadata = {
   title: "Camping in Mussoorie | Glamping near Dehradun - EBC Mussoorie",
@@ -191,11 +193,14 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <Navbar />
-        {children}
-        <RenderFooter />
-        <Call callNumber={contact.call} />
-        <Whatsapp whatsAppNumber={contact.phoneNumber} />
+        <DataProvider>
+          <Navbar />
+          {children}
+          <RenderFooter />
+          <PopForm />
+          <Call callNumber={contact.call} />
+          <Whatsapp whatsAppNumber={contact.phoneNumber} />
+        </DataProvider>
         <Script id="chatbot" strategy="beforeInteractive">
           {`window.eazbotConfig = {
             ndid: "e53a0946-ed31-455f-b278-37aa1b0c8c00",
