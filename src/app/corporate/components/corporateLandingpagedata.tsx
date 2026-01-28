@@ -176,18 +176,19 @@ export const corporateRetreatData = {
       "Elevate team collaboration and culture with an immersive corporate retreat at a top-rated Mussoorie glamping destination — blending work, wellness, and wilderness for lasting impact. Recharge minds and inspire performance in a serene mountain setting designed for meaningful connections and breakthrough ideas.",
     ],
     video: [
-      {
+       {
         src: "/videobnr.webp",
-        videoSrc: "",
+        videoSrc: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+42.mp4",
       },
       {
         src: "/videobnr.webp",
-        videoSrc: "",
+        videoSrc: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+24+.mp4",
       },
       {
         src: "/videobnr.webp",
-        videoSrc: "",
+        videoSrc: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+25.mp4",
       },
+     
     ],
     link: {
       label: "Contact Us",
