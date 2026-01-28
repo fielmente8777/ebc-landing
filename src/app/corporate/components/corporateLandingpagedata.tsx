@@ -6,13 +6,15 @@ export const corporateRetreatData = {
   bannerData: {
     title: "Transform Your Team. Elevate Your <span>Culture</span>",
     images: [
-      "/im4.webp",
       landingpageImgSrc + "zenith/DSC05021.webp",
+      "/im4.webp",
       landingpageImgSrc + "zenith/DSC04978.webp",
       // landingpageImgSrc + "zenith/DSC05055.webp",
       "/im1.webp",
-      "/im2.webp",
+      // "/im2.webp",
+      landingpageImgSrc + "den/DJI_0837.webp",
       "/im3.webp",
+      landingpageImgSrc + "den/DSC05494-HDR-2.webp",
     ],
   },
   subtitle:
@@ -115,6 +117,13 @@ export const corporateRetreatData = {
           "Bird watching",
         ],
         src: imgSrc + "activities/img1.webp",
+        images: [
+          imgSrc + "activities/img1.webp",
+          imgSrc + "activities/outdoor-activities/img1.webp",
+          imgSrc + "activities/outdoor-activities/img2.webp",
+          imgSrc + "activities/img2.webp",
+          imgSrc + "activities/trekking/img2.webp",
+        ],
       },
       {
         title: "Culinary <span>Experience</span>",
@@ -125,11 +134,17 @@ export const corporateRetreatData = {
           "Alcohol service available",
         ],
         src: imgSrc + "park-cafe/our-cuisine/img3.webp",
+        images: [
+          imgSrc + "park-cafe/our-cuisine/img3.webp",
+          imgSrc + "park-cafe/Choose-Us/img1.webp",
+          imgSrc + "park-cafe/Choose-Us/img2.webp",
+          imgSrc + "park-cafe/Choose-Us/img3.webp",
+        ],
       },
       {
         title: "Exclusive Den Area for <span>Meetings & Bonding</span>",
         list: [
-          "Dedicated, soundproof Den",
+          "Dedicated, soundproof Den just for inhouse guests.",
           "Mood lighting",
           "75-inch high-definition television",
           "Premium high-definition sound system",
@@ -140,6 +155,13 @@ export const corporateRetreatData = {
           "Perfect for team-building activities",
         ],
         src: "/cafe.webp",
+        images: [
+          landingpageImgSrc + "den/DSC05415-HDR-2.webp",
+          landingpageImgSrc + "den/DSC05425-HDR-2.webp",
+          landingpageImgSrc + "den/DSC05450-HDR-2.webp",
+          landingpageImgSrc + "den/DJI_0817.webp",
+          landingpageImgSrc + "den/DJI_0837.webp",
+        ],
       },
     ],
     link: {

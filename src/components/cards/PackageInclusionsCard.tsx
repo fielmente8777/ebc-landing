@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { PackageInclusionsProps } from "@/@types/types";
 import Image from "next/image";
+import SwiperCarousel from "../SwiperCarousel";
+import { Autoplay } from "swiper/modules";
 
 const PackageInclusionsCard: React.FC<
   PackageInclusionsProps["sections"][0] & { className?: string }
-> = ({ title, list, src, className }) => {
+> = ({ title, list, src, className, images }) => {
   const [showAll, setShowAll] = useState(false);
 
   const visibleList = showAll ? list : list.slice(0, 4);
@@ -40,9 +42,29 @@ const PackageInclusionsCard: React.FC<
         </ul>
       </div>
 
-      <div className="w-full relative aspect-[4/3]">
-        <Image src={src} alt={title} fill className="object-cover" />
+      <div className="">
+        <SwiperCarousel
+          data={images || []}
+          slidesPerView={1}
+          spaceBetween={24}
+          modules={[Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          effect={"fade"}
+          fadeEffect={{
+            crossFade: true,
+          }}
+          renderSlide={(src) => (
+            <div className="relative w-full aspect-[4/3]">
+              <Image src={src} alt={title} fill className="object-cover" />
+            </div>
+          )}
+        />
       </div>
+
+      {/* <div className="w-full relative aspect-[4/3]">
+        <Image src={src} alt={title} fill className="object-cover" />
+      </div> */}
     </div>
   );
 };

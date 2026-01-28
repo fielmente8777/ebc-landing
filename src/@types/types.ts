@@ -127,6 +127,7 @@ export interface PackageInclusionsProps {
         title: string;
         list: string[];
         src: string;
+        images: string[]
     }[];
     link: {
         label: string;
