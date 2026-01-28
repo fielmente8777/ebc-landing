@@ -40,8 +40,8 @@ const HowNatureHeals: React.FC<HowNatureHealsProps> = ({
           <div
             key={index}
             className={`relative w-full aspect-[4/5.5] ${
-              index == 0 && "mt-26"
-            } ${index == 1 && "mt-14"}`}
+              index == 0 && "md:mt-26"
+            } ${index == 1 && "md:mt-14"}`}
           >
             <LazyLoadedVideo
               src={item.videoSrc}
