@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PackageInclusionsProps } from "@/@types/types";
 import Image from "next/image";
 import SwiperCarousel from "../SwiperCarousel";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 
 const PackageInclusionsCard: React.FC<
   PackageInclusionsProps["sections"][0] & { className?: string }
@@ -47,7 +47,7 @@ const PackageInclusionsCard: React.FC<
           data={images || []}
           slidesPerView={1}
           spaceBetween={24}
-          modules={[Autoplay]}
+          modules={[Autoplay, EffectFade]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop={true}
           effect={"fade"}

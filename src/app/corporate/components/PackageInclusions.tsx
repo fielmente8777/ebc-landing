@@ -1,5 +1,5 @@
 import { PackageInclusionsProps } from "@/@types/types";
-import { SectionHeadingDesc, SectionWithContainer } from "@/components";
+import { LinkButton, SectionHeadingDesc, SectionWithContainer } from "@/components";
 import PackageInclusionsCard from "@/components/cards/PackageInclusionsCard";
 
 const PackageInclusions: React.FC<PackageInclusionsProps> = ({
@@ -24,6 +24,11 @@ const PackageInclusions: React.FC<PackageInclusionsProps> = ({
         ))}
       </div>
       {/* <PackageInclusionsCard/> */}
+      <LinkButton
+      label={link.label}
+      href={link.href}
+      className="text-primary mx-auto w-fit uppercase rounded-none mt-8"
+      />
     </SectionWithContainer>
   );
 };

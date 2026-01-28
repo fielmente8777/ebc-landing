@@ -171,12 +171,24 @@ export const corporateRetreatData = {
   },
   natureHealingData: {
     title: "How Nature <span>Heals</span>",
-    description:
+    description: [
       "At Everest Base Camp Mussoorie, the surrounding forests, mountain air, and natural silence help calm the mind and restore balance. Time in nature reduces stress, improves focus, and encourages a natural digital detox, allowing guests to reconnect, reset, and leave feeling refreshed and re-energized.",
-    video: {
-      src: "/videobnr.webp",
-      videoSrc: "",
-    },
+      "Elevate team collaboration and culture with an immersive corporate retreat at a top-rated Mussoorie glamping destination — blending work, wellness, and wilderness for lasting impact. Recharge minds and inspire performance in a serene mountain setting designed for meaningful connections and breakthrough ideas.",
+    ],
+    video: [
+      {
+        src: "/videobnr.webp",
+        videoSrc: "",
+      },
+      {
+        src: "/videobnr.webp",
+        videoSrc: "",
+      },
+      {
+        src: "/videobnr.webp",
+        videoSrc: "",
+      },
+    ],
     link: {
       label: "Contact Us",
       href: "",
