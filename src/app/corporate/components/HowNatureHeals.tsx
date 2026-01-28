@@ -17,6 +17,7 @@ interface HowNatureHealsProps {
     href: string;
   };
 }
+
 const HowNatureHeals: React.FC<HowNatureHealsProps> = ({
   title,
   description,
