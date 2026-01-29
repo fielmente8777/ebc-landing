@@ -26,13 +26,13 @@ const Pricing: React.FC<PricingProps> = ({
 }) => {
   return (
     <SectionWithContainer sectionClassName="bg-bg1">
-      <div className="grid md:grid-cols-[4fr_2fr]">
+      <div className="grid md:grid-cols-[4fr_2fr] gap-4">
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="h-px bg-primary w-8 my-auto" />
+            <div className="h-px bg-primary w-8 my-auto max-md:hidden" />
             <SectionHeadingDesc title={title} />
           </div>
-          <p className="text-primary text-xl">{maxPrice}</p>
+          <p className="text-primary text-xl min-md:ml-[2.5rem]">{maxPrice}</p>
           <div className="relative w-full aspect-[4/1.5] mx-auto max-w-[500px]">
             <Image src={src} alt={title} fill className="object-contain" />
           </div>

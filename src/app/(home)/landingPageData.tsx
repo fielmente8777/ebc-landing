@@ -349,33 +349,7 @@ export const landingPageData = {
         description:
           "Our newest luxury cottage featuring warm tones, elegant interiors, and stunning forest views. The ultimate luxury retreat experience with private deck and hammock access. Ideal for intimate leadership gatherings and executive off-sites.",
       },
-      {
-        images: [
-          landingpageImgSrc + "surveyor/img1.webp",
-          imgSrc + "home/img2.webp",
-          landingpageImgSrc + "surveyor/img2.webp",
-          landingpageImgSrc + "surveyor/img3.webp",
-        ],
-        roomName: "The Surveyor",
-        label: "Most Popular",
-        labelColor: "#F6CE55",
-        amenities: [
-          {
-            title: "Forest View",
-            icon: <ForestView />,
-          },
-          {
-            title: "Heated Beds",
-            icon: <HeatedBeds />,
-          },
-          {
-            title: "Free Wi-Fi",
-            icon: <FreeWifi />,
-          },
-        ],
-        description:
-          "Experience luxury in the Surveyor at Everest Base Camp, Mussoorie. Enjoy Spacious tents with stunning forest views and king-size beds, perfect for families or friends seeking luxury in nature.",
-      },
+      
       {
         images: [
           landingpageImgSrc + "surveyor_suite/img1.webp",
@@ -402,6 +376,33 @@ export const landingPageData = {
         ],
         description:
           "Relax and recharge in the peaceful Surveyor Suite, surrounded by Deodar forest scenery. Perfect for families or small groups, our serene atmosphere ensures privacy and comfort, allowing you to reconnect with nature.",
+      },
+      {
+        images: [
+          landingpageImgSrc + "surveyor/img1.webp",
+          imgSrc + "home/img2.webp",
+          landingpageImgSrc + "surveyor/img2.webp",
+          landingpageImgSrc + "surveyor/img3.webp",
+        ],
+        roomName: "The Surveyor",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
+        amenities: [
+          {
+            title: "Forest View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "Free Wi-Fi",
+            icon: <FreeWifi />,
+          },
+        ],
+        description:
+          "Experience luxury in the Surveyor at Everest Base Camp, Mussoorie. Enjoy Spacious tents with stunning forest views and king-size beds, perfect for families or friends seeking luxury in nature.",
       },
       {
         images: [

@@ -55,7 +55,7 @@ const HowNatureHeals: React.FC<HowNatureHealsProps> = ({
             </div>
           ))}
         </div>
-        <p className="md:text-[1.375rem] text-primary text-end">
+        <p className="md:text-[1.375rem] text-primary md:text-end">
           {description[1]}
         </p>
       </div>
