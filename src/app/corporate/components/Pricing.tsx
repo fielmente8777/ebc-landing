@@ -37,7 +37,7 @@ const Pricing: React.FC<PricingProps> = ({
             <Image src={src} alt={title} fill className="object-contain" />
           </div>
         </div>
-        <div>
+        <div className="space-y-6">
           <h3 className="text-primary text-2xl pUltralight">{subTitle}</h3>
 
           <ul>
