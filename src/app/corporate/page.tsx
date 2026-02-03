@@ -15,7 +15,7 @@ import ServedCorporates from "./components/ServedCorporates";
 export default function CorporatePage() {
   return (
     <main>
-      <OfferSlider offersTitle={corporateRetreatData.subtitle} perView={1} wrapperClass="!bg-[#F7F5EE] !text-primary" />
+      {/* <OfferSlider offersTitle={corporateRetreatData.subtitle} perView={1} smallPerView={0.2} wrapperClass="!bg-[#F7F5EE] !text-primary" /> */}
       <Banner {...corporateRetreatData.bannerData} />
       <PartnerSection {...corporateRetreatData.ratingsData} />
       <WhyEBC {...corporateRetreatData.whyEbcData} />

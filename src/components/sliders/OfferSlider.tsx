@@ -8,7 +8,8 @@ const OfferSlider: React.FC<{
   wrapperClass?: string;
   direction?: "rtl" | "ltr";
   perView?: number;
-}> = ({ offersTitle, wrapperClass, direction, perView }) => {
+  smallPerView?: number;
+}> = ({ offersTitle, wrapperClass, direction, perView, smallPerView }) => {
   const data =
     offersTitle.length > 5
       ? offersTitle
@@ -30,7 +31,7 @@ const OfferSlider: React.FC<{
           disableOnInteraction: false,
           pauseOnMouseEnter: false,
         }}
-        slidesPerView={1}
+        slidesPerView={smallPerView || 1}
         spaceBetween={0}
         breakpoints={{
           768: {

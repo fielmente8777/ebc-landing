@@ -457,6 +457,29 @@ export const landingPageData = {
             icon: <FreeWifi />,
           },
         ],
+         popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Indoor + Outdoor Seating Area" },
+              { amenityName: "Balcony with Sperate Hammock" },
+              { amenityName: "Meadow View" },
+            ],
+          },
+          {
+            title: "Paid Experiences & Add-ons",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
+          },
+        ],
         description:
           "Experience luxury in the Surveyor at Everest Base Camp, Mussoorie. Enjoy Spacious tents with stunning forest views and king-size beds, perfect for families or friends seeking luxury in nature.",
       },
