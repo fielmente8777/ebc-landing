@@ -5,7 +5,7 @@ import RoomsSlider from "@/components/sliders/RoomsSlider";
 
 const RoomTypes: React.FC<RoomsTypes> = ({ title, cards, link }) => {
   return (
-    <Section className="space-y-8 bg-img-2">
+    <Section className="space-y-8 bg-img-2 max-md:px-4">
       <div className="space-y-6 pb-3">
         <div className="w-[0.5px] bg-primary max-md:h-8 h-16 mx-auto" />
 
