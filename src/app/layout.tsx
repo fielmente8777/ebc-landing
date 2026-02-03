@@ -9,6 +9,7 @@ import Call from "@/components/ContactButton/Call";
 import Image from "next/image";
 import PopForm from "@/components/pop-up/PopForm";
 import DataContext, { DataProvider } from "@/contextApi/DataContext";
+import AmenitiesPopUp from "@/components/pop-up/AmenitiesPopUp";
 
 export const metadata: Metadata = {
   title: "Camping in Mussoorie | Glamping near Dehradun - EBC Mussoorie",
@@ -198,6 +199,7 @@ export default function RootLayout({
           {children}
           <RenderFooter />
           <PopForm />
+          <AmenitiesPopUp />
           <Call callNumber={contact.call} />
           <Whatsapp whatsAppNumber={contact.phoneNumber} />
         </DataProvider>

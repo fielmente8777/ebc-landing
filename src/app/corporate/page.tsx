@@ -10,13 +10,16 @@ import LocationDetails from "./components/LocationDetails";
 import Customizable from "./components/Customizable";
 import Faq from "./components/Faq";
 import OfferSlider from "@/components/sliders/OfferSlider";
+import ServedCorporates from "./components/ServedCorporates";
 
 export default function CorporatePage() {
   return (
     <main>
+      <OfferSlider offersTitle={corporateRetreatData.subtitle} perView={1} wrapperClass="!bg-[#F7F5EE] !text-primary" />
       <Banner {...corporateRetreatData.bannerData} />
       <PartnerSection {...corporateRetreatData.ratingsData} />
       <WhyEBC {...corporateRetreatData.whyEbcData} />
+      <ServedCorporates {...corporateRetreatData.servedCorporates} />
       <HowNatureHeals {...corporateRetreatData.natureHealingData} />
       <PackageInclusions {...corporateRetreatData.packageInclusions} />
       <Pricing {...corporateRetreatData.pricingData} />

@@ -17,8 +17,9 @@ export const corporateRetreatData = {
       landingpageImgSrc + "den/DSC05494-HDR-2.webp",
     ],
   },
-  subtitle:
+  subtitle: [
     "ALL-INCLUSIVE CORPORATE RETREATS WITH LUXURY ACCOMMODATIONS, GOURMET DINING & EXCLUSIVE EXPERIENCES",
+  ],
   ratingsData: {
     title: "Top Rated Glamping Resort of <span>Mussoorie</span>",
     cards: [
@@ -97,7 +98,10 @@ export const corporateRetreatData = {
       href: "#",
     },
   },
-
+  servedCorporates: {
+    title: "Previously Served <span>Corporates</span>",
+    images: ["/jack-jones.png", "/EAZOTEL.png", "/Veromoda.png", "/ey.png"],
+  },
   packageInclusions: {
     title: "Package Inclusions",
     sections: [
@@ -176,19 +180,21 @@ export const corporateRetreatData = {
       "Elevate team collaboration and culture with an immersive corporate retreat at a top-rated Mussoorie glamping destination — blending work, wellness, and wilderness for lasting impact. Recharge minds and inspire performance in a serene mountain setting designed for meaningful connections and breakthrough ideas.",
     ],
     video: [
-       {
+      {
         src: "/videobnr.webp",
-        videoSrc: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+42.mp4",
+        videoSrc:
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+42.mp4",
       },
       {
         src: "/videobnr.webp",
-        videoSrc: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+24+.mp4",
+        videoSrc:
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+24+.mp4",
       },
       {
         src: "/videobnr.webp",
-        videoSrc: "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+25.mp4",
+        videoSrc:
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/landingpage/EBC+25.mp4",
       },
-     
     ],
     link: {
       label: "Contact Us",
@@ -224,6 +230,7 @@ export const corporateRetreatData = {
       roomName: card.roomName,
       description: card.description,
       amenities: card.amenities,
+      popUpAmenities: card.popUpAmenities,
     })),
     link: {
       label: "contact us",

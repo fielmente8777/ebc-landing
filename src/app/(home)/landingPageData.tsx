@@ -346,6 +346,37 @@ export const landingPageData = {
             icon: <FreeWifi />,
           },
         ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Heated Towel Rack" },
+              { amenityName: "Heated Toilet Seat" },
+              { amenityName: "Refrigerator" },
+              { amenityName: "Personal Locker" },
+              { amenityName: "Hair Dryer" },
+              { amenityName: "Soundproof Room" },
+              { amenityName: "Full-View Glass Windows" },
+              { amenityName: "Panoramic Forest View" },
+              { amenityName: "Indoor Seating + Outdoor Seating Area" },
+              { amenityName: "Balcony with Hammock" },
+              { amenityName: "Attached Premium Bathroom" },
+            ],
+          },
+          {
+            title: "Paid Experiences & Add-ons",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
+          },
+        ],
         description:
           "Our newest luxury cottage featuring warm tones, elegant interiors, and stunning forest views. The ultimate luxury retreat experience with private deck and hammock access. Ideal for intimate leadership gatherings and executive off-sites.",
       },
@@ -371,6 +402,29 @@ export const landingPageData = {
           {
             title: "Free Wi-Fi",
             icon: <FreeWifi />,
+          },
+        ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Indoor + Outdoor Seating Area" },
+              { amenityName: "Balcony with Sperate Hammock" },
+              { amenityName: "Meadow View" },
+            ],
+          },
+          {
+            title: "Paid Experiences & Add-ons",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
           },
         ],
         description:
@@ -400,6 +454,31 @@ export const landingPageData = {
             icon: <FreeWifi />,
           },
         ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Largest Room Area" },
+              { amenityName: "Forest Valley View" },
+              { amenityName: "Occupancy: Up to 4 Guests – Chargeable " },
+              { amenityName: "Spacious Indoor + Outdoor Seating Space" },
+              { amenityName: "Balcony / Open View Area" },
+            ],
+          },
+          {
+            title: "Paid Experiences & Add-ons",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
+          },
+        ],
         description:
           "Relax and recharge in the peaceful Surveyor Suite, surrounded by Deodar forest scenery. Perfect for families or small groups, our serene atmosphere ensures privacy and comfort, allowing you to reconnect with nature.",
       },
@@ -427,6 +506,29 @@ export const landingPageData = {
             icon: <FreeWifi />,
           },
         ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Private Balcony" },
+              { amenityName: "Balcony with Attached Hammock" },
+              { amenityName: "Dedicated Balcony Seating Area (Sofa + Table)" },
+            ],
+          },
+          {
+            title: "Paid Experiences & Add-ons",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
+          },
+        ],
         description:
           "Our Glamper rooms promise relaxation and rejuvenation like no other, ideal for small groups, making unforgettable moments on our exclusive netted balcony spaces — perfect for creating Instagram-worthy memories.",
       },
@@ -452,6 +554,36 @@ export const landingPageData = {
           {
             title: "Free Wi-Fi",
             icon: <FreeWifi />,
+          },
+        ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Electrically Heated Bed" },
+              { amenityName: "Wardrobe" },
+              { amenityName: "Geyser (Hot Water)" },
+              { amenityName: "Toiletries" },
+              { amenityName: "Towels" },
+              { amenityName: "Forest View" },
+              { amenityName: "Private Balcony" },
+              { amenityName: "Wi-Fi" },
+              { amenityName: "Room Heater" },
+              { amenityName: "De-Humidifier" },
+            ],
+          },
+          {
+            title: "Paid Experiences & Add-ons",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
           },
         ],
         description:

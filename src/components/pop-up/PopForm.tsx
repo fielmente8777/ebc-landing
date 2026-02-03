@@ -16,7 +16,7 @@ const PopForm: React.FC = () => {
   }, [isOpen]);
   return (
     <div
-      className={`fixed flex items-center justify-center bg-secondary/30 z-50 inset-0 transition-all ease-in-out duration-300  ${isOpen ? "visible opacity-100 scale-100" : "invisible scale-0 opacity-0"}`}
+      className={`fixed flex items-center justify-center bg-secondary/30 backdrop-blur-sm z-50 inset-0 transition-all ease-in-out duration-300  ${isOpen ? "visible opacity-100 scale-100" : "invisible scale-0 opacity-0"}`}
       onClick={(e) => {
         e.stopPropagation();
         if (e.target === e.currentTarget) {

@@ -49,7 +49,7 @@ const Rooms: React.FC<RoomsTypes> = ({ title, cards }) => {
               nextEl: ".button-next",
               prevEl: ".button-prev",
             }}
-            renderSlide={(item) => <RoomCard {...item} />}
+            renderSlide={(item) => <RoomCard {...item} link={true} />}
           />
           <div className="md:hidden mt-6 flex items-center justify-center gap-6">
             <button

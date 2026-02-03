@@ -1,4 +1,5 @@
 import { RoomsTypes } from "@/@types/types";
+import { useDataContext } from "@/contextApi/DataContext";
 import Image from "next/image";
 import { Autoplay, Pagination } from "swiper/modules";
 import { contact } from "../../../constant";
@@ -13,7 +14,14 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
   labelColor,
   amenities,
   link,
+  popUpAmenities,
 }) => {
+  const {
+    setIsOpenAmenitiesPopup,
+    setRoomName,
+    setRoomAmenities,
+    setRoomPopUpAmenities,
+  } = useDataContext();
   return (
     <div className="flex flex-col overflow-hidden rounded-lg box-shadow">
       <div className="w-full bullet">
@@ -46,15 +54,33 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
         />
       </div>
       <div className="p-6 flex flex-col justify-evenly gap-4 min-h-[24rem] bg-white">
-        <h3 className="md:text-[2.5rem] text-2xl text-primary pUltralight">{roomName}</h3>
-        <div className="flex flex-wrap gap-4">
-          {amenities.map((amenity) => (
-            <div key={amenity.title} className="flex items-center gap-2">
-              <span aria-label={amenity.title}>{amenity.icon}</span>
-              <span className="text-lg text-light ntbook">{amenity.title}</span>
-            </div>
-          ))}
+        <h3 className="md:text-[2.5rem] text-2xl text-primary pUltralight">
+          {roomName}
+        </h3>
+        <div className="flex items-center justify-between">
+          <div className="flex flex-wrap gap-4">
+            {amenities.map((amenity) => (
+              <div key={amenity.title} className="flex items-center gap-2">
+                <span aria-label={amenity.title}>{amenity.icon}</span>
+                <span className="text-lg text-light ntbook">
+                  {amenity.title}
+                </span>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={() => {
+              setIsOpenAmenitiesPopup(true);
+              setRoomName(roomName);
+              setRoomAmenities(amenities);
+              setRoomPopUpAmenities(popUpAmenities);
+            }}
+            className="flex items-center gap-2 text-lg pmedium uppercase text-primary underline underline-offset-1 hover:no-underline  transition-all duration-300 ease-in-out"
+          >
+            View All
+          </button>
         </div>
+
         <p className="text-[1.375rem] text-light">{description}</p>
         {link && (
           <LinkButton

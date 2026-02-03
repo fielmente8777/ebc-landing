@@ -55,10 +55,17 @@ export interface RoomsTypes {
     description: string;
     label?: string;
     labelColor?: string;
-    link?: string;
+    link?: boolean;
     amenities: {
       title: string;
       icon: JSX.Element;
+    }[];
+    popUpAmenities: {
+      title?: string;
+      amenities: {
+        amenityName: string;
+        icon?: JSX.Element;
+      }[];
     }[];
   }[];
   link?: {
@@ -120,21 +127,19 @@ export interface LocationDetailsTypes {
   };
 }
 
-
 export interface PackageInclusionsProps {
+  title: string;
+  sections: {
     title: string;
-    sections: {
-        title: string;
-        list: string[];
-        src: string;
-        images: string[]
-    }[];
-    link: {
-        label: string;
-        href: string;
-    };
+    list: string[];
+    src: string;
+    images: string[];
+  }[];
+  link: {
+    label: string;
+    href: string;
+  };
 }
-
 
 export interface WhyEBCProps {
   title: string;
