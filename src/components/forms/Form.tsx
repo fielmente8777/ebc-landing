@@ -377,7 +377,6 @@ const Form = () => {
           name="message"
           aria-label="Message"
           placeholder={msg}
-          {/* placeholder={pathName === "/corporate/" ? "Plan Your Corporate Retreat With Us – Get Best Deals Now!" : "Plan Your Stay With Us – Get Best Deals Now!"} */}
           onChange={handleInputChange}
           value={formData.message}
           rows={3}

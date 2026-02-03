@@ -19,10 +19,6 @@ const ServedCorporates: React.FC<ServedCorporatesProps> = ({
   return (
     <SectionWithContainer sectionClassName="bg-[#F1EECB]">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
-        <div className="flex flex-col gap-4">
-          <SectionHeadingDesc title={title} />
-          <div className="md:w-61 w-38 bg-[#DFB65C] h-[.5PX] md:ml-auto" />
-        </div>
         <div className="md:grid hidden md:grid-cols-4 grid-cols-2 gap-4">
           {images.map((image, index) => (
             <div key={index} className="relative w-full aspect-[4/1.5]">
@@ -34,6 +30,10 @@ const ServedCorporates: React.FC<ServedCorporatesProps> = ({
               />
             </div>
           ))}
+        </div>
+        <div className="flex flex-col gap-4">
+          <SectionHeadingDesc title={title} titleClassName="md:text-4xl" />
+          <div className="md:w-61 w-38 bg-[#DFB65C] h-[.5PX] md:ml-auto" />
         </div>
         <div className="md:hidden block demo">
           <SwiperCarousel
