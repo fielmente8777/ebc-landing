@@ -18,6 +18,8 @@ const Form = () => {
     showPast: false,
   });
 
+  const msg = pathName === "/corporate/" ? "Plan Your Corporate Retreat With Us – Get Best Deals Now!" : "Plan Your Stay With Us – Get Best Deals Now!"
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -374,7 +376,8 @@ const Form = () => {
         <textarea
           name="message"
           aria-label="Message"
-          placeholder={pathName === "/corporate/" ? "Plan Your Corporate Retreat With Us – Get Best Deals Now!" : "Plan Your Stay With Us – Get Best Deals Now!"}
+          placeholder={msg}
+          {/* placeholder={pathName === "/corporate/" ? "Plan Your Corporate Retreat With Us – Get Best Deals Now!" : "Plan Your Stay With Us – Get Best Deals Now!"} */}
           onChange={handleInputChange}
           value={formData.message}
           rows={3}
