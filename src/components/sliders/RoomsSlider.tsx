@@ -13,7 +13,7 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
   return (
     <div className="w-full flex items-center justify-around">
       <button
-        className="button-prev w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center ml-8"
+        className="button-prev w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center ml-8 rotate-90"
         aria-label="Previous"
       >
         <SliderBtn />
@@ -35,6 +35,7 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
               slidesPerView: 2,
             },
           }}
+          loop={true}
           modules={[Navigation]}
           navigation={{
             nextEl: ".button-next",
@@ -58,7 +59,7 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
         </div>
       </Container>
       <button
-        className="button-next w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center mr-8 rotate-180"
+        className="button-next w-10 aspect-square rounded-full bg-white box-shadow md:flex hidden items-center justify-center mr-8 -rotate-90"
         aria-label="Next"
       >
         <SliderBtn />

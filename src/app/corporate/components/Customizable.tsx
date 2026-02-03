@@ -36,12 +36,12 @@ const Customizable: React.FC<CustomizableProps> = ({
             dangerouslySetInnerHTML={{ __html: title }}
           />
 
-          <div className="h-px bg-secondary w-full max-w-32 mx-auto" />
-          <ul className="space-y-4">
+          <div className="h-px bg-[#DFB65C] w-full max-w-32 mx-auto" />
+          <ul className="space-y-4 md:px-8">
             {list.map((item, index) => (
               <li
                 key={index}
-                className="flex items-center justify-center md:text-[1.375rem]"
+                className="flex md:text-[1.375rem]"
               >
                 <span className="text-white font-bold mr-3 mt-px">✓</span>
                 <span>{item}</span>

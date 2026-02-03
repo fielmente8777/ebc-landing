@@ -363,7 +363,7 @@ export const landingPageData = {
             ],
           },
           {
-            title: "Paid Experiences & Add-ons",
+            title: "Paid Experiences & <span>Add-ons</span>",
             amenities: [
               { amenityName: "Bonfire" },
               { amenityName: "Extra Bed" },
@@ -416,7 +416,7 @@ export const landingPageData = {
             ],
           },
           {
-            title: "Paid Experiences & Add-ons",
+            title: "Paid Experiences & <span>Add-ons</span>",
             amenities: [
               { amenityName: "Bonfire" },
               { amenityName: "Extra Bed" },
@@ -435,10 +435,21 @@ export const landingPageData = {
       },
       {
         images: [
-          landingpageImgSrc + "surveyor/img1.webp",
-          imgSrc + "home/img2.webp",
-          landingpageImgSrc + "surveyor/img2.webp",
-          landingpageImgSrc + "surveyor/img3.webp",
+          landingpageImgSrc + "surveyor-new/DSC_6442.webp",
+          landingpageImgSrc + "surveyor-new/IMG_4206.webp",
+          landingpageImgSrc + "surveyor-new/DSC_6448.webp",
+          landingpageImgSrc + "surveyor-new/IMG_4219.webp",
+          landingpageImgSrc + "surveyor-new/DSC_6610.webp",
+          landingpageImgSrc + "surveyor-new/f15de0f9.webp",
+          landingpageImgSrc + "surveyor-new/DSC_6614.webp",
+          landingpageImgSrc + "surveyor-new/DSC_6458.webp",
+          landingpageImgSrc + "surveyor-new/DSC05333.JPG.webp",
+          landingpageImgSrc + "surveyor-new/IMG_4177.webp",
+          landingpageImgSrc + "surveyor-new/f5a9395.webp",
+          // landingpageImgSrc + "surveyor/img1.webp",
+          // imgSrc + "home/img2.webp",
+          // landingpageImgSrc + "surveyor/img2.webp",
+          // landingpageImgSrc + "surveyor/img3.webp",
         ],
         roomName: "The Surveyor",
         label: "Most Popular",
@@ -466,7 +477,7 @@ export const landingPageData = {
             ],
           },
           {
-            title: "Paid Experiences & Add-ons",
+            title: "Paid Experiences & <span>Add-ons</span>",
             amenities: [
               { amenityName: "Bonfire" },
               { amenityName: "Extra Bed" },
@@ -516,7 +527,7 @@ export const landingPageData = {
             ],
           },
           {
-            title: "Paid Experiences & Add-ons",
+            title: "Paid Experiences & <span>Add-ons</span>",
             amenities: [
               { amenityName: "Bonfire" },
               { amenityName: "Extra Bed" },
@@ -573,7 +584,7 @@ export const landingPageData = {
             ],
           },
           {
-            title: "Paid Experiences & Add-ons",
+            title: "Paid Experiences & <span>Add-ons</span>",
             amenities: [
               { amenityName: "Bonfire" },
               { amenityName: "Extra Bed" },
