@@ -1,15 +1,15 @@
 import { Navbar, RenderFooter } from "@/components";
+import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
+import AmenitiesPopUp from "@/components/pop-up/AmenitiesPopUp";
+import PopForm from "@/components/pop-up/PopForm";
+import { DataProvider } from "@/contextApi/DataContext";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Script from "next/script";
 import { contact } from "../../constant";
 import "./globals.css";
 import "./style.scss";
-import Call from "@/components/ContactButton/Call";
-import Image from "next/image";
-import PopForm from "@/components/pop-up/PopForm";
-import DataContext, { DataProvider } from "@/contextApi/DataContext";
-import AmenitiesPopUp from "@/components/pop-up/AmenitiesPopUp";
 
 export const metadata: Metadata = {
   title: "Camping in Mussoorie | Glamping near Dehradun - EBC Mussoorie",

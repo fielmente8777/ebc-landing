@@ -8,7 +8,6 @@ const AmenitiesPopUp = () => {
     isOpenAmenitiesPopup,
     setIsOpenAmenitiesPopup,
     roomName,
-    roomAmenities,
     roomPopUpAmenities,
   } = useDataContext();
   return (

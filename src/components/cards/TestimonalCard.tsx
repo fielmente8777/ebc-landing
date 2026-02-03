@@ -1,9 +1,8 @@
 "use client";
-import { useState } from "react";
-import { Headings } from "../typography";
 import { TestimonialTypes } from "@/@types/types";
-import Image from "next/image";
 import { RatingsIcon } from "@/utils/icons";
+import Image from "next/image";
+import { useState } from "react";
 
 const TestimonialCard: React.FC<TestimonialTypes["cards"][0]> = ({
   name,

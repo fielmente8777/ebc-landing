@@ -8,7 +8,7 @@ import { Autoplay, EffectFade } from "swiper/modules";
 
 const PackageInclusionsCard: React.FC<
   PackageInclusionsProps["sections"][0] & { className?: string }
-> = ({ title, list, src, className, images }) => {
+> = ({ title, list, className, images }) => {
   const [showAll, setShowAll] = useState(false);
 
   const visibleList = showAll ? list : list.slice(0, 4);
