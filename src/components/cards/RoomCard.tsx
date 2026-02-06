@@ -53,7 +53,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
           )}
         />
       </div>
-      <div className="p-6 flex flex-col justify-evenly gap-4 min-h-[24rem] bg-white">
+      <div className="md:p-6 p-4 flex flex-col justify-evenly gap-4 min-h-96 bg-white">
         <h3 className="md:text-[2.5rem] text-2xl text-primary pUltralight">
           {roomName}
         </h3>
@@ -75,7 +75,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
               setRoomAmenities(amenities);
               setRoomPopUpAmenities(popUpAmenities);
             }}
-            className="flex items-center gap-2 text-lg pmedium uppercase text-primary underline underline-offset-1 hover:no-underline  transition-all duration-300 ease-in-out"
+            className="flex items-center text-nowrap gap-2 text-lg pmedium uppercase text-primary underline underline-offset-1 hover:no-underline  transition-all duration-300 ease-in-out"
           >
             View All
           </button>
@@ -87,7 +87,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
             href={contact.ctaUrl}
             target="_blank"
             label={`<span class="pmedium">BOOK YOUR <span class="italic">STAY</span></span>`}
-            className="text-white bg-primary !py-4"
+            className="text-white bg-primary py-4!"
           />
         )}
       </div>

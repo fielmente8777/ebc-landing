@@ -23,7 +23,7 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
           data={cards}
           slidesPerView={1}
           spaceBetween={24}
-          className="!px-1 !py-1"
+          className="md:px-1! md:py-1!"
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -45,13 +45,13 @@ const RoomsSlider: React.FC<RoomsSliderProps> = ({ cards }) => {
         />
         <div className="md:hidden mt-6 flex items-center justify-center gap-6">
           <button
-            className="button-prev w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center"
+            className="button-prev w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center rotate-90"
             aria-label="Previous"
           >
             <SliderBtn />
           </button>
           <button
-            className="button-next w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center rotate-180"
+            className="button-next w-10 aspect-square rounded-full bg-white box-shadow flex items-center justify-center -rotate-90"
             aria-label="Next"
           >
             <SliderBtn />
