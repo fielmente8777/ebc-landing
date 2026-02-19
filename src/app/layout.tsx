@@ -201,7 +201,7 @@ export default function RootLayout({
           <PopForm />
           <AmenitiesPopUp />
           <Call callNumber={contact.call} />
-          <Whatsapp whatsAppNumber={contact.phoneNumber} />
+          <Whatsapp whatsAppNumber={contact.call} />
         </DataProvider>
         <Script id="chatbot" strategy="beforeInteractive">
           {`window.eazbotConfig = {
