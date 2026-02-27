@@ -329,6 +329,7 @@ export const landingPageData = {
           landingpageImgSrc + "zenith/DSC05021.webp",
           landingpageImgSrc + "zenith/DSC05055.webp",
         ],
+        
         roomName: "Zenith",
         label: "Most Popular",
         labelColor: "#F6CE55",
