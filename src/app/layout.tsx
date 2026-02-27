@@ -115,6 +115,7 @@ export default function RootLayout({
         >
           {`var $zoho= $zoho ||  {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"siq4bc7d026b8b5ab8b6663b74417f0678eeb748dabce26466abbf4b7a2765b5550", values:{},ready:function(){$zoho.salesiq.floatbutton.visible("");}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);`}
         </Script> */}
+        
         {/* Clarity Script */}
         <Script
           id="clarity-script"
