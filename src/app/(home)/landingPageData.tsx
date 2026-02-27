@@ -321,11 +321,11 @@ export const landingPageData = {
         images: [
           landingpageImgSrc + "zenith/DSC04996-HDR-2.webp",
           landingpageImgSrc + "zenith/DSC04953-HDR-2.webp",
-          landingpageImgSrc + "zenith/DSC04938-HDR-2.webp",
-          landingpageImgSrc + "zenith/DSC04928-HDR-2.webp",
-          landingpageImgSrc + "zenith/DSC04923-HDR-2.webp",
+          // landingpageImgSrc + "zenith/DSC04923-HDR-2.webp",
+          // landingpageImgSrc + "zenith/DSC04938-HDR-2.webp",
+          // landingpageImgSrc + "zenith/DSC04928-HDR-2.webp",
           landingpageImgSrc + "zenith/DJI_0763.webp",
-          landingpageImgSrc + "zenith/DSC04978.webp",
+          // landingpageImgSrc + "zenith/DSC04978.webp",
           landingpageImgSrc + "zenith/DSC05021.webp",
           landingpageImgSrc + "zenith/DSC05055.webp",
         ],
@@ -380,13 +380,15 @@ export const landingPageData = {
         description:
           "Our newest luxury cottage featuring warm tones, elegant interiors, and stunning forest views. The ultimate luxury retreat experience with private deck and hammock access. Ideal for intimate leadership gatherings and executive off-sites.",
       },
-      
+
       {
         images: [
-          landingpageImgSrc + "surveyor_suite/img1.webp",
           landingpageImgSrc + "surveyor_suite/img2.webp",
+          imgSrc + "room/surveyor-suite/img3.webp",
+          landingpageImgSrc + "surveyor_suite/img1.webp",
           landingpageImgSrc + "surveyor_suite/img3.webp",
-          landingpageImgSrc + "surveyor/img3.webp",
+          imgSrc + "room/surveyor-suite/img4.webp",
+          // landingpageImgSrc + "surveyor/img3.webp",
         ],
         label: "Luxury Glamping",
         labelColor: "#434B3E",
@@ -436,16 +438,16 @@ export const landingPageData = {
       {
         images: [
           landingpageImgSrc + "surveyor-new/DSC_6442.webp",
-          landingpageImgSrc + "surveyor-new/IMG_4206.webp",
-          landingpageImgSrc + "surveyor-new/DSC_6448.webp",
-          landingpageImgSrc + "surveyor-new/IMG_4219.webp",
+          // landingpageImgSrc + "surveyor-new/IMG_4206.webp",
+          // landingpageImgSrc + "surveyor-new/DSC_6448.webp",
+          // landingpageImgSrc + "surveyor-new/IMG_4219.webp",
           landingpageImgSrc + "surveyor-new/DSC_6610.webp",
-          landingpageImgSrc + "surveyor-new/f15de0f9.webp",
-          landingpageImgSrc + "surveyor-new/DSC_6614.webp",
+          // landingpageImgSrc + "surveyor-new/f15de0f9.webp",
+          // landingpageImgSrc + "surveyor-new/DSC_6614.webp",
           landingpageImgSrc + "surveyor-new/DSC_6458.webp",
-          landingpageImgSrc + "surveyor-new/DSC05333.JPG.webp",
           landingpageImgSrc + "surveyor-new/IMG_4177.webp",
-          landingpageImgSrc + "surveyor-new/f5a9395.webp",
+          // landingpageImgSrc + "surveyor-new/f5a9395.webp",
+          landingpageImgSrc + "surveyor-new/DSC05333.JPG.webp",
           // landingpageImgSrc + "surveyor/img1.webp",
           // imgSrc + "home/img2.webp",
           // landingpageImgSrc + "surveyor/img2.webp",
@@ -468,7 +470,7 @@ export const landingPageData = {
             icon: <FreeWifi />,
           },
         ],
-         popUpAmenities: [
+        popUpAmenities: [
           {
             amenities: [
               { amenityName: "Indoor + Outdoor Seating Area" },
@@ -496,9 +498,10 @@ export const landingPageData = {
       },
       {
         images: [
+          landingpageImgSrc + "glamper/img3.webp",
+          imgSrc + "room/glamper/img1.webp",
           landingpageImgSrc + "glamper/img1.webp",
           landingpageImgSrc + "glamper/img2.webp",
-          landingpageImgSrc + "glamper/img3.webp",
           landingpageImgSrc + "glamper/img4.webp",
         ],
         roomName: "The Glamper",
@@ -546,10 +549,11 @@ export const landingPageData = {
       },
       {
         images: [
+          landingpageImgSrc + "camper/img3.webp",
+          imgSrc + "room/camper/img4.webp",
           landingpageImgSrc + "camper/img1.webp",
           landingpageImgSrc + "camper/img2.webp",
-          landingpageImgSrc + "camper/img3.webp",
-          landingpageImgSrc + "camper/img4.webp",
+          imgSrc + "room/camper/img3.webp",
         ],
         roomName: "The Camper",
         label: "Most Popular",

@@ -52,6 +52,19 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
             </div>
           )}
         />
+        {/* <div className="grid grid-cols-5 gap-1">
+          {images.map((image, index) => (
+            <div key={index} className="relative w-full aspect-[4/3.5]">
+              <Image
+                src={image}
+                alt={roomName}
+                className="object-cover"
+                fill
+                sizes="(min-width: 640px) 400px, 100vw"
+              />
+            </div>
+          ))}
+        </div> */}
       </div>
       <div className="md:p-6 p-4 flex flex-col justify-evenly gap-4 min-h-96 bg-white">
         <h3 className="md:text-[2.5rem] text-2xl text-primary pUltralight">
