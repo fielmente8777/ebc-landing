@@ -73,6 +73,9 @@ const Rooms: React.FC<RoomsTypes> = ({ title, cards }) => {
           <NextBtn />
         </button>
       </div>
+        <p className="text-light text-2xl text-center max-md:px-4">
+          &quot;A pet-friendly escape where your furry companions are always welcome.&quot;
+        </p>
     </Section>
   );
 };

@@ -13,6 +13,9 @@ const RoomTypes: React.FC<RoomsTypes> = ({ title, cards, link }) => {
         <div className="w-[0.5px] bg-primary max-md:h-8 h-16 mx-auto" />
       </div>
       <RoomsSlider cards={cards} />
+      <p className="text-light text-2xl text-center">
+          &quot;A pet-friendly escape where your furry companions are always welcome.&quot;
+        </p>
       {link && (
         // <LinkButton label={link?.label} href={link?.href} className="rounded-none w-fit! uppercase mx-auto" />
         <OpenPopUpBtn
