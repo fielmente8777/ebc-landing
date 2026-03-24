@@ -8,7 +8,6 @@ declare module "*.css" {
     export default content;
 }
 
-
 declare module "swiper/*"{
     const content: { [className: string]: string };
     export default content;
