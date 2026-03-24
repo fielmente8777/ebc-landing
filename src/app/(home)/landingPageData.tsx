@@ -183,6 +183,9 @@ export const CarDriveIcon = () => (
   </svg>
 );
 
+
+const callCta = "tel:+918595274861";
+
 export const landingPageData = {
   bannerData: {
     videoSrc: "",
@@ -310,7 +313,7 @@ export const landingPageData = {
       },
     ],
     link: {
-      href: contact.ctaUrl,
+      href: callCta,
       label: "VIEW ALL <span>EXPERIENCES</span>",
     },
   },
@@ -614,7 +617,7 @@ export const landingPageData = {
       "More than just a stay — EBC Mussoorie offers you a hillside sanctuary of style, elegance, and serenity.",
     ],
     link: {
-      href: contact.ctaUrl,
+      href: callCta,
       label: "GET <i>DETAILS</i>",
     },
   },

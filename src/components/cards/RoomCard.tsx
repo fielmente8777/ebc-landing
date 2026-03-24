@@ -1,3 +1,4 @@
+"use client";
 import { RoomsTypes } from "@/@types/types";
 import { useDataContext } from "@/contextApi/DataContext";
 import Image from "next/image";
@@ -5,6 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { contact } from "../../../constant";
 import LinkButton from "../buttons/LinkButton";
 import SwiperCarousel from "../SwiperCarousel";
+import { usePathname } from "next/navigation";
 
 const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
   roomName,
@@ -22,6 +24,10 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
     setRoomAmenities,
     setRoomPopUpAmenities,
   } = useDataContext();
+
+  const callCta = "tel:+918595274861";
+  const pathName = usePathname();
+
   return (
     <div className="flex flex-col overflow-hidden rounded-lg box-shadow">
       <div className="w-full bullet">
@@ -97,7 +103,7 @@ const RoomCard: React.FC<RoomsTypes["cards"][0]> = ({
         <p className="text-[1.375rem] text-light">{description}</p>
         {link && (
           <LinkButton
-            href={contact.ctaUrl}
+            href={pathName !== "/" ? contact.ctaUrl : callCta}
             target="_blank"
             label={`<span class="pmedium">BOOK YOUR <span class="italic">STAY</span></span>`}
             className="text-white bg-primary py-4!"

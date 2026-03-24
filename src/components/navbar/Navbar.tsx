@@ -9,7 +9,7 @@ import { Container } from "../sectionComponents";
 const Navbar = () => {
   const pathName = usePathname();
   const [navbarColor, setNavbarColor] = useState(false);
-
+  const callCta = "tel:+918595274861";
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -51,11 +51,9 @@ const Navbar = () => {
             />
           </div>
           <Link
-            href={
-              pathName === "/corporate/"
-                ? "tel: " + contact.call
-                : contact.ctaUrl
-            }
+            href={"tel: " + contact.call}
+            target="_blank"
+            rel="noreferrer"
             className="flex items-center justify-center gap-2 text-primary bg-white px-6 py-4 hover:bg-light md:text-lg pUltralight hover:text-white transition-colors duration-300"
           >
             {pathName === "/corporate/" ? (
