@@ -7,13 +7,24 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { SliderBtn } from "@/utils/iconsPack2";
 import { Container } from "../sectionComponents";
 
-const Banner: React.FC<BannerType> = ({ videoSrc, images, title }) => {
+const Banner: React.FC<BannerType> = ({ videoSrc, images, title, video }) => {
   return (
     <section className="w-full max_screen relative heading">
       {videoSrc ? (
         <div className="relative md:aspect-[16/9] aspect-[4/4.5] w-full after:absolute after:inset-0 after:bg-black/10">
           <LazyLoadedVideo
             src={videoSrc}
+            muted={true}
+            autoPlay
+            loop
+            controls={false}
+          />
+        </div>
+      ) : video ? (
+        <div className="relative md:aspect-[16/9] aspect-[4/4.5] w-full after:absolute after:inset-0 after:bg-black/10">
+          <LazyLoadedVideo
+            src={video.src}
+            poster={video.poster}
             muted={true}
             autoPlay
             loop

@@ -4,6 +4,7 @@ import {
   FreeWifi,
   HeatedBeds,
   LocationNature,
+  SquareFootIcon,
   SustainabilityCentric,
 } from "@/utils/icons";
 import { contact, imgSrc, landingpageImgSrc, nearby } from "../../../constant";
@@ -183,14 +184,18 @@ export const CarDriveIcon = () => (
   </svg>
 );
 
-
 const callCta = "tel:+918595274861";
 
 export const landingPageData = {
   bannerData: {
-    videoSrc: "",
+    videoSrc:
+      "https://eazotel-client-webp-images.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/0408-2.mp4",
     // src: "/outsideview6.webp",
-    images: ["/im1.webp", "/im4.webp", "/im2.webp", "/im3.webp"],
+    // {
+    //   src: "https://eazotel-client-webp-images.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/0408-2.mp4",
+    //   poster: "/home/video-poster.png",
+    // },
+    // images: ["/im1.webp", "/im4.webp", "/im2.webp", "/im3.webp"],
   },
   aboutUsData: {
     src: "/img.webp",
@@ -322,6 +327,124 @@ export const landingPageData = {
     cards: [
       {
         images: [
+          "/Twin-Luxury-Cottages/Suite-Bedroom-2.png",
+          "/Twin-Luxury-Cottages/Suite-Bedroom-3.png",
+          "/Twin-Luxury-Cottages/Suite-Bedroom-4.png",
+          "/Twin-Luxury-Cottages/Suite-Bedroom-5.png",
+          "/Twin-Luxury-Cottages/Suite-Bedroom-6.png",
+          "/Twin-Luxury-Cottages/Suite-Bedroom-7.png",
+        ],
+        roomName: "Twin Luxury Cottages",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
+        amenities: [
+          {
+            title: "Hillside Luxury for Families & Groups",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "1250 sq ft",
+            icon: <SquareFootIcon />,
+          },
+        ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Electrically Heated Bed" },
+              { amenityName: "Wardrobe" },
+              { amenityName: "Geyser (Hot Water)" },
+              { amenityName: "Toiletries" },
+              { amenityName: "Towels" },
+              { amenityName: "Forest View" },
+              { amenityName: "Private Balcony" },
+              { amenityName: "Wi-Fi" },
+              { amenityName: "Room Heater" },
+              { amenityName: "De-Humidifier" },
+            ],
+          },
+          {
+            title: "Paid Experiences & <span>Add-ons</span>",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
+          },
+        ],
+        description:
+          "The Twin Luxury Cottages are designed as two interconnecting cottages with a shared private balcony, ideal for families or groups seeking both togetherness and personal space.",
+      },
+      {
+        images: [
+          "/andrew-villa/Suite-Bedroom-2.png",
+          "/andrew-villa/Suite-Bedroom-3.png",
+          "/andrew-villa/Suite-Bedroom-4.png",
+          "/andrew-villa/Suite-Bedroom-5.png",
+          "/andrew-villa/Suite-Bedroom-6.png",
+          "/andrew-villa/Suite-Bedroom-7.png",
+        ],
+        roomName: "Andrew’s Villa",
+        label: "Most Popular",
+        labelColor: "#F6CE55",
+        amenities: [
+          {
+            title: "Forest View/ Meadows View",
+            icon: <ForestView />,
+          },
+          {
+            title: "Heated Beds",
+            icon: <HeatedBeds />,
+          },
+          {
+            title: "1300 sq ft",
+            icon: <SquareFootIcon />,
+          },
+        ],
+        popUpAmenities: [
+          {
+            amenities: [
+              { amenityName: "Electrically Heated Bed" },
+              { amenityName: "Wardrobe" },
+              { amenityName: "Geyser (Hot Water)" },
+              { amenityName: "Toiletries" },
+              { amenityName: "Towels" },
+              { amenityName: "Forest View" },
+              { amenityName: "Private Balcony" },
+              { amenityName: "Wi-Fi" },
+              { amenityName: "Room Heater" },
+              { amenityName: "De-Humidifier" },
+            ],
+          },
+          {
+            title: "Paid Experiences & <span>Add-ons</span>",
+            amenities: [
+              { amenityName: "Bonfire" },
+              { amenityName: "Extra Bed" },
+              { amenityName: "BBQ Grill" },
+              { amenityName: "Alfresco Dining" },
+              { amenityName: "Pet Friendly Stay" },
+              { amenityName: "Decorated Picnic Setup" },
+              { amenityName: "Driver / Staff Accommodation" },
+              { amenityName: "Pet Accommodation " },
+              { amenityName: "Guided Trek" },
+            ],
+          },
+        ],
+        description:
+          "Andrew’s Villa is a spacious duplex private villa, ideal for families and groups seeking an exclusive stay. Elevated 40 ft above ground, it offers stunning panoramic views, soundproof privacy.",
+      },
+      {
+        images: [
           landingpageImgSrc + "zenith/DSC04996-HDR-2.webp",
           landingpageImgSrc + "zenith/DSC04953-HDR-2.webp",
           // landingpageImgSrc + "zenith/DSC04923-HDR-2.webp",
@@ -332,7 +455,7 @@ export const landingPageData = {
           landingpageImgSrc + "zenith/DSC05021.webp",
           landingpageImgSrc + "zenith/DSC05055.webp",
         ],
-        
+
         roomName: "Zenith",
         label: "Most Popular",
         labelColor: "#F6CE55",

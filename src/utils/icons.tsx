@@ -410,6 +410,88 @@ export const HeatedBeds = ({ ...props }) => (
     />
   </svg>
 );
+export const SquareFootIcon = () => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M13.6015 14.8735V19.5932C13.6015 20.4417 12.9136 21.1296 12.0651 21.1296H4.53645C3.68791 21.1296 3 20.4417 3 19.5932V12.0647C3 11.2162 3.68791 10.5283 4.53645 10.5283H9.25623"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.4557 3H5.30467C4.03184 3 3 4.03182 3 5.30463V7.45561"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.5291 3H13.602"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16.6746 3H18.8256C20.0984 3 21.1303 4.03182 21.1303 5.30463V7.45561"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21.1303 16.6738V18.8248C21.1303 20.0976 20.0984 21.1294 18.8256 21.1294H16.6746"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21.1299 10.5283V13.6012"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.90625 16.2247L17.6077 6.52344"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.45581 14.3691V16.6738H9.76049"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M15.7527 6.07324H18.0574V8.37787"
+      stroke="#29422C"
+      strokeWidth="0.7"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
 
 export const FreeWifi = ({ ...props }) => (
   <svg

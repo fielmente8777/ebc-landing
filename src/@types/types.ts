@@ -2,6 +2,10 @@ import { JSX } from "react";
 
 export interface BannerType {
   videoSrc?: string;
+  video?:{
+    src: string;
+    poster: string;
+  }
   images?: string[];
   title?: string;
   description?: string;
