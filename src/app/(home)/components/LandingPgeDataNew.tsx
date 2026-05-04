@@ -31,7 +31,7 @@ export const landingPageData = {
       src: "https://eazotel-client-webp-images.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/0408-2.mp4",
       poster: "/home/video-poster.png",
     },
-    actions: [{ label: "EXPLORE ROOMS", href: "#rooms" }],
+    actions: { label: "EXPLORE ROOMS", href: "#rooms" },
     location: {
       label: "Hathipaon Road · Mussoorie · 2,000m",
       href: contact.mapUrl,
@@ -436,7 +436,6 @@ export const landingPageData = {
         label: "BOOK NOW",
         href: bookingLink,
       },
-      ,
     ],
   },
 };

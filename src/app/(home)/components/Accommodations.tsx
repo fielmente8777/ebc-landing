@@ -14,6 +14,7 @@ const Accommodations: React.FC<AccommodationsTypes> = ({
     <SectionWithContainer
       sectionClassName="bg-new-dark"
       containerClassName="md:space-y-12 space-y-10"
+      sectionId="rooms"
     >
       <SectionHeading2 title={title} description={description[0]} textCenter />
       <div className="grid stagger xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 ">
