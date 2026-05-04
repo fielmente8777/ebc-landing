@@ -15,6 +15,7 @@ interface SectionHeadingDescProps {
   descriptionClassName?: string;
 }
 
+
 const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
   title,
   subTitle,

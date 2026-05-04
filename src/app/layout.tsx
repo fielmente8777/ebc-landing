@@ -5,11 +5,25 @@ import AmenitiesPopUp from "@/components/pop-up/AmenitiesPopUp";
 import PopForm from "@/components/pop-up/PopForm";
 import { DataProvider } from "@/contextApi/DataContext";
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import Image from "next/image";
 import Script from "next/script";
 import { contact } from "../../constant";
 import "./globals.css";
 import "./style.scss";
+import "./animation.scss"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Camping in Mussoorie | Glamping near Dehradun - EBC Mussoorie",
@@ -115,7 +129,7 @@ export default function RootLayout({
         >
           {`var $zoho= $zoho ||  {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"siq4bc7d026b8b5ab8b6663b74417f0678eeb748dabce26466abbf4b7a2765b5550", values:{},ready:function(){$zoho.salesiq.floatbutton.visible("");}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);`}
         </Script> */}
-        
+
         {/* Clarity Script */}
         <Script
           id="clarity-script"
@@ -185,7 +199,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`antialiased`} suppressHydrationWarning={true}>
+      <body
+        className={`${inter.variable} ${cormorant.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-T36V8385"
@@ -211,6 +228,68 @@ export default function RootLayout({
           };`}
         </Script>
         <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
+
+        <Script id="premium-motion" strategy="afterInteractive">
+          {`
+(function () {
+
+  function initAnimations() {
+    const elements = document.querySelectorAll(".animate, .stagger");
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+
+          // stagger logic
+          if (entry.target.classList.contains("stagger")) {
+            const children = entry.target.children;
+            Array.from(children).forEach((el, i) => {
+              el.style.setProperty("--i", i);
+            });
+          }
+
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  }
+
+  // RUN AFTER FULL LOAD
+  window.addEventListener("load", initAnimations);
+
+  // ALSO RUN AFTER ROUTE CHANGE (Next.js)
+  const observerDOM = new MutationObserver(() => {
+    initAnimations();
+  });
+
+  observerDOM.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+  /* ================= PARALLAX ================= */
+
+  const parallaxEls = document.querySelectorAll("[data-parallax]");
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    parallaxEls.forEach(el => {
+      const speed = parseFloat(el.dataset.parallax || "0.2");
+      el.style.transform = "translateY(" + (scrollY * speed) + "px)";
+    });
+  }
+
+  window.addEventListener("scroll", handleScroll);
+
+})();
+`}
+        </Script>
       </body>
     </html>
   );

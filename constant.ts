@@ -231,4 +231,6 @@ export const contact = {
     youtube: "https://www.youtube.com/@EverestBaseCampMussoorie",
   },
   ctaUrl: `https://wa.me/+918595274861?text=${enCodedText}`,
+  formDomain: "eb112233",
+  WhatsappCta: `https://wa.me/+918595274861?text=${enCodedText}`,
 };
