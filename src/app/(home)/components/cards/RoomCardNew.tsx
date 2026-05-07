@@ -34,22 +34,22 @@ const RoomCardNew: React.FC<AccommodationsTypes["items"][0]> = ({
         <p className="text-new-secondary font-primary text-[1.375rem]">
           {price}
         </p>
-        <div className="flex flex-wrap items-center justify-between max-md:gap-2 gap-1">
+        <div className="flex flex-wrap items-center justify-between max-md:gap-2">
           <LinkButton
             label={"CALL NOW"}
             href={"tel:" + contact.call}
-            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs"
+            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs px-5.5!"
             target="_blank"
             rel="noopener noreferrer"
           />
           <OpenPopUpBtn
             label="GET A CALL BACK"
-            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs"
+            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs px-5.5!"
           />
           <LinkButton
             label={link.label}
             href={link.href}
-            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs"
+            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs px-5.5!"
             target="_blank"
             rel="noopener noreferrer"
           />
