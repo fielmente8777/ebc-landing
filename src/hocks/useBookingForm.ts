@@ -1,3 +1,4 @@
+"use client";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useDebounce } from "./useDebounce";
@@ -11,6 +12,8 @@ interface BookingFormData {
   checkIn?: string;
   checkOut?: string;
   message?: string;
+  adults?: number;
+  kids?: number;
 }
 
 interface FormErrors {
@@ -19,6 +22,8 @@ interface FormErrors {
   email?: string;
   checkIn?: string;
   checkOut?: string;
+  adults?: string;
+  kids?: string;
   [key: string]: string | undefined;
 }
 
@@ -26,6 +31,7 @@ interface UseBookingFormProps {
   includeCheckIn?: boolean;
   includeCheckOut?: boolean;
   includeMessage?: boolean;
+  includePeopleCount?: boolean; // New prop for people count field
   formHid?: string;
   onSubmitSuccess?: () => void;
 }
@@ -38,12 +44,15 @@ const initialFormData: BookingFormData = {
   checkIn: "",
   checkOut: "",
   message: "",
+  adults: 1,
+  kids: 0,  
 };
 
 const useBookingForm = ({
   includeCheckIn,
   includeCheckOut,
   includeMessage,
+  includePeopleCount = false,
   formHid,
   onSubmitSuccess,
 }: UseBookingFormProps) => {
@@ -138,9 +147,21 @@ const useBookingForm = ({
       isValid = false;
     }
 
+    // Optional validation for people count
+    if (includePeopleCount) {
+      if (formData.adults === undefined || formData.adults < 1) {
+        newErrors.adults = "At least 1 adult required";
+        isValid = false;
+      }
+      if (formData.kids !== undefined && (formData.kids < 0 || formData.kids > 10)) {
+        newErrors.kids = "Kids must be between 0 and 10";
+        isValid = false;
+      }
+    }
+
     setErrors(newErrors);
     return isValid;
-  }, [formData, includeCheckIn, includeCheckOut]);
+  }, [formData, includeCheckIn, includeCheckOut, includePeopleCount]);
 
   // handle form submission
   const handleChange = (
@@ -160,7 +181,32 @@ const useBookingForm = ({
     }
   };
 
-  const setFieldValue = (field: keyof BookingFormData, value: string) => {
+  // Handle number input changes for adults/kids
+  const handleNumberChange = (field: 'adults' | 'kids', increment: boolean) => {
+    setFormData((prevFormData) => {
+      const currentValue = prevFormData[field] || 0;
+      const newValue = increment ? currentValue + 1 : Math.max(0, currentValue - 1);
+      
+      // Optional: Set max limit (e.g., 20)
+      const maxLimit = field === 'adults' ? 20 : 10;
+      const finalValue = Math.min(maxLimit, Math.max(0, newValue));
+      
+      return {
+        ...prevFormData,
+        [field]: finalValue,
+      };
+    });
+    
+    // Clear error for this field if it exists
+    if (errors[field]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [field]: "",
+      }));
+    }
+  };
+
+  const setFieldValue = (field: keyof BookingFormData, value: string | number) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       [field]: value,
@@ -176,7 +222,11 @@ const useBookingForm = ({
 
   // reset form
   const resetForm = () => {
-    setFormData(initialFormData);
+    setFormData({
+      ...initialFormData,
+      adults: includePeopleCount ? 2 : undefined,
+      kids: includePeopleCount ? 1 : undefined,
+    });
     setErrors({});
   };
 
@@ -198,6 +248,10 @@ const useBookingForm = ({
       if (includeMessage) {
         descriptionPart.push(`Message: ${formData.message}`);
       }
+      if (includePeopleCount) {
+        descriptionPart.push(`Adults: ${formData.adults}`);
+        descriptionPart.push(`Kids: ${formData.kids || 0}`);
+      }
       const description = descriptionPart.join("\n");
 
       const { data } = await axios.post(
@@ -212,6 +266,11 @@ const useBookingForm = ({
           Description: description,
           created_from: "webform",
           source_url: window.location.href,
+          // Include people count in the payload if needed
+          ...(includePeopleCount && {
+            adults: formData.adults,
+            kids: formData.kids,
+          }),
           // hId: contact.formHid ? contact.formHid : formHid,
         }
       );
@@ -249,10 +308,13 @@ const useBookingForm = ({
     includeCheckIn,
     includeCheckOut,
     includeMessage,
+    includePeopleCount,
     onSubmitSuccess,
     handleChange,
+    handleNumberChange, // New method for increment/decrement
     setFieldValue,
     handleSubmit,
+    resetForm,
   };
 };
 

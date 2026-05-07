@@ -1,6 +1,4 @@
-import { SectionWithContainer } from "@/components";
 import VideoBanner from "@/components/banner/VideoBanner";
-import Form2 from "@/components/forms/Form2";
 import SlidingTitle from "@/components/sliders/SlidingTitle";
 import Accommodations from "./components/Accommodations";
 import CtaSection from "./components/CtaSection";
@@ -19,12 +17,12 @@ export default function Home() {
         {...landingPageData.ratingData}
         wrapperClassName="text-[13.3px]"
       />
-      <SectionWithContainer
+      {/* <SectionWithContainer
         sectionClassName="bg-new-bg1"
         containerClassName="bg-new-dark border-[0.5px] border-new-secondary/50"
       >
         <Form2 />
-      </SectionWithContainer>
+      </SectionWithContainer> */}
       <OurStory {...landingPageData.storyData} />
       <SlidingTitle {...landingPageData.highlightData} />
       <Accommodations {...landingPageData.accommodationsData} />

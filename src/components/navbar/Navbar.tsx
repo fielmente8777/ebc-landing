@@ -1,13 +1,13 @@
 "use client";
 
+import { landingPageData } from "@/app/(home)/components/LandingPgeDataNew";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { contact } from "../../../constant";
 import { useEffect, useRef, useState } from "react";
+import { bookingEngining, contact } from "../../../constant";
 import { Container } from "../sectionComponents";
 import ShowSlidingTitle from "../sliders/ShowSlidingTitle";
-import { landingPageData } from "@/app/(home)/components/LandingPgeDataNew";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -70,8 +70,8 @@ const Navbar = () => {
             isCorporate
               ? "bg-primary shadow-xl"
               : scrolled
-              ? "bg-new-dark backdrop-blur-md shadow-xl"
-              : "bg-transparent"
+                ? "bg-new-dark backdrop-blur-md shadow-xl"
+                : "bg-transparent"
           }
         `}
       >
@@ -88,27 +88,40 @@ const Navbar = () => {
               />
             </div>
 
-            <Link
-              href={"tel:" + contact.call}
-              className="flex items-center gap-2 bg-new-secondary px-6 py-2 rounded-sm md:text-lg text-new-dark hover:text-white transition-colors duration-300"
-            >
-              {isCorporate ? (
-                <>
-                  <span className="hidden md:flex items-center gap-2">
-                    <CallIcon />
-                    INQUIRE GROUP RATES
-                  </span>
-                  <span className="md:hidden">
-                    <CallIcon />
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span className="hidden md:block">BOOK NOW</span>
-                  <span className="md:hidden">BOOK</span>
-                </>
+            <div className="flex items-center gap-4">
+              {pathName === "/" && (
+                <Link
+                  href={"tel:" + contact.call}
+                  className="md:flex hidden items-center gap-2 bg-transparent  px-6 py-2 rounded-sm md:text-lg text-white border transition-colors duration-300"
+                >
+                  CALL NOW
+                </Link>
               )}
-            </Link>
+
+              <Link
+                href={
+                  pathName === "/" ? bookingEngining : "tel:" + contact.call
+                }
+                className="flex items-center gap-2 bg-new-secondary px-6 py-2 rounded-sm md:text-lg text-new-dark hover:text-white transition-colors duration-300"
+              >
+                {isCorporate ? (
+                  <>
+                    <span className="hidden md:flex items-center gap-2">
+                      <CallIcon />
+                      INQUIRE GROUP RATES
+                    </span>
+                    <span className="md:hidden">
+                      <CallIcon />
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="hidden md:block">BOOK NOW</span>
+                    <span className="md:hidden">BOOK</span>
+                  </>
+                )}
+              </Link>
+            </div>
           </div>
         </Container>
       </nav>

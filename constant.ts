@@ -203,6 +203,10 @@ export const countries: data_Type[] = [
 
 export const bookingLink = "https://wa.me/+918595274861?text=Hello";
 
+export const bookingEngining = "https://live.ipms247.com/booking/book-rooms-everestbasecamp";
+
+export const CallCta = "tel:+918595274861";
+
 export const imgSrc =
   "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/Ebc-New-Ui-Image/";
 export const nearby =
@@ -231,6 +235,7 @@ export const contact = {
     youtube: "https://www.youtube.com/@EverestBaseCampMussoorie",
   },
   ctaUrl: `https://wa.me/+918595274861?text=${enCodedText}`,
+  // formDomain: "sumittest11157821",
   formDomain: "eb112233",
   WhatsappCta: `https://wa.me/+918595274861?text=${enCodedText}`,
 };

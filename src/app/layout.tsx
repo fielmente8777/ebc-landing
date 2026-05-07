@@ -11,7 +11,7 @@ import Script from "next/script";
 import { contact } from "../../constant";
 import "./globals.css";
 import "./style.scss";
-import "./animation.scss"
+import "./animation.scss";
 
 const inter = Inter({
   subsets: ["latin"],

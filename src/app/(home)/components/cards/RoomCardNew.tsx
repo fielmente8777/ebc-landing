@@ -1,6 +1,9 @@
 import { AccommodationsTypes } from "@/@types/types";
 import { LinkButton } from "@/components";
 import RoomCardImgSlider from "../sliders/RoomCardImgSlider";
+import OpenPopUpBtn from "@/components/buttons/OpenPopUpBtn";
+import { contact } from "../../../../../constant";
+import Link from "next/link";
 
 const RoomCardNew: React.FC<AccommodationsTypes["items"][0]> = ({
   category,
@@ -31,13 +34,26 @@ const RoomCardNew: React.FC<AccommodationsTypes["items"][0]> = ({
         <p className="text-new-secondary font-primary text-[1.375rem]">
           {price}
         </p>
-        <LinkButton
-          label={link.label}
-          href={link.href}
-          className="bg-new-secondary border-none rounded-sm text-new-dark"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
+        <div className="flex flex-wrap items-center justify-between max-md:gap-2">
+          <LinkButton
+            label={"CALL NOW"}
+            href={"tel:" + contact.call}
+            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+          <OpenPopUpBtn
+            label="GET A CALL BACK"
+            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs"
+          />
+          <LinkButton
+            label={link.label}
+            href={link.href}
+            className="bg-new-secondary border-none rounded-sm text-new-dark text-xs"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        </div>
       </div>
     </div>
   );

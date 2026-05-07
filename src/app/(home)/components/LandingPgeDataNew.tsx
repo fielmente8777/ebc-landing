@@ -11,6 +11,7 @@ import {
   StargazingIcon,
 } from "@/utils/newIcon";
 import {
+  bookingEngining,
   bookingLink,
   contact,
   imgSrc,
@@ -68,7 +69,7 @@ export const landingPageData = {
     ],
     link: {
       label: "BOOK NOW",
-      href: bookingLink,
+      href: bookingEngining,
     },
   },
 
@@ -108,7 +109,7 @@ export const landingPageData = {
           "/andrew-villa/Suite-Bedroom-6.png",
           "/andrew-villa/Suite-Bedroom-7.png",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
       {
         category: "Luxury Cottages",
@@ -130,7 +131,7 @@ export const landingPageData = {
           "/Twin-Luxury-Cottages/Suite-Bedroom-6.png",
           "/Twin-Luxury-Cottages/Suite-Bedroom-7.png",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
       {
         category: "Signature Cottage",
@@ -151,7 +152,7 @@ export const landingPageData = {
           landingpageImgSrc + "zenith/DSC05021.webp",
           landingpageImgSrc + "zenith/DSC05055.webp",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
       {
         category: "SUITE",
@@ -172,7 +173,7 @@ export const landingPageData = {
           landingpageImgSrc + "surveyor-new/IMG_4177.webp",
           landingpageImgSrc + "surveyor-new/DSC05333.JPG.webp",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
       {
         category: "Premium Glamping",
@@ -193,7 +194,7 @@ export const landingPageData = {
           landingpageImgSrc + "surveyor_suite/img3.webp",
           imgSrc + "room/surveyor-suite/img4.webp",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
       {
         category: "Luxury Tent",
@@ -214,7 +215,7 @@ export const landingPageData = {
           landingpageImgSrc + "glamper/img2.webp",
           landingpageImgSrc + "glamper/img4.webp",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
       {
         category: "Forest Glamping",
@@ -235,7 +236,7 @@ export const landingPageData = {
           landingpageImgSrc + "camper/img2.webp",
           imgSrc + "room/camper/img3.webp",
         ],
-        link: { label: "BOOK NOW", href: "#" },
+        link: { label: "BOOK NOW", href: bookingEngining },
       },
     ],
 
@@ -339,6 +340,12 @@ export const landingPageData = {
     title: "Featured Press <i>Releases!</i>",
     links: [
       {
+        backImage: "/images/PressReleases-3.png",
+        src: "/images/logo-ad-int.svg",
+        name: "AD",
+        link: "https://www.architecturaldigest.in/story/weekend-getaways-from-delhi-that-are-perfect-for-last-minute-planning/",
+      },
+      {
         backImage: "/images/PressReleases-1.png",
         src: "/images/tripoto2.png",
         name: "Tripoto",
@@ -350,12 +357,7 @@ export const landingPageData = {
         name: "Hotelier India",
         link: "https://www.hotelierindia.com/operations/experience-tranquil-adventure-in-the-heart-of-mussoorie-with-ebc-mussoorie",
       },
-      {
-        backImage: "/images/PressReleases-3.png",
-        src: "/images/logo-ad-int.svg",
-        name: "AD",
-        link: "https://www.architecturaldigest.in/story/weekend-getaways-from-delhi-that-are-perfect-for-last-minute-planning/",
-      },
+
       {
         backImage: "/images/LLB.png",
         src: "/images/lbb.png",
@@ -434,7 +436,7 @@ export const landingPageData = {
       { label: "Check Availability via WhatsApp", href: contact.WhatsappCta },
       {
         label: "BOOK NOW",
-        href: bookingLink,
+        href: bookingEngining,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import { FillFacebook, FillTripAdvisor, FillYoutubeIcon } from "@/utils/icons";
-import { contact } from "../../../constant";
-import { OutLineInstagram } from "../../utils/icons";
 import { FillCallIcon, FillLocationIcon, FillMailIcon } from "@/utils/newIcon";
+import { bookingEngining, contact } from '../../../constant';
+import { OutLineInstagram } from "../../utils/icons";
 
 export const landingFooterData = {
   src: "/logo.webp",
@@ -87,7 +87,7 @@ export const footerData: FooterData = {
   logo: "/logo-new.png",
   cta: {
     label: "Book Now",
-    href: contact.WhatsappCta,
+    href: bookingEngining,
   },
   lists: [
     {

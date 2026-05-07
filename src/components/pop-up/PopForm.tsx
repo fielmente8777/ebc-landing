@@ -3,6 +3,7 @@ import { useDataContext } from "@/contextApi/DataContext";
 import { useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { Form } from "../forms";
+import NewForm from "../forms/NewForm";
 
 const PopForm: React.FC = () => {
   const { isOpen, setIsOpen } = useDataContext();
@@ -31,7 +32,7 @@ const PopForm: React.FC = () => {
         >
           <AiOutlineClose size={20} />
         </button>
-        <Form />
+        <NewForm />
       </div>
     </div>
   );

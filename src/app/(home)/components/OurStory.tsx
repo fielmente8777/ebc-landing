@@ -2,6 +2,7 @@ import { OurStoryProps } from "@/@types/types";
 import { LinkButton, SectionWithContainer } from "@/components";
 import { SectionHeading2 } from "@/components/typography/SectionHeading2";
 import OurStorySlider from "./sliders/OurStorySlider";
+import OpenPopUpBtn from "@/components/buttons/OpenPopUpBtn";
 
 const OurStory: React.FC<OurStoryProps> = ({
   title,
@@ -25,11 +26,17 @@ const OurStory: React.FC<OurStoryProps> = ({
             </div>
             <p className="text-white/90">{description[0]}</p>
           </div>
-          <LinkButton
-            label={link.label}
-            href={link.href}
-            className="bg-new-ternary mt-4 text-white rounded-sm border-none"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <OpenPopUpBtn
+              label="GET A CALL BACK"
+              className="bg-new-ternary mt-4 text-white rounded-sm border-none"
+            />
+            <LinkButton
+              label={link.label}
+              href={link.href}
+              className="bg-new-ternary mt-4 text-white rounded-sm border-none"
+            />
+          </div>
         </div>
       </div>
     </SectionWithContainer>
