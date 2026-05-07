@@ -1,0 +1,214 @@
+"use client";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
+import useBookingForm from "@/hocks/useBookingForm";
+import { getDateInputLimits } from "@/hocks/getDateInputLimits";
+import { CalendarIcon, CallIcon, MailIcon, UserIcon, } from "@/utils/formIcons";
+import { countries } from "../../../constant";
+
+interface Props {
+  gridView?: boolean;
+}
+const Form2 = ({ gridView }: Props) => {
+  const {
+    isSubmitting,
+    errors,
+    handleSubmit,
+    formData,
+    handleChange,
+    setFieldValue,
+  } = useBookingForm({
+    includeCheckIn: true,
+    includeCheckOut: true,
+    onSubmitSuccess: () => {},
+  });
+  const { min, max } = getDateInputLimits({
+    showPast: false,
+    showFuture: true,
+  });
+
+  const minDate = min ? new Date(min) : undefined;
+  const maxDate = max ? new Date(max) : undefined;
+
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const handleDateChange = (dates: [Date | null, Date | null]) => {
+    const [start, end] = dates;
+
+    setStartDate(start);
+    setEndDate(end);
+
+    if (start) {
+      setFieldValue("checkIn", start.toISOString().split("T")[0]);
+    }
+
+    if (end) {
+      setFieldValue("checkOut", end.toISOString().split("T")[0]);
+    }
+  };
+
+  const formFields = [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      value: formData.name,
+      onChange: handleChange,
+      icon: <UserIcon />,
+    },
+    {
+      name: "phone",
+      label: "Ph Number",
+      type: "tel",
+      value: formData.phone,
+      onChange: handleChange,
+      icon: <CallIcon />,
+    },
+    {
+      name: "email",
+      label: "Email ID",
+      type: "email",
+      value: formData.email,
+      onChange: handleChange,
+      icon: <MailIcon />,
+    },
+    {
+      name: "checkIn",
+      label: "Check-in & out",
+      type: "date",
+      value: formData.checkIn || "",
+      onChange: handleChange,
+      icon: <CalendarIcon />,
+    },
+  ];
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+        className={`${gridView ? "flex flex-col divide-y divide-p1" : "grid md:grid-cols-5 items-center gap-3.5 "} py-3 px-4 text-base max-md:divide-y divide-p1`}
+    >
+      {formFields.map((field, index) => (
+        <>
+          {field.type === "date" ? (
+            <div
+              className={`flex items-center gap-2.5 ${gridView ? "py-4" : "max-md:pb-4 max-md:pt-2"}`}
+              key={index}
+            >
+              <label className="text-white/70">{field.icon}</label>
+              <DatePicker
+                selected={startDate}
+                onChange={handleDateChange}
+                startDate={startDate}
+                endDate={endDate}
+                selectsRange
+                minDate={minDate}
+                maxDate={maxDate}
+                placeholderText={field.label}
+                className={`${gridView ? "" : "border-p1  md:border-r"} outline-none w-full h-full bg-transparent  placeholder:text-[#7F7F7F] focus:outline-none text-white `}
+                wrapperClassName="w-full h-full !flex items-center"
+              />
+            </div>
+          ) : field.type === "tel" ? (
+            <div
+              className={`flex items-center gap-2.5 ${gridView ? "py-4" : "max-md:pb-4 max-md:pt-2"}`}
+              key={index}
+            >
+              <label className="text-white/70">{field.icon}</label>
+              <div className="relative">
+                <select
+                  className="ps-2 cursor-pointer border-p1 appearance-none w-full placeholder:text-white/70 focus:outline-none text-white"
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={(e) => setFieldValue("countryCode", e.target.value)}
+                  style={{ width: `${formData.countryCode.length * 2}ch` }}
+                   aria-label="Country Code"
+                >
+                  {countries.map((country, index) => (
+                    <option key={index} value={country.code} className="">
+                      {country.code}
+                    </option>
+                  ))}
+                </select>
+                <span className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <OutLineDropDownIcon />
+                </span>
+              </div>
+              <input
+                type={field.type}
+                name={field.name}
+                placeholder={field.label}
+                className={`w-full placeholder:text-white/70 focus:outline-none text-white ${gridView ? "" : "border-p1 md:border-r"}`}
+                value={field.value}
+                onChange={field.onChange}
+              />
+            </div>
+          ) : (
+            <div
+              className={`flex items-center gap-2.5 ${gridView ? "py-4" : "max-md:pb-4 max-md:pt-2"}`}
+              key={index}
+            >
+              <label className="text-white/70">{field.icon}</label>
+              <input
+                key={index}
+                type={field.type}
+                name={field.name}
+                placeholder={field.label}
+                className={`w-full placeholder:text-white/70 focus:outline-none text-white ${gridView ? "" : "border-p1 md:border-r"}`}
+                value={field.value}
+                onChange={field.onChange}
+              />
+            </div>
+          )}
+
+          {errors[field.name] && (
+            <p className="text-red-500">{errors[field.name]}</p>
+          )}
+        </>
+      ))}
+      <button type="submit" className="bg-new-secondary rounded-sm  text-white/70 py-3">
+        {isSubmitting ? (
+          "Submitting..."
+        ) : (
+          <span className="flex items-center justify-center gap-2.5">
+            Book Now{" "}
+            {/* <span>
+              <ArrowUpIcons />
+            </span>{" "} */}
+          </span>
+        )}
+      </button>
+    </form>
+  );
+};
+
+export default Form2;
+export const OutLineDropDownIcon = () => (
+  <svg
+    width={24}
+    height={12}
+    viewBox="0 0 24 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_2084_2516)">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M11.9967 8.6575L19.0677 1.5865L20.4817 3.0005L12.7037 10.7785C12.5162 10.966 12.2619 11.0713 11.9967 11.0713C11.7316 11.0713 11.4772 10.966 11.2897 10.7785L3.51172 3.0005L4.92572 1.5865L11.9967 8.6575Z"
+        fill="#FFFFFFB2"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_2084_2516">
+        <rect
+          width={12}
+          height={24}
+          fill="white"
+          transform="translate(5.24537e-07 12) rotate(-90)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+)

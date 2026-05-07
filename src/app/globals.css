@@ -79,10 +79,10 @@
   --font-times: "Times New Roman";
 }
 
-p {
+/* p {
   font-family: "Neutra Text Book";
   font-weight: 200;
-}
+} */
 
 .font-times {
   font-family: var(--font-times);
@@ -188,11 +188,27 @@ a {
     --color-bg1: var(--bg1);
     --color-bg2: var(--bg2);
     --color-ternary: var(--ternary);
+
+    /* new colors */
+    --color-new-dark: #0C150D;
+    --color-new-primary: #162218;
+    --color-new-secondary: #B89258;
+    --color-new-ternary: #C9A060;
+    --color-new-bg1: #070C08;
+
+    /* font family */
+    --font-primary: var(--font-cormorant);
+    --font-body: var(--font-inter);
   }
 
-  body {
+  /* body {
     font-family: "Neutra Text Book";
     font-weight: 200;
+  } */
+  body{
+    font-family: var(--font-inter);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
 }

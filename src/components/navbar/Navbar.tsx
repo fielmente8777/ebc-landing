@@ -1,88 +1,134 @@
 "use client";
+
+import { landingPageData } from "@/app/(home)/components/LandingPgeDataNew";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { contact } from "../../../constant";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { bookingEngining, contact } from "../../../constant";
 import { Container } from "../sectionComponents";
+import ShowSlidingTitle from "../sliders/ShowSlidingTitle";
 
 const Navbar = () => {
   const pathName = usePathname();
-  const [navbarColor, setNavbarColor] = useState(false);
-  const callCta = "tel:+918595274861";
+  const isCorporate = pathName === "/corporate/";
+
+  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  // ✅ useRef instead of state (prevents re-renders)
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setNavbarColor(true);
-      } else {
-        setNavbarColor(false);
+      const currentScrollY = window.scrollY;
+
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const delta = currentScrollY - lastScrollY.current;
+
+          // ✅ background change
+          setScrolled(currentScrollY > 20);
+
+          // ✅ ignore micro scroll (prevents flicker)
+          if (Math.abs(delta) > 6) {
+            if (delta > 0 && currentScrollY > 100) {
+              setVisible(false); // scrolling down
+            } else {
+              setVisible(true); // scrolling up
+            }
+
+            lastScrollY.current = currentScrollY;
+          }
+
+          ticking.current = false;
+        });
+
+        ticking.current = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 1024) {
-        setNavbarColor(true);
-      }
-    });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (pathName === "/thank-you/") {
-    return null;
-  }
+  if (pathName === "/thank-you/") return null;
+
   return (
-    <nav
-      className={`${pathName === "/corporate/" ? "bg-primary" : `top-0 left-0 w-full z-50 shadow-xl transition-all duration-500 ease-in-out ${navbarColor ? "sticky bg-primary" : "fixed bg-transparent"}`}`}
-    >
-      <Container className="px-4">
-        <div className="flex items-center justify-between  py-4">
-          <div className="relative max-w-[10rem] w-full aspect-[4/2.5] lg:-mr-20 bg-primary">
-            <Image
-              src={`/logo.webp`}
-              fill
-              className="object-contain px-1"
-              alt="logo"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
-          <Link
-            href={"tel: " + contact.call}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center gap-2 text-primary bg-white px-6 py-4 hover:bg-light md:text-lg pUltralight hover:text-white transition-colors duration-300"
-          >
-            {pathName === "/corporate/" ? (
-              <span className="md:flex items-center justify-center gap-2 hidden">
-                <span>
-                  <CallIcon />
-                </span>
-                INQUIRE GROUP{""}
-                <span className="pultralight-italic"> RATES</span>
-              </span>
-            ) : (
-              <span className="md:block hidden">
-                BOOK YOUR MOUNTAIN{" "}
-                <span className="pultralight-italic">ESCAPE</span>
-              </span>
-            )}
-            <span className="md:hidden block pUltralight">
-              {pathName === "/corporate/" ? (
-                <span>
-                  <CallIcon />
-                </span>
-              ) : (
-                "BOOK NOW"
+    <>
+      <nav
+        className={`
+          fixed top-0 left-0 w-full z-50
+          transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
+          will-change-transform
+
+          ${visible ? "translate-y-0" : "-translate-y-full"}
+
+          ${
+            isCorporate
+              ? "bg-primary shadow-xl"
+              : scrolled
+                ? "bg-new-dark backdrop-blur-md shadow-xl"
+                : "bg-transparent"
+          }
+        `}
+      >
+        <ShowSlidingTitle title={landingPageData.slidingTitle} />
+
+        <Container className="px-4">
+          <div className="flex items-center justify-between py-4">
+            <div className="relative max-w-40 w-full aspect-[4/2.25]">
+              <Image
+                src="/logo-new.png"
+                fill
+                className="object-contain"
+                alt="logo"
+              />
+            </div>
+
+            <div className="flex items-center gap-4">
+              {pathName === "/" && (
+                <Link
+                  href={"tel:" + contact.call}
+                  className="md:flex hidden items-center gap-2 bg-transparent  px-6 py-2 rounded-sm md:text-lg text-white border transition-colors duration-300"
+                >
+                  CALL NOW
+                </Link>
               )}
-            </span>
-          </Link>
-        </div>
-      </Container>
-    </nav>
+
+              <Link
+                href={
+                  pathName === "/" ? bookingEngining : "tel:" + contact.call
+                }
+                className="flex items-center gap-2 bg-new-secondary px-6 py-2 rounded-sm md:text-lg text-new-dark hover:text-white transition-colors duration-300"
+              >
+                {isCorporate ? (
+                  <>
+                    <span className="hidden md:flex items-center gap-2">
+                      <CallIcon />
+                      INQUIRE GROUP RATES
+                    </span>
+                    <span className="md:hidden">
+                      <CallIcon />
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="hidden md:block">BOOK NOW</span>
+                    <span className="md:hidden">BOOK</span>
+                  </>
+                )}
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </nav>
+
+      {/* Spacer */}
+      <div className="h-13" />
+    </>
   );
 };
 

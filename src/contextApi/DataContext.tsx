@@ -3,7 +3,7 @@
 import { RoomsTypes } from "@/@types/types";
 import React, { createContext, ReactNode, useState } from "react";
 
-export const DataContext = createContext<{
+interface DataContextProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpenNav?: boolean;
@@ -20,7 +20,11 @@ export const DataContext = createContext<{
   setRoomPopUpAmenities: React.Dispatch<
     React.SetStateAction<RoomsTypes["cards"][0]["popUpAmenities"]>
   >;
-}>({
+  isOpenFormPopup: boolean;
+  setIsOpenFormPopup: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const DataContext = createContext<DataContextProps>({
   isOpen: false,
   setIsOpen: () => {},
   isOpenNav: false,
@@ -33,6 +37,8 @@ export const DataContext = createContext<{
   setRoomAmenities: () => {},
   roomPopUpAmenities: [],
   setRoomPopUpAmenities: () => {},
+  isOpenFormPopup: false,
+  setIsOpenFormPopup: () => {},
 });
 
 type DataProviderProps = {
@@ -50,10 +56,13 @@ export const DataProvider = ({ children }: DataProviderProps) => {
   const [roomPopUpAmenities, setRoomPopUpAmenities] = useState<
     RoomsTypes["cards"][0]["popUpAmenities"]
   >([]);
+  const [isOpenFormPopup, setIsOpenFormPopup] = useState(false);
 
   return (
     <DataContext.Provider
       value={{
+        isOpenFormPopup,
+        setIsOpenFormPopup,
         isOpen,
         setIsOpen,
         isOpenNav,

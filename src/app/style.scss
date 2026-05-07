@@ -1,42 +1,24 @@
 @layer utilities {
   input {
-    font-family: "Neutra Text Book";
     font-weight: 200;
-    font-size: 1.22rem; // 20px
-    color: #797979 !important; 
+    font-size: 1rem; // 20px
+    color: #797979 !important;
 
     &::placeholder {
       font-weight: 200;
-      font-size: 1.22rem; // 20px
-      color: #797979 !important; 
-    }
-
-    @media (min-width: 768px) {
-      font-size: 1rem;
-    }
-  }
-
-  select {
-    font-family: "Neutra Text Book";
-    font-weight: 200;
-    font-size: 1.22rem; // 20px
-    color: #797979 !important; 
-
-    @media (min-width: 768px) {
-      font-size: 1rem;
+      color: #797979 !important;
     }
   }
 
   textarea {
     font-family: "Neutra Text Book";
     font-weight: 200;
-    font-size: 1.22rem; // 20px
-    color: #797979 !important; 
+    font-size: 1rem; // 20px
+    color: #797979 !important;
 
     &::placeholder {
       font-weight: 200;
-      font-size: 1.22rem; // 20px
-      color: #797979 !important; 
+      color: #797979 !important;
     }
 
     @media (min-width: 768px) {
@@ -97,27 +79,73 @@
     margin-inline: auto;
   }
 
+  .heading2 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      i {
+        color: #b89258;
+      }
+    }
+  }
+
   // container sizes for xl, lg, md, sm screens
 
+  // .max_width {
+  //   max-width: 100%;
+  //   width: 100%;
+  //   margin-inline: auto;
+  //   padding-inline: 1rem;
+  //   @media (min-width: 768px) {
+  //     max-width: 720px;
+  //     padding-inline: 1rem;
+  //   }
+  //   @media (min-width: 992px) {
+  //     max-width: 960px;
+  //     padding-inline: 1rem;
+  //   }
+  //   @media (min-width: 1200px) {
+  //     max-width: 1140px;
+  //     padding-inline: 0;
+  //   }
+  //   @media (min-width: 1400px) {
+  //     max-width: 1320px;
+  //     padding-inline: 0;
+  //   }
+  // }
   .max_width {
     max-width: 100%;
     width: 100%;
     margin-inline: auto;
     padding-inline: 1rem;
+
     @media (min-width: 768px) {
+      /* md */
       max-width: 720px;
-      padding-inline: 1rem;
     }
-    @media (min-width: 992px) {
+
+    @media (min-width: 1024px) {
+      /* lg */
       max-width: 960px;
-      padding-inline: 1rem;
     }
-    @media (min-width: 1200px) {
+
+    @media (min-width: 1280px) {
+      /* xl */
       max-width: 1140px;
+    }
+
+    @media (min-width: 1536px) {
+      /* 2xl */
+      max-width: 1320px;
       padding-inline: 0;
     }
-    @media (min-width: 1400px) {
-      max-width: 1320px;
+
+    @media (min-width: 1920px) {
+      /* 3xl */
+      max-width: 1440px;
       padding-inline: 0;
     }
   }
@@ -356,10 +384,9 @@
   }
 }
 
-
-.why-ebc-bg{
+.why-ebc-bg {
   position: relative;
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -370,7 +397,7 @@
     background-repeat: no-repeat;
     z-index: -1;
   }
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -381,9 +408,9 @@
   }
 }
 
-.bg-img{
+.bg-img {
   position: relative;
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -395,7 +422,7 @@
     z-index: -1;
     opacity: 0.7;
   }
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -406,9 +433,9 @@
   }
 }
 
-.bg-img-2{
+.bg-img-2 {
   position: relative;
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     top: -3rem;
@@ -420,5 +447,37 @@
     background-repeat: no-repeat;
     z-index: -1;
     // opacity: 0.7;
+  }
+}
+
+.room-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &::after {
+      color: #0C150D;
+      font-size: 16px;
+    }
+    svg {
+      color: #0C150D;
+      width: 20px;
+      height: 20px;
+    }
+    @media (width < 768px) {
+      width: 32px;
+      height: 32px;
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
   }
 }

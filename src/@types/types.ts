@@ -2,10 +2,10 @@ import { JSX } from "react";
 
 export interface BannerType {
   videoSrc?: string;
-  video?:{
+  video?: {
     src: string;
     poster: string;
-  }
+  };
   images?: string[];
   title?: string;
   description?: string;
@@ -152,6 +152,84 @@ export interface WhyEBCProps {
     description: string[];
   }[];
   note: string;
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+export interface OurStoryProps {
+  title: string;
+  subtitle: string;
+  description: string[];
+  images: string[];
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+export interface AccommodationsTypes {
+  title: string;
+  description: string[];
+  video: {
+    src: string;
+    videoSrc: string;
+  }[];
+  items: {
+    category: string;
+    title: string;
+    details: {
+      text: string;
+      icon: JSX.Element;
+    }[];
+    description: string[];
+    price: string;
+    images: string[];
+    link: {
+      label: string;
+      href: string;
+    };
+  }[];
+}
+
+export interface JourneyProps {
+  title: string;
+  description: string[];
+  items: {
+    title: string;
+    description: string[];
+    image: string;
+  }[];
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+export interface ExperienceProps {
+  title: string;
+  description: string[];
+  image: string;
+  items: {
+    title: string;
+    description: string;
+    icon: JSX.Element;
+  }[];
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+export interface PressReleasesProps {
+  title: string;
+  links: {
+    backImage: string;
+    src: string;
+    name: string;
+    link: string;
+  }[];
   link: {
     label: string;
     href: string;
