@@ -26,7 +26,7 @@ const OurStory: React.FC<OurStoryProps> = ({
             </div>
             <p className="text-white/90">{description[0]}</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-2">
             <OpenPopUpBtn
               label="GET A CALL BACK"
               className="bg-new-ternary mt-4 text-white rounded-sm border-none"

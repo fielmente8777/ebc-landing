@@ -36,7 +36,7 @@ const FaqSection: React.FC<Props> = ({ title, faq, link }) => {
           className="bg-new-secondary w-fit mx-auto text-new-dark rounded-sm border-none"
           target="_blank"
         /> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 w-full">
           <OpenPopUpBtn
             label="GET A CALL BACK"
             className="bg-new-ternary mt-4 text-new-dark rounded-sm border-none"

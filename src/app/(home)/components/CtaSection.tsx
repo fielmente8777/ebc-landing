@@ -26,7 +26,7 @@ const CtaSection: React.FC<Props> = ({
           wrapperClassName="gap-4"
           description={description[0]}
         />
-        <div className="flex max-md:flex-col md:gap-4 gap-3">
+        <div className="flex max-md:flex-col md:gap-4 gap-1">
           {actions.map((action, index) => (
             <LinkButton
               label={action.label}

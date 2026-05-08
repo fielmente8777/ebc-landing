@@ -17,7 +17,7 @@ const ExperienceNew: React.FC<ExperienceProps> = ({
   return (
     <Section
       defaultPadding={false}
-      className="relative w-full xl:aspect-16/8 lg:aspect-16/14 md:aspect-[4/5.5] aspect-4/6"
+      className="relative w-full xl:aspect-16/8 lg:aspect-16/14 md:aspect-[4/5.5] aspect-[4/7.5]"
     >
       <Image
         src={image}
@@ -46,7 +46,7 @@ const ExperienceNew: React.FC<ExperienceProps> = ({
             className="bg-new-secondary w-fit mx-auto xl:px-40 text-new-dark rounded-sm border-none"
             target="_blank"
           /> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl w-full mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 max-w-2xl w-full mx-auto">
             <OpenPopUpBtn
               label="GET A CALL BACK"
               className="bg-new-ternary mt-4 text-new-dark rounded-sm border-none"

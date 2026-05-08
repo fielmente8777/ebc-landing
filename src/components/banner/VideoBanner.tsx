@@ -33,7 +33,7 @@ const VideoBanner: React.FC<VideoBannerProps> = ({
   return (
     <Section
       defaultPadding={false}
-      className="relative w-full md:aspect-video aspect-[4/6]"
+      className="relative w-full md:aspect-video aspect-[4/6.75]"
     >
       <LazyLoadedVideo
         src={video.src}

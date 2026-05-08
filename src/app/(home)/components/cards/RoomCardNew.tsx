@@ -31,9 +31,9 @@ const RoomCardNew: React.FC<AccommodationsTypes["items"][0]> = ({
           ))}
         </ul>
         <p className="text-white text-base grid-rows-2">{description}</p>
-        <p className="text-new-secondary font-primary text-[1.375rem]">
+        {/* <p className="text-new-secondary font-primary text-[1.375rem]">
           {price}
-        </p>
+        </p> */}
         <div className="flex flex-wrap items-center justify-between max-md:gap-2">
           <LinkButton
             label={"CALL NOW"}
