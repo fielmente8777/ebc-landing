@@ -15,8 +15,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
-  
+    
    trailingSlash: true,
 };
 
