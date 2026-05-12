@@ -124,17 +124,20 @@
 
     @media (min-width: 768px) {
       /* md */
-      max-width: 720px;
+      max-width: 760px;
+      padding-inline: 0;
     }
 
     @media (min-width: 1024px) {
       /* lg */
       max-width: 960px;
+      padding-inline: 0;
     }
 
     @media (min-width: 1280px) {
       /* xl */
       max-width: 1140px;
+      padding-inline: 0;
     }
 
     @media (min-width: 1536px) {
@@ -463,11 +466,11 @@
     align-items: center;
     cursor: pointer;
     &::after {
-      color: #0C150D;
+      color: #0c150d;
       font-size: 16px;
     }
     svg {
-      color: #0C150D;
+      color: #0c150d;
       width: 20px;
       height: 20px;
     }

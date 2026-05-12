@@ -126,20 +126,20 @@ const LandingFooterNew = () => {
             </div>
           ))}
 
-          <div className="w-full rounded-sm border-[0.5px] border-new-secondary/60 overflow-hidden max-md:aspect-4/3">
+          <div className="w-full rounded-sm md:col-span-2 lg:col-span-1 col-span-1 border-[0.5px] border-new-secondary/60 overflow-hidden max-lg:aspect-4/3">
             <LazyLoadedMap src={contact.mapUrl} />
           </div>
         </div>
       </Container>
       <div className="bg-white h-0.5 w-full max_width" />
-      <Container className="py-4 flex max-md:flex-col items-center gap-3.5 justify-between">
-        <div className="md:flex max-md:space-x-2 text-center flex-wrap items-center justify-center gap-2 text-white md:text-lg">
+      <Container className="py-4 flex max-lg:flex-col items-center gap-3.5 justify-between">
+        <div className="lg:flex max-md:space-x-2 text-center flex-wrap items-center justify-center gap-2 text-white md:text-lg">
           {" "}
           <span className="text-white">
             © {new Date().getFullYear()} EBC Mussoorie — Everest Base Camp
             Mussoorie.
           </span>
-          <span className="md:block hidden">|</span>
+          <span className="lg:block hidden">|</span>
           <span className="text-white">All Rights Reserved</span>
           {/* <span className="md:block hidden">|</span> */}
         </div>

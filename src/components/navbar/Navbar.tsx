@@ -116,8 +116,7 @@ const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <span className="hidden md:block">BOOK NOW</span>
-                    <span className="md:hidden">BOOK</span>
+                    <span className="">BOOK NOW</span>
                   </>
                 )}
               </Link>
