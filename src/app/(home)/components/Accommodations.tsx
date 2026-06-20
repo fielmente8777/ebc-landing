@@ -17,7 +17,7 @@ const Accommodations: React.FC<AccommodationsTypes> = ({
       sectionId="rooms"
     >
       <SectionHeading2 title={title} description={description[0]} textCenter />
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 ">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 w-full">
         {items.slice(0, items.length - 1).map((item, index) => (
           <RoomCardNew key={index} {...item} />
         ))}
