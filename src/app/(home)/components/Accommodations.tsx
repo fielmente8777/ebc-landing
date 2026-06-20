@@ -17,11 +17,11 @@ const Accommodations: React.FC<AccommodationsTypes> = ({
       sectionId="rooms"
     >
       <SectionHeading2 title={title} description={description[0]} textCenter />
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 w-full">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 ">
         {items.slice(0, items.length - 1).map((item, index) => (
           <RoomCardNew key={index} {...item} />
         ))}
-        <div className="relative w-full aspect-[4/6.2] xl:block hidden">
+        <div className="relative w-full aspect-[4/6.8] xl:block hidden">
           <LazyLoadedVideo
             src={video[0].videoSrc}
             muted
@@ -33,7 +33,7 @@ const Accommodations: React.FC<AccommodationsTypes> = ({
         {items.slice(items.length - 1).map((item, index) => (
           <RoomCardNew key={index} {...item} />
         ))}
-        <div className="relative w-full aspect-[4/6.2]">
+        <div className="relative w-full aspect-[4/6.8]">
           <LazyLoadedVideo
             src={video[1].videoSrc}
             muted
