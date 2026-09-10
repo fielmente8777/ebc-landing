@@ -229,6 +229,39 @@ export default function RootLayout({
         </Script>
         <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></Script>
 
+        <Script id="openai-pixel" strategy="afterInteractive">
+          {`
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+
+      var q = function () {
+        q.q.push(arguments);
+      };
+
+      q.q = [];
+      w.oaiq = q;
+
+      var js = d.createElement(s);
+      js.async = true;
+      js.src = u;
+
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(js, f);
+    })(window, document, "script", "https://oaiq.openai.com/pixel.js");
+
+    
+            oaiq("init", {
+              pixelId: "AEHPLAH6oN5Z4jm3W7Zvd7",
+              debug: true
+            });
+                        oaiq(
+      "measure",
+      "page_viewed",
+      { type: "contents" }
+    );
+  `}
+        </Script>
+
         <Script id="premium-motion" strategy="afterInteractive">
           {`
 (function () {

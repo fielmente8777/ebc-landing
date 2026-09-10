@@ -2,7 +2,17 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useDebounce } from "./useDebounce";
-import { contact } from '../../constant';
+import { contact } from "../../constant";
+
+declare global {
+  interface Window {
+    oaiq?: (
+      command: string,
+      eventName: string,
+      data?: Record<string, unknown>
+    ) => void;
+  }
+}
 
 interface BookingFormData {
   name: string;
@@ -45,7 +55,7 @@ const initialFormData: BookingFormData = {
   checkOut: "",
   message: "",
   adults: 1,
-  kids: 0,  
+  kids: 0,
 };
 
 const useBookingForm = ({
@@ -153,7 +163,10 @@ const useBookingForm = ({
         newErrors.adults = "At least 1 adult required";
         isValid = false;
       }
-      if (formData.kids !== undefined && (formData.kids < 0 || formData.kids > 10)) {
+      if (
+        formData.kids !== undefined &&
+        (formData.kids < 0 || formData.kids > 10)
+      ) {
         newErrors.kids = "Kids must be between 0 and 10";
         isValid = false;
       }
@@ -182,21 +195,23 @@ const useBookingForm = ({
   };
 
   // Handle number input changes for adults/kids
-  const handleNumberChange = (field: 'adults' | 'kids', increment: boolean) => {
+  const handleNumberChange = (field: "adults" | "kids", increment: boolean) => {
     setFormData((prevFormData) => {
       const currentValue = prevFormData[field] || 0;
-      const newValue = increment ? currentValue + 1 : Math.max(0, currentValue - 1);
-      
+      const newValue = increment
+        ? currentValue + 1
+        : Math.max(0, currentValue - 1);
+
       // Optional: Set max limit (e.g., 20)
-      const maxLimit = field === 'adults' ? 20 : 10;
+      const maxLimit = field === "adults" ? 20 : 10;
       const finalValue = Math.min(maxLimit, Math.max(0, newValue));
-      
+
       return {
         ...prevFormData,
         [field]: finalValue,
       };
     });
-    
+
     // Clear error for this field if it exists
     if (errors[field]) {
       setErrors((prevErrors) => ({
@@ -206,7 +221,10 @@ const useBookingForm = ({
     }
   };
 
-  const setFieldValue = (field: keyof BookingFormData, value: string | number) => {
+  const setFieldValue = (
+    field: keyof BookingFormData,
+    value: string | number
+  ) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       [field]: value,
@@ -278,6 +296,14 @@ const useBookingForm = ({
       if (data.Status) {
         setSubmitSuccess(true);
         resetForm();
+
+        if (
+          typeof window !== "undefined" &&
+          typeof window.oaiq === "function"
+        ) {
+          window.oaiq("measure", "lead_created", { type: "customer_action" });
+        }
+
         if (onSubmitSuccess) {
           onSubmitSuccess();
         }
