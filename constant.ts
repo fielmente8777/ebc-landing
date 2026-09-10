@@ -3,7 +3,6 @@ interface data_Type {
   code: string;
 }
 
-
 export const countries: data_Type[] = [
   { name: "AFG", code: "+93" },
   { name: "ALB", code: "+355" },
