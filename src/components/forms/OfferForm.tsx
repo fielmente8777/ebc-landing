@@ -2,6 +2,17 @@
 import { countries } from "../../../constant";
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
+
+declare global {
+  interface Window {
+    oaiq?: (
+      command: string,
+      eventName: string,
+      data?: Record<string, unknown>
+    ) => void;
+  }
+}
+
 const OfferForm = () => {
   const [countryCode, setCountryCode] = useState("+91");
 
@@ -93,6 +104,14 @@ const OfferForm = () => {
           PhoneNumber: "",
         });
         setSubmitSuccess(true);
+
+        if (
+          typeof window !== "undefined" &&
+          typeof window.oaiq === "function"
+        ) {
+          window.oaiq("measure", "lead_created", { type: "customer_action" });
+        }
+
         setTimeout(() => setSubmitSuccess(false), 3000);
         window.open("/thank-you", "_blank");
       } else {
@@ -187,7 +206,9 @@ const OfferForm = () => {
           ) : submitSuccess ? (
             "Thank You!"
           ) : (
-            <span className="pmedium">GET MY <span className="pmedium-italic">DEAL</span></span>
+            <span className="pmedium">
+              GET MY <span className="pmedium-italic">DEAL</span>
+            </span>
           )}
         </button>
       </div>
